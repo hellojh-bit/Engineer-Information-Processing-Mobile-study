@@ -856,6 +856,44 @@
             }
         }
 
+
+
+        /* [수정] 보통 난이도 문제 해설 영역 PC 좌우 배치 및 모바일 상하 배치 */
+        .ai-question-block[data-ai-difficulty="normal"] .question-layout {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 100%;
+        }
+        .ai-question-block[data-ai-difficulty="normal"].is-open .question-layout {
+            justify-content: space-between;
+        }
+        .ai-question-block[data-ai-difficulty="normal"].is-open .question-card {
+            flex: 1 1 50%;
+            max-width: none;
+        }
+        .ai-question-block[data-ai-difficulty="normal"].is-open .solution-panel {
+            display: block;
+            flex: 1 1 50%;
+            max-width: none;
+        }
+        @media (max-width: 768px) {
+            .ai-question-block[data-ai-difficulty="normal"] .question-layout,
+            .ai-question-block[data-ai-difficulty="normal"].is-open .question-layout {
+                display: block;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-open .question-card,
+            .ai-question-block[data-ai-difficulty="normal"].is-open .solution-panel {
+                width: 100%;
+                max-width: none;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-open .solution-panel {
+                margin-top: 1rem;
+            }
+        }
+
         /* [추가] AI 예상문제 통합 화면 스타일 끝 */
 
 
@@ -1069,6 +1107,32 @@
             }
             .update-log-list li {
                 font-size: 0.92rem;
+            }
+        }
+
+
+
+        /* [수정] 업데이트 로그 내부 스크롤 영역 개선 */
+        .update-log-dialog {
+            max-height: min(80vh, 680px);
+        }
+        .update-log-body {
+            flex: 1 1 auto;
+            max-height: calc(min(80vh, 680px) - 74px);
+            overflow-y: auto;
+            padding-right: 1.4rem;
+        }
+        .update-log-list {
+            max-height: none;
+        }
+        @media (max-width: 768px) {
+            .update-log-dialog {
+                max-height: 82vh;
+            }
+            .update-log-body {
+                max-height: calc(82vh - 72px);
+                overflow-y: auto;
+                padding-right: 1.1rem;
             }
         }
 
@@ -1375,6 +1439,98 @@
                 display: none !important;
             }
         }
+
+
+        /* [수정] 보통 난이도 해설 영역 최종 배치 보정 */
+        @media (min-width: 769px) {
+            .ai-question-block[data-ai-difficulty="normal"].is-current,
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current .question-layout {
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open .question-layout {
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+                align-items: flex-start !important;
+                justify-content: stretch !important;
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current .question-card,
+            .ai-question-block[data-ai-difficulty="normal"].is-current .solution-panel {
+                min-width: 0 !important;
+                max-width: 100% !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open .question-card,
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open .solution-panel {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+                flex: none !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current:not(.is-open) .solution-panel {
+                display: none !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open .solution-panel {
+                display: block !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"] pre,
+            .ai-question-block[data-ai-difficulty="normal"] code,
+            .ai-question-block[data-ai-difficulty="normal"] .answer-box,
+            .ai-question-block[data-ai-difficulty="normal"] textarea,
+            .ai-question-block[data-ai-difficulty="normal"] .answer-input {
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"] pre,
+            .ai-question-block[data-ai-difficulty="normal"] .answer-box {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        @media (max-width: 768px) {
+            .ai-question-block[data-ai-difficulty="normal"].is-current,
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current .question-layout,
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open .question-layout {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current .question-card,
+            .ai-question-block[data-ai-difficulty="normal"].is-current .solution-panel {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current.is-open .solution-panel {
+                display: block !important;
+                margin-top: 1rem !important;
+            }
+            .ai-question-block[data-ai-difficulty="normal"].is-current:not(.is-open) .solution-panel {
+                display: none !important;
+            }
+        }
+
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col md:flex-row selection:bg-indigo-100">
@@ -1831,7 +1987,7 @@
 </button>
 <button class="ai-difficulty-btn" data-ai-difficulty="normal" onclick="selectAIDifficulty('normal')" type="button">
 <span class="ai-difficulty-title">보통</span>
-<span class="ai-difficulty-desc">중간 난이도 문제 영역 · 아직 미등록</span>
+<span class="ai-difficulty-desc">중간 난이도 출력 결과 작성 문제 1회~5회</span>
 </button>
 <button class="ai-difficulty-btn active" data-ai-difficulty="hard" onclick="selectAIDifficulty('hard')" type="button">
 <span class="ai-difficulty-title">어려움</span>
@@ -1844,6 +2000,11 @@
 <button class="ai-round-btn hidden" data-ai-round="easy-set3" data-ai-round-difficulty="easy" onclick="showAISet('easy-set3')" type="button">3회</button>
 <button class="ai-round-btn hidden" data-ai-round="easy-set4" data-ai-round-difficulty="easy" onclick="showAISet('easy-set4')" type="button">4회</button>
 <button class="ai-round-btn hidden" data-ai-round="easy-set5" data-ai-round-difficulty="easy" onclick="showAISet('easy-set5')" type="button">5회</button>
+<button class="ai-round-btn hidden" data-ai-round="normal-set1" data-ai-round-difficulty="normal" onclick="showAISet('normal-set1')" type="button">1회</button>
+<button class="ai-round-btn hidden" data-ai-round="normal-set2" data-ai-round-difficulty="normal" onclick="showAISet('normal-set2')" type="button">2회</button>
+<button class="ai-round-btn hidden" data-ai-round="normal-set3" data-ai-round-difficulty="normal" onclick="showAISet('normal-set3')" type="button">3회</button>
+<button class="ai-round-btn hidden" data-ai-round="normal-set4" data-ai-round-difficulty="normal" onclick="showAISet('normal-set4')" type="button">4회</button>
+<button class="ai-round-btn hidden" data-ai-round="normal-set5" data-ai-round-difficulty="normal" onclick="showAISet('normal-set5')" type="button">5회</button>
 <button class="ai-round-btn" data-ai-round="hard-set1" data-ai-round-difficulty="hard" onclick="showAISet('hard-set1')" type="button">1회</button>
 <button class="ai-round-btn" data-ai-round="hard-set2" data-ai-round-difficulty="hard" onclick="showAISet('hard-set2')" type="button">2회</button>
 <button class="ai-round-btn" data-ai-round="hard-set3" data-ai-round-difficulty="hard" onclick="showAISet('hard-set3')" type="button">3회</button>
@@ -4765,6 +4926,2463 @@ st
 </div>
 </section>
 </div></div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="normal" data-ai-set="normal-set1" id="aiNormalSet1"><div class="ai-top-nav-wrap"><nav aria-label="보통 1회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="보통 1회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 1)" type="button" aria-current="true">1</button>
+<button aria-label="보통 1회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 2)" type="button">2</button>
+<button aria-label="보통 1회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 3)" type="button">3</button>
+<button aria-label="보통 1회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 4)" type="button">4</button>
+<button aria-label="보통 1회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 5)" type="button">5</button>
+<button aria-label="보통 1회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 6)" type="button">6</button>
+<button aria-label="보통 1회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 7)" type="button">7</button>
+<button aria-label="보통 1회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 8)" type="button">8</button>
+<button aria-label="보통 1회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 9)" type="button">9</button>
+<button aria-label="보통 1회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="normal-set1" onclick="showAIQuestion('normal-set1', 10)" type="button">10</button></nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="normal" data-ai-question="1" data-ai-set="normal-set1" data-question="1" id="ai-normal-set1-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 배열 전달과 값 변경</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">배열</span><span class="badge">함수</span><span class="badge">매개변수</span><span class="badge">반환값</span><span class="badge">반복문</span></div>
+<p><strong>출제 개념:</strong> 배열, 함수, 매개변수, 반환값, 반복문, 조건문, 복합 대입 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int update(int a[], int n) {
+    int sum = 0;
+
+    for (int i = 0; i &lt; n; i++) {
+        a[i] += i;
+
+        if (a[i] % 2 == 0)
+            sum += a[i];
+        else
+            sum -= a[i];
+    }
+
+    return sum;
+}
+
+int main() {
+    int a[4] = {2, 3, 5, 8};
+    int r = update(a, 4);
+
+    printf("%d %d %d", r, a[1], a[3]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-1">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-1" onclick="toggleAISolution('normal-set1', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">-12 4 11</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>배열 a는 함수에 전달될 때 시작 주소가 전달되므로 함수 안의 변경이 main의 배열에도 반영됩니다.</li><li>반복 i=0에서 a[0]은 2이고 짝수이므로 sum은 2입니다.</li><li>반복 i=1에서 a[1]은 3+1=4가 되고 짝수이므로 sum은 6입니다.</li><li>반복 i=2에서 a[2]는 5+2=7이 되고 홀수이므로 sum은 -1입니다.</li><li>반복 i=3에서 a[3]은 8+3=11이 되고 홀수이므로 sum은 -12입니다.</li><li>최종적으로 r=-12, a[1]=4, a[3]=11이 출력됩니다.</li><li>헷갈릴 수 있는 부분은 배열이 복사되는 것이 아니라 원본 배열이 변경된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 함수, 매개변수, 반환값, 반복문, 조건문, 복합 대입 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="2" data-ai-set="normal-set1" data-question="2" id="ai-normal-set1-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자열과 널 문자</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">널 문자</span><span class="badge">반복문</span><span class="badge">조건문</span></div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 널 문자, 반복문, 조건문, 인덱싱, printf 출력</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char s[10] = "korea";
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        if (i % 2 == 0)
+            s[i] = s[i] + 1;
+    }
+
+    s[3] = '\0';
+
+    printf("%s %c", s, s[4]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-2">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-2" onclick="toggleAISolution('normal-set1', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">los b</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 문자열은 korea입니다.</li><li>인덱스 0, 2, 4의 문자가 각각 1씩 증가합니다.</li><li>k는 l, r은 s, a는 b가 되어 문자열 배열은 l o s e b 형태가 됩니다.</li><li>이후 s[3]에 널 문자 \0이 저장됩니다.</li><li>문자열 출력 %s는 널 문자 전까지만 출력하므로 los만 출력됩니다.</li><li>s[4]는 널 문자 뒤에 남아 있는 문자 b이므로 두 번째 값으로 b가 출력됩니다.</li><li>헷갈릴 수 있는 부분은 %s 출력은 널 문자에서 멈추지만 s[4] 값 자체는 그대로 남아 있다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 널 문자, 반복문, 조건문, 인덱싱, printf 출력</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="3" data-ai-set="normal-set1" data-question="3" id="ai-normal-set1-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 구조체 배열과 포인터</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">구조체 포인터</span><span class="badge">포인터 산술</span><span class="badge">멤버 접근</span></div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 구조체 포인터, 포인터 산술, 멤버 접근, 함수</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct Pair {
+    int a;
+    int b;
+};
+
+void change(struct Pair *p) {
+    p[0].a += p[1].b;
+    (p + 1)-&gt;b += p-&gt;a;
+}
+
+int main() {
+    struct Pair arr[2] = {{1, 2}, {3, 4}};
+
+    change(arr);
+
+    printf("%d %d %d", arr[0].a, arr[1].b, arr[0].a + arr[1].b);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-3">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-3" onclick="toggleAISolution('normal-set1', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">5 9 14</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>arr[0]은 {1, 2}, arr[1]은 {3, 4}입니다.</li><li>change(arr)에서 p는 arr[0]을 가리킵니다.</li><li>p[0].a += p[1].b에 의해 arr[0].a는 1+4=5가 됩니다.</li><li>(p+1)-&gt;b += p-&gt;a에서 p-&gt;a는 변경된 arr[0].a인 5입니다.</li><li>따라서 arr[1].b는 4+5=9가 됩니다.</li><li>출력은 arr[0].a=5, arr[1].b=9, 두 값의 합 14입니다.</li><li>헷갈릴 수 있는 부분은 두 번째 계산에서 p-&gt;a가 이미 변경된 값 5라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 구조체 포인터, 포인터 산술, 멤버 접근, 함수</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="4" data-ai-set="normal-set1" data-question="4" id="ai-normal-set1-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 재귀 함수의 반환값</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">재귀</span><span class="badge">함수</span><span class="badge">조건문</span><span class="badge">반환값</span><span class="badge">산술 연산자</span></div>
+<p><strong>출제 개념:</strong> 재귀, 함수, 조건문, 반환값, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int g(int n) {
+    if (n &lt;= 1)
+        return n + 1;
+
+    return g(n - 1) + g(n - 2);
+}
+
+int main() {
+    printf("%d", g(4));
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-4">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-4" onclick="toggleAISolution('normal-set1', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">8</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>g(0)은 1을 반환하고 g(1)은 2를 반환합니다.</li><li>g(2)는 g(1)+g(0)이므로 2+1=3입니다.</li><li>g(3)는 g(2)+g(1)이므로 3+2=5입니다.</li><li>g(4)는 g(3)+g(2)이므로 5+3=8입니다.</li><li>따라서 출력 결과는 8입니다.</li><li>헷갈릴 수 있는 부분은 종료 조건에서 g(0)=1, g(1)=2라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>재귀, 함수, 조건문, 반환값, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="5" data-ai-set="normal-set1" data-question="5" id="ai-normal-set1-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] static 필드와 객체 생성</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">생성자</span><span class="badge">static</span><span class="badge">필드</span></div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 생성자, static, 필드, 메서드, 문자열 결합</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    static int s = 1;
+    int x;
+
+    A(int x) {
+        this.x = x;
+        s += x;
+    }
+
+    int f() {
+        return x + s;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A(2);
+        A b = new A(3);
+
+        System.out.print(a.f() + " " + b.f() + " " + A.s);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-5">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-5" onclick="toggleAISolution('normal-set1', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">8 9 6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>static 필드 s는 모든 A 객체가 공유합니다.</li><li>처음 s는 1입니다.</li><li>new A(2)를 실행하면 s는 1+2=3이 됩니다.</li><li>new A(3)를 실행하면 s는 3+3=6이 됩니다.</li><li>a.f()는 a.x 2와 현재 s 6을 더해 8입니다.</li><li>b.f()는 b.x 3과 현재 s 6을 더해 9입니다.</li><li>마지막 A.s는 6입니다.</li><li>헷갈릴 수 있는 부분은 a.f()를 호출할 때도 s는 최종 공유값 6이라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 생성자, static, 필드, 메서드, 문자열 결합</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="6" data-ai-set="normal-set1" data-question="6" id="ai-normal-set1-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] 필드 은닉과 오버라이딩</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">필드 은닉</span><span class="badge">업캐스팅</span><span class="badge">동적 바인딩</span></div>
+<p><strong>출제 개념:</strong> 상속, 오버라이딩, 필드 은닉, 업캐스팅, 동적 바인딩, super</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int n = 1;
+
+    int f() {
+        return n + 1;
+    }
+}
+
+class B extends A {
+    int n = 5;
+
+    int f() {
+        return n + super.f();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A x = new B();
+
+        System.out.print(x.n + " " + x.f() + " " + ((B)x).n);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-6">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-6" onclick="toggleAISolution('normal-set1', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">1 7 5</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>x의 참조 타입은 A이고 실제 객체는 B입니다.</li><li>필드 n은 참조 타입 기준으로 접근되므로 x.n은 A의 n인 1입니다.</li><li>메서드 f()는 실제 객체 타입 기준으로 동적 바인딩되어 B의 f()가 실행됩니다.</li><li>B.f()에서 n은 B의 n인 5입니다.</li><li>super.f()는 A의 f()를 호출하며 A의 n 1을 사용하므로 2를 반환합니다.</li><li>따라서 x.f()는 5+2=7입니다.</li><li>((B)x).n은 B의 n인 5입니다.</li><li>헷갈릴 수 있는 부분은 필드 접근과 메서드 호출의 기준이 다르다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>상속, 오버라이딩, 필드 은닉, 업캐스팅, 동적 바인딩, super</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="7" data-ai-set="normal-set1" data-question="7" id="ai-normal-set1-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 오버로딩과 오버라이딩</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">동적 바인딩</span><span class="badge">참조변수 타입</span></div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 동적 바인딩, 참조변수 타입</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class T {
+    String m(Object o) {
+        return "O";
+    }
+
+    String m(String s) {
+        return "S";
+    }
+}
+
+class U extends T {
+    String m(Object o) {
+        return "U";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        T t = new U();
+
+        System.out.print(t.m("x") + t.m((Object)"x"));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-7">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-7" onclick="toggleAISolution('normal-set1', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">SU</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>t의 참조 타입은 T이고 실제 객체 타입은 U입니다.</li><li>t.m("x")는 컴파일 시점에 T의 m(String)이 선택됩니다.</li><li>U는 m(String)을 오버라이딩하지 않았으므로 T의 m(String)이 실행되어 S를 반환합니다.</li><li>t.m((Object)"x")는 컴파일 시점에 m(Object)가 선택됩니다.</li><li>m(Object)는 U에서 오버라이딩되었으므로 U의 m(Object)가 실행되어 U를 반환합니다.</li><li>따라서 전체 출력은 SU입니다.</li><li>헷갈릴 수 있는 부분은 오버로딩 선택은 참조 타입과 인수 타입 기준으로 먼저 결정된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 동적 바인딩, 참조변수 타입</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="8" data-ai-set="normal-set1" data-question="8" id="ai-normal-set1-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 인터페이스와 배열 순회</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">인터페이스</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">다형성</span><span class="badge">배열</span></div>
+<p><strong>출제 개념:</strong> 인터페이스, 클래스, 객체, 다형성, 배열, 반복문, 오버라이딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>interface I {
+    int f(int x);
+}
+
+class A implements I {
+    int v;
+
+    A(int v) {
+        this.v = v;
+    }
+
+    public int f(int x) {
+        return x + v;
+    }
+}
+
+class B extends A {
+    B() {
+        super(2);
+    }
+
+    public int f(int x) {
+        return super.f(x) * 2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        I[] arr = {new A(3), new B()};
+        int sum = 0;
+
+        for (I i : arr) {
+            sum += i.f(2);
+        }
+
+        System.out.print(sum);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-8">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-8" onclick="toggleAISolution('normal-set1', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">13</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>배열에는 A(3) 객체와 B 객체가 들어 있습니다.</li><li>첫 번째 객체 A(3)의 f(2)는 2+3=5입니다.</li><li>두 번째 객체는 실제 타입이 B이므로 B의 f(2)가 실행됩니다.</li><li>B에서 super.f(2)는 A의 f를 호출하므로 2+2=4입니다.</li><li>B.f(2)는 이 값을 2배 하므로 8입니다.</li><li>합계는 5+8=13입니다.</li><li>헷갈릴 수 있는 부분은 인터페이스 타입 배열이어도 실제 객체의 오버라이딩 메서드가 호출된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>인터페이스, 클래스, 객체, 다형성, 배열, 반복문, 오버라이딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="9" data-ai-set="normal-set1" data-question="9" id="ai-normal-set1-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 리스트 처리와 map</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">리스트</span><span class="badge">함수</span><span class="badge">리스트 컴프리헨션</span><span class="badge">map</span><span class="badge">lambda</span></div>
+<p><strong>출제 개념:</strong> 리스트, 함수, 리스트 컴프리헨션, map, lambda, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>nums = [1, 2, 3, 4]
+
+def f(x):
+    x = [n * 2 for n in x if n % 2 == 0]
+    return sum(x)
+
+print(f(nums), nums[1])</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-9">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-9" onclick="toggleAISolution('normal-set1', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">12 2</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>nums는 [1, 2, 3, 4]입니다.</li><li>f(nums)에서 짝수만 골라 2배 하므로 [4, 8]이 만들어집니다.</li><li>sum([4, 8])은 12입니다.</li><li>함수 안에서 x에 새 리스트를 다시 대입했으므로 원래 nums는 바뀌지 않습니다.</li><li>따라서 nums[1]은 여전히 2입니다.</li><li>출력은 12 2입니다.</li><li>헷갈릴 수 있는 부분은 함수 안에서 x를 새 리스트로 바꾼 것이 원본 nums 자체를 바꾸는 것은 아니라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>리스트, 함수, 리스트 컴프리헨션, map, lambda, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="10" data-ai-set="normal-set1" data-question="10" id="ai-normal-set1-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 클래스 변수와 문자열</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">클래스 변수</span><span class="badge">메서드</span><span class="badge">문자열 슬라이싱</span></div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 클래스 변수, 메서드, 문자열 슬라이싱, 문자열 결합</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A:
+    count = 0
+
+    def __init__(self, name):
+        self.name = name
+        A.count += len(name)
+
+    def short(self):
+        return self.name[:2] + str(A.count)
+
+a = A("kim")
+b = A("lee")
+
+print(a.short(), b.short())</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set1-answer-10">내 답안</label><textarea class="answer-input" id="ai-normal-set1-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set1', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set1-solution-button-10" onclick="toggleAISolution('normal-set1', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set1-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-normal-set1-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">ki6 le6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>A.count는 클래스 변수라서 모든 객체가 공유합니다.</li><li>a = A("kim")을 실행하면 문자열 길이 3이 더해져 count는 3이 됩니다.</li><li>b = A("lee")를 실행하면 다시 3이 더해져 count는 6이 됩니다.</li><li>a.short()는 a.name의 앞 두 글자 ki와 현재 count 6을 결합합니다.</li><li>b.short()는 le와 현재 count 6을 결합합니다.</li><li>따라서 출력은 ki6 le6입니다.</li><li>헷갈릴 수 있는 부분은 count가 객체별 값이 아니라 클래스 전체 공유값이라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 클래스 변수, 메서드, 문자열 슬라이싱, 문자열 결합</p>
+</aside>
+</div>
+</section></div>
+</div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="normal" data-ai-set="normal-set2" id="aiNormalSet2"><div class="ai-top-nav-wrap"><nav aria-label="보통 2회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="보통 2회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 1)" type="button" aria-current="true">1</button>
+<button aria-label="보통 2회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 2)" type="button">2</button>
+<button aria-label="보통 2회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 3)" type="button">3</button>
+<button aria-label="보통 2회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 4)" type="button">4</button>
+<button aria-label="보통 2회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 5)" type="button">5</button>
+<button aria-label="보통 2회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 6)" type="button">6</button>
+<button aria-label="보통 2회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 7)" type="button">7</button>
+<button aria-label="보통 2회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 8)" type="button">8</button>
+<button aria-label="보통 2회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 9)" type="button">9</button>
+<button aria-label="보통 2회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="normal-set2" onclick="showAIQuestion('normal-set2', 10)" type="button">10</button></nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="normal" data-ai-question="1" data-ai-set="normal-set2" data-question="1" id="ai-normal-set2-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 2차원 배열 누적</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">2차원 배열</span><span class="badge">중첩 반복문</span><span class="badge">조건문</span><span class="badge">산술 연산자</span><span class="badge">printf 출력</span></div>
+<p><strong>출제 개념:</strong> 2차원 배열, 중첩 반복문, 조건문, 산술 연산자, printf 출력</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int sum = 0;
+
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            if (j == 1)
+                a[i][j] += i;
+
+            sum += a[i][j];
+        }
+    }
+
+    printf("%d %d", sum, a[1][1]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-1">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-1" onclick="toggleAISolution('normal-set2', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">22 6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 배열은 첫 행 1,2,3 두 번째 행 4,5,6입니다.</li><li>j가 1인 열만 a[i][j] += i가 수행됩니다.</li><li>i=0일 때 a[0][1]은 2+0으로 그대로 2입니다.</li><li>i=1일 때 a[1][1]은 5+1=6이 됩니다.</li><li>최종 배열의 합은 1+2+3+4+6+6=22입니다.</li><li>따라서 sum은 22이고 a[1][1]은 6입니다.</li><li>헷갈릴 수 있는 부분은 i 값이 행마다 다르게 더해진다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>2차원 배열, 중첩 반복문, 조건문, 산술 연산자, printf 출력</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="2" data-ai-set="normal-set2" data-question="2" id="ai-normal-set2-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자열 길이와 포인터 이동</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">포인터</span><span class="badge">널 문자</span><span class="badge">반복문</span><span class="badge">조건문</span></div>
+<p><strong>출제 개념:</strong> 문자열, 포인터, 널 문자, 반복문, 조건문, 함수, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int count(char *p) {
+    int c = 0;
+
+    while (*p != '\0') {
+        if (*p != 'a')
+            c++;
+        p++;
+    }
+
+    return c;
+}
+
+int main() {
+    char s[] = "banana";
+
+    s[3] = '\0';
+
+    printf("%d %s", count(s), s);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-2">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-2" onclick="toggleAISolution('normal-set2', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">2 ban</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 문자열은 banana입니다.</li><li>s[3]에 널 문자가 들어가면 문자열은 ban까지만 인식됩니다.</li><li>count 함수는 널 문자를 만날 때까지 포인터를 이동합니다.</li><li>ban에서 a가 아닌 문자는 b와 n입니다.</li><li>따라서 count(s)는 2를 반환합니다.</li><li>%s로 출력되는 문자열은 ban입니다.</li><li>헷갈릴 수 있는 부분은 s[4], s[5]에 문자가 남아 있어도 %s 출력과 while 반복은 널 문자에서 멈춘다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 포인터, 널 문자, 반복문, 조건문, 함수, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="3" data-ai-set="normal-set2" data-question="3" id="ai-normal-set2-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 포인터로 배열 일부 변경</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">배열</span><span class="badge">포인터</span><span class="badge">포인터 산술</span><span class="badge">역참조</span><span class="badge">함수</span></div>
+<p><strong>출제 개념:</strong> 배열, 포인터, 포인터 산술, 역참조, 함수, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void add(int *p) {
+    for (int i = 0; i &lt; 3; i++) {
+        *(p + i) += i + 1;
+    }
+}
+
+int main() {
+    int a[4] = {5, 1, 2, 3};
+
+    add(a + 1);
+
+    printf("%d %d %d", a[1], a[2], a[3]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-3">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-3" onclick="toggleAISolution('normal-set2', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">2 4 6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>add(a + 1)을 호출하므로 p는 a[1]을 가리킵니다.</li><li>i=0일 때 *(p+0)은 a[1]이고 1이 더해져 2가 됩니다.</li><li>i=1일 때 *(p+1)은 a[2]이고 2가 더해져 4가 됩니다.</li><li>i=2일 때 *(p+2)는 a[3]이고 3이 더해져 6이 됩니다.</li><li>따라서 출력은 a[1], a[2], a[3] 값인 2 4 6입니다.</li><li>헷갈릴 수 있는 부분은 p가 a[0]이 아니라 a[1]에서 시작한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 포인터, 포인터 산술, 역참조, 함수, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="4" data-ai-set="normal-set2" data-question="4" id="ai-normal-set2-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 구조체 배열과 문자 계산</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">문자</span><span class="badge">산술 연산자</span><span class="badge">반복문</span></div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 문자, 산술 연산자, 반복문, printf 출력</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct P {
+    char c;
+    int n;
+};
+
+int main() {
+    struct P arr[3] = {{'A', 1}, {'B', 2}, {'C', 3}};
+    int sum = 0;
+
+    for (int i = 0; i &lt; 3; i++) {
+        arr[i].n += arr[i].c - 'A';
+        sum += arr[i].n;
+    }
+
+    printf("%d %d", sum, arr[2].n);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-4">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-4" onclick="toggleAISolution('normal-set2', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">9 5</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>문자 A, B, C는 문자 코드 차이를 이용해 계산됩니다.</li><li>arr[0].c - A는 0이므로 arr[0].n은 1입니다.</li><li>arr[1].c - A는 1이므로 arr[1].n은 2+1=3입니다.</li><li>arr[2].c - A는 2이므로 arr[2].n은 3+2=5입니다.</li><li>sum은 1+3+5=9입니다.</li><li>따라서 출력은 9 5입니다.</li><li>헷갈릴 수 있는 부분은 문자끼리 뺄셈을 하면 문자 코드 차이가 계산된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 문자, 산술 연산자, 반복문, printf 출력</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="5" data-ai-set="normal-set2" data-question="5" id="ai-normal-set2-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] 생성자 실행 순서</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">생성자</span><span class="badge">상속</span><span class="badge">오버라이딩</span></div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 생성자, 상속, 오버라이딩, 필드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int v = 1;
+
+    A() {
+        v += 2;
+    }
+
+    int get() {
+        return v;
+    }
+}
+
+class B extends A {
+    B() {
+        v += 3;
+    }
+
+    int get() {
+        return v * 2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+
+        System.out.print(b.v + " " + b.get());
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-5">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-5" onclick="toggleAISolution('normal-set2', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">6 12</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>B 객체를 만들 때 부모 A의 필드와 생성자가 먼저 실행됩니다.</li><li>A의 v는 1로 초기화됩니다.</li><li>A 생성자에서 v += 2가 실행되어 v는 3이 됩니다.</li><li>이후 B 생성자에서 v += 3이 실행되어 v는 6이 됩니다.</li><li>b.v는 6입니다.</li><li>b.get()은 B에서 오버라이딩된 get()이므로 v*2인 12를 반환합니다.</li><li>헷갈릴 수 있는 부분은 부모 생성자가 먼저 실행된 뒤 자식 생성자가 실행된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 생성자, 상속, 오버라이딩, 필드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="6" data-ai-set="normal-set2" data-question="6" id="ai-normal-set2-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] static 누적과 배열</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">static</span><span class="badge">객체 배열</span><span class="badge">생성자</span><span class="badge">반복문</span><span class="badge">메서드</span></div>
+<p><strong>출제 개념:</strong> static, 객체 배열, 생성자, 반복문, 메서드, 필드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class C {
+    static int s = 0;
+    int x;
+
+    C(int x) {
+        this.x = x;
+        s += x;
+    }
+
+    int f() {
+        return x + s;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        C[] arr = {new C(1), new C(2), new C(3)};
+        int result = 0;
+
+        for (C c : arr) {
+            result += c.f();
+        }
+
+        System.out.print(result + " " + C.s);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-6">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-6" onclick="toggleAISolution('normal-set2', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">24 6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>C.s는 static 필드이므로 모든 객체가 공유합니다.</li><li>new C(1), new C(2), new C(3)이 만들어지면서 s는 1+2+3=6이 됩니다.</li><li>반복문이 실행될 때 모든 객체의 f()는 현재 s=6을 사용합니다.</li><li>첫 번째 객체는 1+6=7, 두 번째 객체는 2+6=8, 세 번째 객체는 3+6=9를 반환합니다.</li><li>result는 7+8+9=24입니다.</li><li>마지막 C.s는 6입니다.</li><li>헷갈릴 수 있는 부분은 f() 호출 시점에는 객체 생성이 모두 끝나 s가 6이라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>static, 객체 배열, 생성자, 반복문, 메서드, 필드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="7" data-ai-set="normal-set2" data-question="7" id="ai-normal-set2-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 오버로딩 선택 기준</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">다형성</span><span class="badge">참조변수 타입</span></div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 다형성, 참조변수 타입, 실제 객체 타입</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    String f(A a) {
+        return "A";
+    }
+}
+
+class B extends A {
+    String f(B b) {
+        return "B";
+    }
+
+    String f(A a) {
+        return "BA";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A x = new B();
+        B y = new B();
+
+        System.out.print(x.f(y) + " " + y.f(y));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-7">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-7" onclick="toggleAISolution('normal-set2', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">BA B</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>x의 참조 타입은 A이고 실제 객체는 B입니다.</li><li>x.f(y)는 참조 타입 A를 기준으로 컴파일되므로 A에 있는 f(A)가 선택됩니다.</li><li>선택된 f(A)는 B에서 오버라이딩되었으므로 실제 실행은 B의 f(A)이고 BA를 반환합니다.</li><li>y.f(y)는 참조 타입도 B이고 인수도 B이므로 더 구체적인 f(B)가 선택됩니다.</li><li>따라서 y.f(y)는 B를 반환합니다.</li><li>최종 출력은 BA B입니다.</li><li>헷갈릴 수 있는 부분은 오버로딩 선택은 컴파일 시점의 참조 타입이 중요하다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 다형성, 참조변수 타입, 실제 객체 타입</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="8" data-ai-set="normal-set2" data-question="8" id="ai-normal-set2-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 추상 클래스와 증가 메서드</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">추상 클래스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">생성자</span><span class="badge">증감 연산자</span></div>
+<p><strong>출제 개념:</strong> 추상 클래스, 상속, 오버라이딩, 생성자, 증감 연산자, 동적 바인딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>abstract class N {
+    int v;
+
+    N(int v) {
+        this.v = v;
+    }
+
+    abstract int calc();
+
+    int inc() {
+        return ++v;
+    }
+}
+
+class M extends N {
+    M(int v) {
+        super(v);
+    }
+
+    int calc() {
+        return inc() + v;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        N n = new M(4);
+
+        System.out.print(n.calc() + " " + n.v);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-8">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-8" onclick="toggleAISolution('normal-set2', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">10 5</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>N 타입 변수 n은 실제로 M 객체를 가리킵니다.</li><li>M(4)에 의해 v는 4로 초기화됩니다.</li><li>n.calc()는 실제 객체 타입 M의 calc()가 실행됩니다.</li><li>calc()에서 inc()가 먼저 호출됩니다.</li><li>inc()는 ++v이므로 v를 5로 증가시키고 5를 반환합니다.</li><li>그 뒤 현재 v도 5이므로 inc()+v는 5+5=10입니다.</li><li>calc() 실행 후 n.v는 5입니다.</li><li>헷갈릴 수 있는 부분은 ++v가 v 값을 실제로 변경한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>추상 클래스, 상속, 오버라이딩, 생성자, 증감 연산자, 동적 바인딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="9" data-ai-set="normal-set2" data-question="9" id="ai-normal-set2-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 입력 문자열 분리와 결합</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">input</span><span class="badge">split</span><span class="badge">리스트</span><span class="badge">문자열 인덱싱</span><span class="badge">join</span></div>
+<p><strong>출제 개념:</strong> input, split, 리스트, 문자열 인덱싱, join, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">입력값:</p><div class="input-box"><code>hi ai hi</code></div>
+<p class="section-label">코드:</p>
+<pre><code>text = input()
+words = text.split()
+result = []
+
+for w in words:
+    result.append(w[0] + str(len(w)))
+
+print('-'.join(result))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-9">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-9" onclick="toggleAISolution('normal-set2', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">h2-a2-h2</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>입력값은 hi ai hi입니다.</li><li>split()을 적용하면 words는 ["hi", "ai", "hi"]가 됩니다.</li><li>각 단어에 대해 첫 글자와 단어 길이를 결합합니다.</li><li>hi는 h2, ai는 a2, 마지막 hi는 h2가 됩니다.</li><li>result는 ["h2", "a2", "h2"]입니다.</li><li>'-'.join(result)를 출력하므로 h2-a2-h2가 출력됩니다.</li><li>헷갈릴 수 있는 부분은 split()이 공백을 기준으로 단어를 나누고, join()이 리스트 요소 사이에 -를 넣는다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>input, split, 리스트, 문자열 인덱싱, join, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="10" data-ai-set="normal-set2" data-question="10" id="ai-normal-set2-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] set과 map 계산</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">set</span><span class="badge">중복 제거</span><span class="badge">map</span><span class="badge">lambda</span><span class="badge">리스트</span></div>
+<p><strong>출제 개념:</strong> set, 중복 제거, map, lambda, 리스트, 산술 연산자, len</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>a = [1, 2, 2, 3, 4]
+b = list(map(lambda x: x + 1, set(a)))
+
+print(sum(b), len(b))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set2-answer-10">내 답안</label><textarea class="answer-input" id="ai-normal-set2-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set2', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set2-solution-button-10" onclick="toggleAISolution('normal-set2', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set2-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-normal-set2-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">14 4</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>set(a)는 중복을 제거해 {1, 2, 3, 4}가 됩니다.</li><li>각 값에 1을 더하면 2, 3, 4, 5가 됩니다.</li><li>b의 순서는 set 특성상 표시에는 주의가 필요하지만 여기서는 sum과 len만 사용하므로 결과가 정해집니다.</li><li>sum(b)는 2+3+4+5=14입니다.</li><li>len(b)는 4입니다.</li><li>따라서 출력은 14 4입니다.</li><li>헷갈릴 수 있는 부분은 set의 출력 순서는 고정되지 않을 수 있지만 합계와 개수는 명확하다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>set, 중복 제거, map, lambda, 리스트, 산술 연산자, len</p>
+</aside>
+</div>
+</section></div>
+</div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="normal" data-ai-set="normal-set3" id="aiNormalSet3"><div class="ai-top-nav-wrap"><nav aria-label="보통 3회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="보통 3회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 1)" type="button" aria-current="true">1</button>
+<button aria-label="보통 3회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 2)" type="button">2</button>
+<button aria-label="보통 3회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 3)" type="button">3</button>
+<button aria-label="보통 3회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 4)" type="button">4</button>
+<button aria-label="보통 3회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 5)" type="button">5</button>
+<button aria-label="보통 3회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 6)" type="button">6</button>
+<button aria-label="보통 3회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 7)" type="button">7</button>
+<button aria-label="보통 3회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 8)" type="button">8</button>
+<button aria-label="보통 3회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 9)" type="button">9</button>
+<button aria-label="보통 3회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="normal-set3" onclick="showAIQuestion('normal-set3', 10)" type="button">10</button></nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="normal" data-ai-question="1" data-ai-set="normal-set3" data-question="1" id="ai-normal-set3-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 포인터 이동과 배열 값 변경</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">배열</span><span class="badge">포인터</span><span class="badge">역참조</span><span class="badge">포인터 산술</span><span class="badge">반복문</span></div>
+<p><strong>출제 개념:</strong> 배열, 포인터, 역참조, 포인터 산술, 반복문, 증감 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[4] = {1, 3, 5, 7};
+    int *p = a;
+    int sum = 0;
+
+    for (int i = 0; i &lt; 4; i++) {
+        sum += *p;
+        (*p)++;
+        p++;
+    }
+
+    printf("%d %d %d", sum, a[0], a[3]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-1">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-1" onclick="toggleAISolution('normal-set3', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">16 2 8</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>p는 처음에 a[0]을 가리킵니다.</li><li>반복문은 현재 p가 가리키는 값을 sum에 더한 뒤 그 값을 1 증가시키고 다음 요소로 이동합니다.</li><li>sum에는 원래 값 1, 3, 5, 7이 더해져 16이 됩니다.</li><li>각 요소는 한 번씩 증가하므로 a[0]은 2가 되고 a[3]은 8이 됩니다.</li><li>따라서 출력은 16 2 8입니다.</li><li>헷갈릴 수 있는 부분은 sum에 더한 뒤에 배열 값이 증가한다는 순서입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 포인터, 역참조, 포인터 산술, 반복문, 증감 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="2" data-ai-set="normal-set3" data-question="2" id="ai-normal-set3-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 2차원 배열의 대각선 조건</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">2차원 배열</span><span class="badge">중첩 반복문</span><span class="badge">조건문</span><span class="badge">논리 연산자</span><span class="badge">산술 연산자</span></div>
+<p><strong>출제 개념:</strong> 2차원 배열, 중첩 반복문, 조건문, 논리 연산자, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    int sum = 0;
+
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            if (i == j || i + j == 2)
+                sum += a[i][j];
+        }
+    }
+
+    printf("%d", sum);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-2">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-2" onclick="toggleAISolution('normal-set3', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">25</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>조건 i==j는 주대각선입니다. 해당 값은 1, 5, 9입니다.</li><li>조건 i+j==2는 부대각선입니다. 해당 값은 3, 5, 7입니다.</li><li>가운데 5는 두 조건을 모두 만족하지만 if문은 한 번만 실행되므로 한 번만 더해집니다.</li><li>더해지는 값은 1, 3, 5, 7, 9입니다.</li><li>합은 25입니다.</li><li>헷갈릴 수 있는 부분은 가운데 값 5를 두 번 더하지 않는다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>2차원 배열, 중첩 반복문, 조건문, 논리 연산자, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="3" data-ai-set="normal-set3" data-question="3" id="ai-normal-set3-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 문자열 뒤집기와 문자 변경</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">함수</span><span class="badge">반복문</span><span class="badge">인덱싱</span></div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 함수, 반복문, 인덱싱, 값 교환</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void reverse(char s[]) {
+    int n = 0;
+
+    while (s[n] != '\0')
+        n++;
+
+    for (int i = 0; i &lt; n / 2; i++) {
+        char temp = s[i];
+        s[i] = s[n - 1 - i];
+        s[n - 1 - i] = temp;
+    }
+}
+
+int main() {
+    char s[] = "code";
+
+    reverse(s);
+    s[1] = 'A';
+
+    printf("%s", s);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-3">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-3" onclick="toggleAISolution('normal-set3', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">eAoc</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 문자열은 code입니다.</li><li>reverse 함수에서 문자열 길이 n은 4입니다.</li><li>앞뒤 문자를 교환하면 code는 edoc가 됩니다.</li><li>main으로 돌아온 뒤 s[1]에 A를 저장합니다.</li><li>edoc의 인덱스 1인 d가 A로 바뀌어 eAoc가 됩니다.</li><li>따라서 출력은 eAoc입니다.</li><li>헷갈릴 수 있는 부분은 배열이 함수에 전달되어 원본 문자열이 직접 변경된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 함수, 반복문, 인덱싱, 값 교환</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="4" data-ai-set="normal-set3" data-question="4" id="ai-normal-set3-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 구조체 배열 전달</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">배열 전달</span><span class="badge">함수</span><span class="badge">반복문</span></div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 배열 전달, 함수, 반복문, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct N {
+    int x;
+};
+
+int add(struct N p[], int n) {
+    int sum = 0;
+
+    for (int i = 0; i &lt; n; i++) {
+        p[i].x += i;
+        sum += p[i].x;
+    }
+
+    return sum;
+}
+
+int main() {
+    struct N arr[3] = {{2}, {4}, {6}};
+    int r = add(arr, 3);
+
+    printf("%d %d", r, arr[2].x);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-4">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-4" onclick="toggleAISolution('normal-set3', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">15 8</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>arr의 x 값은 처음에 2, 4, 6입니다.</li><li>add 함수에서 구조체 배열이 전달되어 원본 값이 변경됩니다.</li><li>i=0에서 arr[0].x는 2+0=2입니다.</li><li>i=1에서 arr[1].x는 4+1=5입니다.</li><li>i=2에서 arr[2].x는 6+2=8입니다.</li><li>sum은 2+5+8=15입니다.</li><li>따라서 r은 15이고 arr[2].x는 8입니다.</li><li>헷갈릴 수 있는 부분은 구조체 배열도 배열이므로 함수에서 원본 요소가 변경된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 배열 전달, 함수, 반복문, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="5" data-ai-set="normal-set3" data-question="5" id="ai-normal-set3-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] super 메서드와 필드</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">상속</span><span class="badge">super</span><span class="badge">오버라이딩</span><span class="badge">필드 은닉</span><span class="badge">업캐스팅</span></div>
+<p><strong>출제 개념:</strong> 상속, super, 오버라이딩, 필드 은닉, 업캐스팅, 동적 바인딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int x = 2;
+
+    int f() {
+        return x + 1;
+    }
+}
+
+class B extends A {
+    int x = 4;
+
+    int f() {
+        return super.f() + x;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        A a = b;
+
+        System.out.print(b.f() + " " + a.f() + " " + a.x);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-5">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-5" onclick="toggleAISolution('normal-set3', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">7 7 2</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>b는 B 객체이고 a도 같은 B 객체를 A 타입으로 참조합니다.</li><li>b.f()는 B의 f()를 호출합니다.</li><li>B.f()에서 super.f()는 A의 f()이고 A의 x=2를 사용하여 3을 반환합니다.</li><li>B의 x는 4이므로 b.f()는 3+4=7입니다.</li><li>a.f()는 참조 타입이 A이지만 실제 객체가 B이므로 B.f()가 호출되어 7입니다.</li><li>a.x는 필드 접근이므로 참조 타입 A 기준으로 A의 x인 2입니다.</li><li>헷갈릴 수 있는 부분은 메서드는 동적 바인딩, 필드는 참조 타입 기준이라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>상속, super, 오버라이딩, 필드 은닉, 업캐스팅, 동적 바인딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="6" data-ai-set="normal-set3" data-question="6" id="ai-normal-set3-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] 인터페이스와 상태 변화</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">인터페이스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">증감 연산자</span><span class="badge">다형성</span></div>
+<p><strong>출제 개념:</strong> 인터페이스, 상속, 오버라이딩, 증감 연산자, 다형성, 메서드 호출</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>interface Run {
+    int go();
+}
+
+class A implements Run {
+    int n;
+
+    A(int n) {
+        this.n = n;
+    }
+
+    public int go() {
+        return n++;
+    }
+}
+
+class B extends A {
+    B(int n) {
+        super(n);
+    }
+
+    public int go() {
+        return super.go() + n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Run r = new B(3);
+
+        System.out.print(r.go() + " " + r.go());
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-6">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-6" onclick="toggleAISolution('normal-set3', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">7 9</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>r은 Run 타입이지만 실제 객체는 B입니다.</li><li>첫 번째 r.go()는 B.go()를 호출합니다.</li><li>super.go()는 A.go()이며 n++이므로 현재 n=3을 반환하고 n은 4가 됩니다.</li><li>그 뒤 B.go()에서 현재 n=4를 더하므로 첫 번째 결과는 3+4=7입니다.</li><li>두 번째 호출에서는 n이 4에서 시작합니다.</li><li>super.go()는 4를 반환하고 n을 5로 증가시킵니다.</li><li>현재 n=5를 더해 두 번째 결과는 4+5=9입니다.</li><li>헷갈릴 수 있는 부분은 n++이 반환 후 증가라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>인터페이스, 상속, 오버라이딩, 증감 연산자, 다형성, 메서드 호출</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="7" data-ai-set="normal-set3" data-question="7" id="ai-normal-set3-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 객체 배열과 문자열 결합</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">객체 배열</span><span class="badge">반복문</span><span class="badge">메서드</span><span class="badge">증감 연산자</span><span class="badge">문자열 결합</span></div>
+<p><strong>출제 개념:</strong> 객체 배열, 반복문, 메서드, 증감 연산자, 문자열 결합</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class Box {
+    int n;
+
+    Box(int n) {
+        this.n = n;
+    }
+
+    int add() {
+        return ++n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box[] boxes = {new Box(1), new Box(2)};
+        int sum = 0;
+
+        for (Box b : boxes) {
+            sum += b.add();
+        }
+
+        System.out.print(sum + " " + boxes[0].n + boxes[1].n);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-7">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-7" onclick="toggleAISolution('normal-set3', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">5 23</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>boxes[0].n은 1, boxes[1].n은 2에서 시작합니다.</li><li>첫 번째 add()는 ++n이므로 boxes[0].n을 2로 만들고 2를 반환합니다.</li><li>두 번째 add()는 boxes[1].n을 3으로 만들고 3을 반환합니다.</li><li>sum은 2+3=5입니다.</li><li>출력식에서 sum + " "이 먼저 문자열이 되므로 이후 boxes[0].n과 boxes[1].n은 문자열로 이어 붙습니다.</li><li>따라서 5, 공백, 2, 3이 이어져 5 23이 출력됩니다.</li><li>헷갈릴 수 있는 부분은 마지막 두 숫자가 더해지는 것이 아니라 문자열로 붙는다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>객체 배열, 반복문, 메서드, 증감 연산자, 문자열 결합</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="8" data-ai-set="normal-set3" data-question="8" id="ai-normal-set3-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 오버로딩과 형 변환</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">형 변환</span><span class="badge">참조변수 타입</span></div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 형 변환, 참조변수 타입, 메서드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int f(int x) {
+        return x + 1;
+    }
+
+    int f(double x) {
+        return (int)x + 2;
+    }
+}
+
+class B extends A {
+    int f(int x) {
+        return x * 2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+
+        System.out.print(a.f(3) + " " + a.f(3.5));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-8">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-8" onclick="toggleAISolution('normal-set3', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">6 5</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>a의 참조 타입은 A이고 실제 객체 타입은 B입니다.</li><li>a.f(3)은 int 인수를 사용하므로 f(int)가 선택됩니다.</li><li>f(int)는 B에서 오버라이딩되었으므로 B의 f(int)가 실행되어 3*2=6입니다.</li><li>a.f(3.5)는 double 인수를 사용하므로 A의 f(double)이 선택됩니다.</li><li>B는 f(double)을 오버라이딩하지 않았으므로 A의 f(double)이 실행됩니다.</li><li>(int)3.5는 3이고 3+2=5입니다.</li><li>따라서 출력은 6 5입니다.</li><li>헷갈릴 수 있는 부분은 f(double)은 오버라이딩되지 않았다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 형 변환, 참조변수 타입, 메서드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="9" data-ai-set="normal-set3" data-question="9" id="ai-normal-set3-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 기본값 처리와 리스트 참조</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">함수</span><span class="badge">매개변수</span><span class="badge">기본값 매개변수</span><span class="badge">리스트</span><span class="badge">객체 참조</span></div>
+<p><strong>출제 개념:</strong> 함수, 매개변수, 기본값 매개변수, 리스트, 객체 참조, print</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>def add(x, arr=None):
+    if arr is None:
+        arr = []
+    arr.append(x)
+    return arr
+
+a = add(1)
+b = add(2, a)
+c = add(3)
+
+print(a, b, c)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-9">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-9" onclick="toggleAISolution('normal-set3', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">[1, 2] [1, 2] [3]</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>첫 번째 add(1)은 arr이 None이므로 새 리스트를 만들고 1을 추가합니다. a는 [1]을 가리킵니다.</li><li>두 번째 add(2, a)는 a가 가리키는 리스트를 전달받아 2를 추가합니다.</li><li>따라서 a와 b는 같은 리스트 [1, 2]를 가리킵니다.</li><li>세 번째 add(3)은 arr이 None이므로 새로운 리스트를 만들고 3을 추가합니다.</li><li>c는 [3]입니다.</li><li>따라서 출력은 [1, 2] [1, 2] [3]입니다.</li><li>헷갈릴 수 있는 부분은 b가 a와 같은 리스트 객체를 가리킨다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>함수, 매개변수, 기본값 매개변수, 리스트, 객체 참조, print</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="10" data-ai-set="normal-set3" data-question="10" id="ai-normal-set3-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 클래스 변수와 인스턴스 값</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">클래스 변수</span><span class="badge">메서드</span><span class="badge">산술 연산자</span></div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 클래스 변수, 메서드, 산술 연산자, 상태 변화</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class C:
+    total = 0
+
+    def __init__(self, n):
+        self.n = n
+        C.total += n
+
+    def f(self):
+        self.n += 1
+        return self.n + C.total
+
+x = C(2)
+y = C(3)
+
+print(x.f(), y.f(), C.total)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set3-answer-10">내 답안</label><textarea class="answer-input" id="ai-normal-set3-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set3', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set3-solution-button-10" onclick="toggleAISolution('normal-set3', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set3-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-normal-set3-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">8 9 5</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>C.total은 클래스 변수입니다.</li><li>x = C(2)를 실행하면 total은 2가 됩니다.</li><li>y = C(3)를 실행하면 total은 5가 됩니다.</li><li>x.f()는 x.n을 2에서 3으로 증가시키고 3+5=8을 반환합니다.</li><li>y.f()는 y.n을 3에서 4로 증가시키고 4+5=9를 반환합니다.</li><li>C.total은 f()에서 변경되지 않으므로 5입니다.</li><li>따라서 출력은 8 9 5입니다.</li><li>헷갈릴 수 있는 부분은 self.n은 객체별로 따로 있고 C.total은 공유된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 클래스 변수, 메서드, 산술 연산자, 상태 변화</p>
+</aside>
+</div>
+</section></div>
+</div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="normal" data-ai-set="normal-set4" id="aiNormalSet4"><div class="ai-top-nav-wrap"><nav aria-label="보통 4회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="보통 4회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 1)" type="button" aria-current="true">1</button>
+<button aria-label="보통 4회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 2)" type="button">2</button>
+<button aria-label="보통 4회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 3)" type="button">3</button>
+<button aria-label="보통 4회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 4)" type="button">4</button>
+<button aria-label="보통 4회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 5)" type="button">5</button>
+<button aria-label="보통 4회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 6)" type="button">6</button>
+<button aria-label="보통 4회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 7)" type="button">7</button>
+<button aria-label="보통 4회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 8)" type="button">8</button>
+<button aria-label="보통 4회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 9)" type="button">9</button>
+<button aria-label="보통 4회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="normal-set4" onclick="showAIQuestion('normal-set4', 10)" type="button">10</button></nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="normal" data-ai-question="1" data-ai-set="normal-set4" data-question="1" id="ai-normal-set4-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 문자열에서 숫자 처리</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">함수</span><span class="badge">반복문</span><span class="badge">조건문</span></div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 함수, 반복문, 조건문, 문자 연산, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int change(char s[]) {
+    int sum = 0;
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        if (s[i] &gt;= '0' &amp;&amp; s[i] &lt;= '9') {
+            sum += s[i] - '0';
+            s[i] = '*';
+        }
+    }
+
+    return sum;
+}
+
+int main() {
+    char s[] = "a2b3";
+    int r = change(s);
+
+    printf("%s %d", s, r);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-1">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-1" onclick="toggleAISolution('normal-set4', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">a*b* 5</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>문자열은 a2b3입니다.</li><li>change 함수는 숫자 문자를 만나면 그 숫자 값을 sum에 더하고 해당 문자를 *로 바꿉니다.</li><li>문자 2는 숫자 값 2로 더해지고 *로 변경됩니다.</li><li>문자 3은 숫자 값 3으로 더해지고 *로 변경됩니다.</li><li>sum은 2+3=5입니다.</li><li>문자열은 a*b*가 됩니다.</li><li>따라서 출력은 a*b* 5입니다.</li><li>헷갈릴 수 있는 부분은 문자 숫자를 실제 숫자로 바꿀 때 s[i]-'0'을 사용한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 함수, 반복문, 조건문, 문자 연산, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="2" data-ai-set="normal-set4" data-question="2" id="ai-normal-set4-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 2차원 배열 함수 변경</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">2차원 배열</span><span class="badge">배열 전달</span><span class="badge">함수</span><span class="badge">중첩 반복문</span><span class="badge">산술 연산자</span></div>
+<p><strong>출제 개념:</strong> 2차원 배열, 배열 전달, 함수, 중첩 반복문, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void f(int a[2][2]) {
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 2; j++) {
+            a[i][j] += i + j;
+        }
+    }
+}
+
+int main() {
+    int a[2][2] = {{1, 2}, {3, 4}};
+
+    f(a);
+
+    printf("%d %d", a[0][1], a[1][1]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-2">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-2" onclick="toggleAISolution('normal-set4', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">3 6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 배열은 {{1,2},{3,4}}입니다.</li><li>함수 f에서 각 원소에 i+j가 더해집니다.</li><li>a[0][1]에는 0+1이 더해져 2+1=3이 됩니다.</li><li>a[1][1]에는 1+1이 더해져 4+2=6이 됩니다.</li><li>배열은 함수에서 직접 변경되므로 main에서도 변경된 값이 출력됩니다.</li><li>따라서 출력은 3 6입니다.</li><li>헷갈릴 수 있는 부분은 2차원 배열도 함수에 전달되면 원본 배열 요소가 변경된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>2차원 배열, 배열 전달, 함수, 중첩 반복문, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="3" data-ai-set="normal-set4" data-question="3" id="ai-normal-set4-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 조건이 있는 재귀</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">재귀</span><span class="badge">함수</span><span class="badge">조건문</span><span class="badge">나머지 연산자</span><span class="badge">반환값</span></div>
+<p><strong>출제 개념:</strong> 재귀, 함수, 조건문, 나머지 연산자, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int sum(int n) {
+    if (n == 0)
+        return 0;
+
+    if (n % 2 == 0)
+        return n + sum(n - 1);
+
+    return sum(n - 1) - 1;
+}
+
+int main() {
+    printf("%d", sum(5));
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-3">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-3" onclick="toggleAISolution('normal-set4', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">3</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>sum(0)은 0을 반환합니다.</li><li>n이 짝수이면 n을 더하고, 홀수이면 1을 뺍니다.</li><li>sum(1)은 sum(0)-1이므로 -1입니다.</li><li>sum(2)는 2+sum(1)이므로 1입니다.</li><li>sum(3)은 sum(2)-1이므로 0입니다.</li><li>sum(4)는 4+sum(3)이므로 4입니다.</li><li>sum(5)는 sum(4)-1이므로 3입니다.</li><li>따라서 출력은 3입니다.</li><li>헷갈릴 수 있는 부분은 홀수에서는 n을 더하지 않고 1만 뺀다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>재귀, 함수, 조건문, 나머지 연산자, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="4" data-ai-set="normal-set4" data-question="4" id="ai-normal-set4-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 포인터 음수 인덱스</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">배열</span><span class="badge">포인터</span><span class="badge">포인터 산술</span><span class="badge">역참조</span><span class="badge">인덱싱</span></div>
+<p><strong>출제 개념:</strong> 배열, 포인터, 포인터 산술, 역참조, 인덱싱, printf 출력</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[4] = {10, 20, 30, 40};
+    int *p = a + 3;
+
+    printf("%d %d", *(p - 2), p[-1]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-4">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-4" onclick="toggleAISolution('normal-set4', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">20 30</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>p는 a+3이므로 a[3]을 가리킵니다.</li><li>*(p-2)는 a[1]을 의미하므로 20입니다.</li><li>p[-1]은 *(p-1)과 같으며 a[2]를 의미합니다.</li><li>a[2]는 30입니다.</li><li>따라서 출력은 20 30입니다.</li><li>헷갈릴 수 있는 부분은 p[-1] 같은 표현도 포인터 기준의 상대 위치 접근이라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 포인터, 포인터 산술, 역참조, 인덱싱, printf 출력</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="5" data-ai-set="normal-set4" data-question="5" id="ai-normal-set4-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] static과 상속 생성자</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">static</span><span class="badge">생성자</span><span class="badge">상속</span><span class="badge">필드</span><span class="badge">super</span></div>
+<p><strong>출제 개념:</strong> static, 생성자, 상속, 필드, super, 메서드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    static int s = 1;
+    int n = 2;
+
+    A() {
+        s += n;
+    }
+
+    int f() {
+        return s + n;
+    }
+}
+
+class B extends A {
+    B() {
+        n = 5;
+        s += n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+
+        System.out.print(A.s + " " + b.f());
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-5">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-5" onclick="toggleAISolution('normal-set4', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">8 13</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>처음 A.s는 1입니다.</li><li>B 객체 생성 시 부모 A의 필드 n이 2로 초기화됩니다.</li><li>A 생성자에서 s += n이 실행되어 s는 3이 됩니다.</li><li>B 생성자에서 n이 5로 바뀌고 s += n이 실행되어 s는 8이 됩니다.</li><li>b.f()는 A의 f()를 사용하며 현재 s=8, n=5이므로 13입니다.</li><li>따라서 출력은 8 13입니다.</li><li>헷갈릴 수 있는 부분은 B 생성자에서 n 값을 바꾼 뒤 f()에서도 바뀐 n=5를 사용한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>static, 생성자, 상속, 필드, super, 메서드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="6" data-ai-set="normal-set4" data-question="6" id="ai-normal-set4-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] this와 super 흐름</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">생성자</span><span class="badge">this</span><span class="badge">super</span><span class="badge">상속</span><span class="badge">오버라이딩</span></div>
+<p><strong>출제 개념:</strong> 생성자, this, super, 상속, 오버라이딩, 필드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int x = 1;
+
+    A(int x) {
+        this.x += x;
+    }
+
+    int f() {
+        return x;
+    }
+}
+
+class B extends A {
+    int y;
+
+    B() {
+        super(3);
+        y = super.f() + 2;
+    }
+
+    int f() {
+        return y + x;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+
+        System.out.print(a.f() + " " + a.x);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-6">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-6" onclick="toggleAISolution('normal-set4', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">10 4</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>B 객체 생성 시 A의 x가 먼저 1로 초기화됩니다.</li><li>super(3)에 의해 A 생성자가 실행되고 this.x += x가 수행됩니다.</li><li>따라서 A의 x는 1+3=4입니다.</li><li>B 생성자에서 y = super.f() + 2가 실행됩니다.</li><li>super.f()는 A의 f()이므로 x 값 4를 반환합니다. 따라서 y는 6입니다.</li><li>a.f()는 실제 객체 타입 B의 f()가 실행되어 y+x = 6+4 = 10입니다.</li><li>a.x는 필드 접근이므로 A의 x인 4입니다.</li><li>헷갈릴 수 있는 부분은 this.x와 매개변수 x를 구분해야 한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>생성자, this, super, 상속, 오버라이딩, 필드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="7" data-ai-set="normal-set4" data-question="7" id="ai-normal-set4-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] Number와 Integer 오버로딩</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">참조변수 타입</span><span class="badge">필드</span></div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 참조변수 타입, 필드, 메서드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    String f(Number n) {
+        return "N";
+    }
+
+    String f(Integer i) {
+        return "I";
+    }
+}
+
+class B extends A {
+    String f(Number n) {
+        return "BN";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        Number n = 3;
+        Integer i = 3;
+
+        System.out.print(a.f(n) + a.f(i));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-7">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-7" onclick="toggleAISolution('normal-set4', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">BNI</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>a의 참조 타입은 A이고 실제 객체는 B입니다.</li><li>n의 변수 타입은 Number이므로 a.f(n)은 f(Number)를 선택합니다.</li><li>f(Number)는 B에서 오버라이딩되었으므로 BN을 반환합니다.</li><li>i의 변수 타입은 Integer이므로 a.f(i)는 더 구체적인 f(Integer)를 선택합니다.</li><li>f(Integer)는 B에서 오버라이딩되지 않았으므로 A의 f(Integer)가 실행되어 I를 반환합니다.</li><li>따라서 출력은 BNI입니다.</li><li>헷갈릴 수 있는 부분은 인수의 실제 값보다 변수의 선언 타입이 오버로딩 선택에 중요하다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 참조변수 타입, 필드, 메서드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="8" data-ai-set="normal-set4" data-question="8" id="ai-normal-set4-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 추상 클래스 배열</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">추상 클래스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">배열</span><span class="badge">반복문</span></div>
+<p><strong>출제 개념:</strong> 추상 클래스, 상속, 오버라이딩, 배열, 반복문, 다형성</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>abstract class A {
+    int n;
+
+    A(int n) {
+        this.n = n;
+    }
+
+    abstract int f();
+}
+
+class B extends A {
+    B(int n) {
+        super(n);
+    }
+
+    int f() {
+        return n * 2;
+    }
+}
+
+class C extends A {
+    C(int n) {
+        super(n);
+    }
+
+    int f() {
+        return n + 3;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A[] arr = {new B(2), new C(4)};
+        int sum = 0;
+
+        for (A a : arr) {
+            sum += a.f();
+        }
+
+        System.out.print(sum);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-8">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-8" onclick="toggleAISolution('normal-set4', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">11</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>배열에는 B(2)와 C(4)가 A 타입으로 저장되어 있습니다.</li><li>첫 번째 객체는 실제 타입이 B이므로 B.f()가 실행되어 2*2=4입니다.</li><li>두 번째 객체는 실제 타입이 C이므로 C.f()가 실행되어 4+3=7입니다.</li><li>sum은 4+7=11입니다.</li><li>따라서 출력은 11입니다.</li><li>헷갈릴 수 있는 부분은 배열 타입은 A이지만 실제 객체 타입의 f()가 호출된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>추상 클래스, 상속, 오버라이딩, 배열, 반복문, 다형성</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="9" data-ai-set="normal-set4" data-question="9" id="ai-normal-set4-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 문자열 필터링과 뒤집기</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">조건 필터링</span><span class="badge">join</span><span class="badge">슬라이싱</span><span class="badge">리스트 컴프리헨션</span></div>
+<p><strong>출제 개념:</strong> 문자열, 조건 필터링, join, 슬라이싱, 리스트 컴프리헨션</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>s = "open ai"
+t = ''.join(ch for ch in s if ch not in 'aeiou ')
+
+print(t[::-1])</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-9">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-9" onclick="toggleAISolution('normal-set4', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">np</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>문자열 s는 open ai입니다.</li><li>조건 ch not in 'aeiou '는 모음과 공백을 제외합니다.</li><li>남는 문자는 p와 n입니다.</li><li>t는 pn이 됩니다.</li><li>t[::-1]은 문자열을 거꾸로 뒤집으므로 np입니다.</li><li>따라서 출력은 np입니다.</li><li>헷갈릴 수 있는 부분은 공백도 제거 대상에 포함되어 있다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 조건 필터링, join, 슬라이싱, 리스트 컴프리헨션</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="10" data-ai-set="normal-set4" data-question="10" id="ai-normal-set4-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] map과 enumerate</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">map</span><span class="badge">형 변환</span><span class="badge">리스트</span><span class="badge">enumerate</span><span class="badge">슬라이싱</span></div>
+<p><strong>출제 개념:</strong> map, 형 변환, 리스트, enumerate, 슬라이싱, sum</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>nums = list(map(int, "1 3 5 7".split()))
+nums = [x + idx for idx, x in enumerate(nums)]
+
+print(nums[1:4], sum(nums))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set4-answer-10">내 답안</label><textarea class="answer-input" id="ai-normal-set4-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set4', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set4-solution-button-10" onclick="toggleAISolution('normal-set4', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set4-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-normal-set4-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">[4, 7, 10] 22</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>문자열을 split하고 int로 변환하면 nums는 [1, 3, 5, 7]입니다.</li><li>enumerate(nums)는 인덱스와 값을 함께 제공합니다.</li><li>각 값에 인덱스를 더하면 [1+0, 3+1, 5+2, 7+3]입니다.</li><li>따라서 nums는 [1, 4, 7, 10]이 됩니다.</li><li>nums[1:4]는 [4, 7, 10]입니다.</li><li>sum(nums)는 1+4+7+10=22입니다.</li><li>따라서 출력은 [4, 7, 10] 22입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>map, 형 변환, 리스트, enumerate, 슬라이싱, sum</p>
+</aside>
+</div>
+</section></div>
+</div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="normal" data-ai-set="normal-set5" id="aiNormalSet5"><div class="ai-top-nav-wrap"><nav aria-label="보통 5회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="보통 5회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 1)" type="button" aria-current="true">1</button>
+<button aria-label="보통 5회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 2)" type="button">2</button>
+<button aria-label="보통 5회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 3)" type="button">3</button>
+<button aria-label="보통 5회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 4)" type="button">4</button>
+<button aria-label="보통 5회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 5)" type="button">5</button>
+<button aria-label="보통 5회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 6)" type="button">6</button>
+<button aria-label="보통 5회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 7)" type="button">7</button>
+<button aria-label="보통 5회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 8)" type="button">8</button>
+<button aria-label="보통 5회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 9)" type="button">9</button>
+<button aria-label="보통 5회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="normal-set5" onclick="showAIQuestion('normal-set5', 10)" type="button">10</button></nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="normal" data-ai-question="1" data-ai-set="normal-set5" data-question="1" id="ai-normal-set5-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 배열 누적과 나머지</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">배열</span><span class="badge">포인터</span><span class="badge">함수</span><span class="badge">반복문</span><span class="badge">복합 대입 연산자</span></div>
+<p><strong>출제 개념:</strong> 배열, 포인터, 함수, 반복문, 복합 대입 연산자, 나머지 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int f(int *a) {
+    int r = 0;
+
+    for (int i = 0; i &lt; 4; i++) {
+        r += a[i];
+        a[i] = r % 5;
+    }
+
+    return r;
+}
+
+int main() {
+    int a[4] = {2, 4, 1, 3};
+    int r = f(a);
+
+    printf("%d %d %d", r, a[0], a[3]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-1">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-1" onclick="toggleAISolution('normal-set5', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">10 2 0</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>배열 a의 초기값은 2,4,1,3입니다.</li><li>i=0에서 r은 2가 되고 a[0]은 2%5=2입니다.</li><li>i=1에서 r은 2+4=6이 되고 a[1]은 6%5=1입니다.</li><li>i=2에서 r은 6+1=7이 되고 a[2]는 7%5=2입니다.</li><li>i=3에서 r은 7+3=10이 되고 a[3]은 10%5=0입니다.</li><li>함수는 r=10을 반환합니다.</li><li>따라서 출력은 10 2 0입니다.</li><li>헷갈릴 수 있는 부분은 r에 더한 뒤 a[i]를 r%5로 바꾼다는 순서입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 포인터, 함수, 반복문, 복합 대입 연산자, 나머지 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="2" data-ai-set="normal-set5" data-question="2" id="ai-normal-set5-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자 포인터로 문자 변경</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">포인터</span><span class="badge">포인터 산술</span><span class="badge">역참조</span></div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 포인터, 포인터 산술, 역참조, printf 출력</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char s[] = "ABCDE";
+    char *p = s + 1;
+
+    *p = 'x';
+    *(p + 2) = 'y';
+
+    printf("%s %c", s, *(p + 1));
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-2">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-2" onclick="toggleAISolution('normal-set5', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">AxCyE C</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 문자열은 ABCDE입니다.</li><li>p는 s+1이므로 문자 B를 가리킵니다.</li><li>*p = x에 의해 B가 x로 바뀝니다.</li><li>*(p+2)는 s[3]을 의미하므로 D가 y로 바뀝니다.</li><li>문자열은 AxCyE가 됩니다.</li><li>*(p+1)는 s[2]이므로 C입니다.</li><li>따라서 출력은 AxCyE C입니다.</li><li>헷갈릴 수 있는 부분은 p+2가 문자열 전체의 인덱스 3 위치를 가리킨다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 포인터, 포인터 산술, 역참조, printf 출력</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="3" data-ai-set="normal-set5" data-question="3" id="ai-normal-set5-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 구조체 포인터 계산</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">구조체 포인터</span><span class="badge">포인터 산술</span><span class="badge">멤버 접근</span></div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 구조체 포인터, 포인터 산술, 멤버 접근, 함수</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct A {
+    int x;
+    int y;
+};
+
+int f(struct A *p) {
+    p-&gt;x += p-&gt;y;
+    (p + 1)-&gt;y += p-&gt;x;
+
+    return p-&gt;x + (p + 1)-&gt;y;
+}
+
+int main() {
+    struct A arr[2] = {{1, 2}, {3, 4}};
+    int r = f(arr);
+
+    printf("%d %d %d", r, arr[0].x, arr[1].y);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-3">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-3" onclick="toggleAISolution('normal-set5', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">10 3 7</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>arr[0]은 x=1, y=2이고 arr[1]은 x=3, y=4입니다.</li><li>p는 arr[0]을 가리킵니다.</li><li>p-&gt;x += p-&gt;y로 arr[0].x는 1+2=3이 됩니다.</li><li>(p+1)-&gt;y += p-&gt;x에서 p-&gt;x는 변경된 3입니다.</li><li>arr[1].y는 4+3=7이 됩니다.</li><li>반환값은 arr[0].x + arr[1].y = 3+7=10입니다.</li><li>따라서 출력은 10 3 7입니다.</li><li>헷갈릴 수 있는 부분은 두 번째 계산에서 변경된 arr[0].x가 사용된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 구조체 포인터, 포인터 산술, 멤버 접근, 함수</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="4" data-ai-set="normal-set5" data-question="4" id="ai-normal-set5-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 간단한 정렬 흐름</h2>
+<div class="badge-row"><span class="badge lang">C</span><span class="badge difficulty">난이도: 보통</span><span class="badge">배열</span><span class="badge">반복문</span><span class="badge">중첩 반복문</span><span class="badge">조건문</span><span class="badge">정렬</span></div>
+<p><strong>출제 개념:</strong> 배열, 반복문, 중첩 반복문, 조건문, 정렬, 값 교환</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[3] = {4, 1, 3};
+
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = i + 1; j &lt; 3; j++) {
+            if (a[i] &gt; a[j]) {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+
+    printf("%d%d%d", a[0], a[1], a[2]);
+    return 0;
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-4">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-4" onclick="toggleAISolution('normal-set5', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">134</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>초기 배열은 4,1,3입니다.</li><li>i=0, j=1에서 4&gt;1이므로 4와 1을 교환하여 1,4,3이 됩니다.</li><li>i=0, j=2에서는 1&gt;3이 아니므로 그대로입니다.</li><li>i=1, j=2에서 4&gt;3이므로 4와 3을 교환하여 1,3,4가 됩니다.</li><li>최종 배열은 1,3,4입니다.</li><li>printf("%d%d%d")는 공백 없이 출력하므로 134가 출력됩니다.</li><li>헷갈릴 수 있는 부분은 출력 사이에 공백이 없다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 반복문, 중첩 반복문, 조건문, 정렬, 값 교환</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="5" data-ai-set="normal-set5" data-question="5" id="ai-normal-set5-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] 상속 필드와 메서드 호출</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">상속</span><span class="badge">필드</span><span class="badge">메서드</span><span class="badge">super</span><span class="badge">업캐스팅</span></div>
+<p><strong>출제 개념:</strong> 상속, 필드, 메서드, super, 업캐스팅, 필드 은닉</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int v = 1;
+
+    int f() {
+        return v + 1;
+    }
+}
+
+class B extends A {
+    int v = 3;
+
+    int g() {
+        return v + super.f();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        A a = b;
+
+        System.out.print(a.v + " " + b.g() + " " + a.f());
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-5">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-5" onclick="toggleAISolution('normal-set5', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">1 5 2</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>b는 B 객체이고 a는 같은 객체를 A 타입으로 참조합니다.</li><li>a.v는 필드 접근이므로 A 타입의 v인 1입니다.</li><li>b.g()에서 v는 B의 v인 3입니다.</li><li>super.f()는 A의 f()를 호출하고 A의 v=1을 사용하므로 2를 반환합니다.</li><li>따라서 b.g()는 3+2=5입니다.</li><li>a.f()는 B가 f()를 오버라이딩하지 않았으므로 A의 f()가 실행되어 2입니다.</li><li>출력은 1 5 2입니다.</li><li>헷갈릴 수 있는 부분은 B에 v가 있어도 A.f()는 A의 v를 사용한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>상속, 필드, 메서드, super, 업캐스팅, 필드 은닉</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="6" data-ai-set="normal-set5" data-question="6" id="ai-normal-set5-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] static 공유 확인</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">static</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">생성자</span><span class="badge">메서드</span></div>
+<p><strong>출제 개념:</strong> static, 클래스, 객체, 생성자, 메서드, 필드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    static int count = 0;
+    int n;
+
+    A(int n) {
+        this.n = n;
+        count++;
+    }
+
+    int f() {
+        return n + count;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A(2);
+        A b = new A(5);
+
+        System.out.print(a.f() + " " + b.f() + " " + A.count);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-6">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-6" onclick="toggleAISolution('normal-set5', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">4 7 2</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>count는 static 필드이므로 모든 객체가 공유합니다.</li><li>첫 번째 객체 a가 생성되면 count는 1이 됩니다.</li><li>두 번째 객체 b가 생성되면 count는 2가 됩니다.</li><li>a.f() 호출 시 count는 이미 2이므로 2+2=4입니다.</li><li>b.f()는 5+2=7입니다.</li><li>마지막 A.count는 2입니다.</li><li>헷갈릴 수 있는 부분은 a.f()를 호출할 때도 count는 최종값 2라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>static, 클래스, 객체, 생성자, 메서드, 필드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="7" data-ai-set="normal-set5" data-question="7" id="ai-normal-set5-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 생성자 출력과 오버라이딩</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">생성자</span><span class="badge">상속</span><span class="badge">super</span><span class="badge">오버라이딩</span><span class="badge">메서드 호출</span></div>
+<p><strong>출제 개념:</strong> 생성자, 상속, super, 오버라이딩, 메서드 호출, 출력 순서</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    A() {
+        System.out.print("A");
+    }
+
+    void f() {
+        System.out.print("1");
+    }
+}
+
+class B extends A {
+    B() {
+        System.out.print("B");
+    }
+
+    void f() {
+        super.f();
+        System.out.print("2");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A x = new B();
+        x.f();
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-7">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-7" onclick="toggleAISolution('normal-set5', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">AB12</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>new B()를 실행하면 부모 A 생성자가 먼저 실행되어 A가 출력됩니다.</li><li>그 뒤 B 생성자가 실행되어 B가 출력됩니다.</li><li>x의 참조 타입은 A이지만 실제 객체는 B입니다.</li><li>x.f()는 오버라이딩된 B의 f()가 호출됩니다.</li><li>B.f()에서 super.f()가 먼저 실행되어 1이 출력됩니다.</li><li>그 뒤 2가 출력됩니다.</li><li>따라서 전체 출력은 AB12입니다.</li><li>헷갈릴 수 있는 부분은 생성자 출력과 메서드 출력이 이어서 나타난다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>생성자, 상속, super, 오버라이딩, 메서드 호출, 출력 순서</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="8" data-ai-set="normal-set5" data-question="8" id="ai-normal-set5-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 인터페이스와 증가 상태</h2>
+<div class="badge-row"><span class="badge lang">Java</span><span class="badge difficulty">난이도: 보통</span><span class="badge">인터페이스</span><span class="badge">다형성</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">증감 연산자</span></div>
+<p><strong>출제 개념:</strong> 인터페이스, 다형성, 상속, 오버라이딩, 증감 연산자, 상태 변화</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>interface T {
+    int f();
+}
+
+class A implements T {
+    int n = 1;
+
+    public int f() {
+        return ++n;
+    }
+}
+
+class B extends A {
+    public int f() {
+        return super.f() + n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        T t = new B();
+
+        System.out.print(t.f() + " " + t.f());
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-8">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-8" onclick="toggleAISolution('normal-set5', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">4 6</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>t는 T 타입이지만 실제 객체는 B입니다.</li><li>첫 번째 t.f()는 B.f()를 호출합니다.</li><li>super.f()는 A.f()이고 ++n이므로 n은 2가 되고 2를 반환합니다.</li><li>현재 n도 2이므로 첫 번째 결과는 2+2=4입니다.</li><li>두 번째 호출에서는 n이 2에서 시작합니다.</li><li>super.f() 실행으로 n은 3이 되고 3을 반환합니다.</li><li>현재 n도 3이므로 두 번째 결과는 3+3=6입니다.</li><li>따라서 출력은 4 6입니다.</li><li>헷갈릴 수 있는 부분은 같은 객체의 n 값이 호출 사이에 유지된다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>인터페이스, 다형성, 상속, 오버라이딩, 증감 연산자, 상태 변화</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="9" data-ai-set="normal-set5" data-question="9" id="ai-normal-set5-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] split과 문자열 조합</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">문자열</span><span class="badge">split</span><span class="badge">리스트</span><span class="badge">인덱싱</span><span class="badge">join</span></div>
+<p><strong>출제 개념:</strong> 문자열, split, 리스트, 인덱싱, join, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>data = "java c python"
+parts = data.split()
+result = []
+
+for word in parts:
+    result.append(word[-1] + word[0])
+
+print(''.join(result))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-9">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-9" onclick="toggleAISolution('normal-set5', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">ajccnp</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>data.split()은 ["java", "c", "python"]을 만듭니다.</li><li>각 단어에 대해 마지막 글자와 첫 글자를 결합합니다.</li><li>java는 a+j가 되어 aj입니다.</li><li>c는 마지막 글자와 첫 글자가 모두 c이므로 cc입니다.</li><li>python은 n+p가 되어 np입니다.</li><li>이를 빈 문자열로 join하면 ajccnp입니다.</li><li>헷갈릴 수 있는 부분은 word[-1]이 마지막 문자를 의미한다는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, split, 리스트, 인덱싱, join, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="normal" data-ai-question="10" data-ai-set="normal-set5" data-question="10" id="ai-normal-set5-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 객체 리스트와 클래스 변수</h2>
+<div class="badge-row"><span class="badge lang">Python</span><span class="badge difficulty">난이도: 보통</span><span class="badge">클래스</span><span class="badge">객체</span><span class="badge">메서드</span><span class="badge">클래스 변수</span><span class="badge">리스트</span></div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 메서드, 클래스 변수, 리스트, 상태 변화</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class Bag:
+    total = 0
+
+    def __init__(self, items):
+        self.items = items
+        Bag.total += len(items)
+
+    def add(self, x):
+        self.items.append(x)
+        return len(self.items) + Bag.total
+
+b = Bag([1, 2])
+c = Bag([3])
+
+print(b.add(4), c.add(5), Bag.total)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-normal-set5-answer-10">내 답안</label><textarea class="answer-input" id="ai-normal-set5-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('normal-set5', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-normal-set5-solution-button-10" onclick="toggleAISolution('normal-set5', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-normal-set5-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-normal-set5-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">6 5 3</div>
+<h4>해설</h4>
+<ol class="solution-list"><li>b를 만들 때 items 길이가 2이므로 Bag.total은 2가 됩니다.</li><li>c를 만들 때 items 길이가 1이므로 Bag.total은 3이 됩니다.</li><li>b.add(4)는 b.items에 4를 추가하여 길이를 3으로 만들고, 3+Bag.total 3을 반환해 6입니다.</li><li>c.add(5)는 c.items에 5를 추가하여 길이를 2로 만들고, 2+Bag.total 3을 반환해 5입니다.</li><li>add 메서드는 Bag.total을 변경하지 않으므로 마지막 값은 3입니다.</li><li>따라서 출력은 6 5 3입니다.</li><li>헷갈릴 수 있는 부분은 items는 객체별 리스트이고 total은 클래스 공유 변수라는 점입니다.</li></ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 메서드, 클래스 변수, 리스트, 상태 변화</p>
+</aside>
+</div>
+</section></div>
+</div>
 <div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-set="hard-set1" id="aiHardSet1">
 <div class="ai-top-nav-wrap">
 <nav aria-label="어려움 1회 문제 번호 이동 메뉴" class="ai-top-nav">
@@ -10957,6 +13575,8 @@ EEl
 <li><strong>2026-07-04 22:59:39</strong> - 개념(쉬움) 1회~5회 문제 세트 추가 및 기존 어려움 세트 유지, ai예상문제 난이도/회차 구조 확장</li>
 <li><strong>2026-07-04 23:17:01</strong> - 문제 해설 영역 PC 좌우 반반 배치 복구 및 모바일 상하 배치 유지</li>
 <li><strong>2026-07-04 23:24:29</strong> - 개념(쉬움) 회차 해설 영역 PC 좌우 배치 적용 및 모바일 상하 배치 유지</li>
+<li><strong>2026-07-04 23:56:09</strong> - 보통 1회~5회 문제 세트 추가 및 ai예상문제 난이도/회차 구조 확장</li>
+<li><strong>2026-07-05 00:10:54</strong> - 보통 난이도 해설 영역 PC 좌우 배치 적용 및 업데이트 로그 스크롤 개선</li>
 </ul>
 </div>
 </div>
@@ -14672,6 +17292,11 @@ function updateInterfaceBadge() {
                         "9": "[6, 7]\n[2, 6, 4]\n[6]\nTrue 5",
                         "10": "rAO\nEEl\n8 4"
             },
+            "normal-set1": {"1": "-12 4 11", "2": "los b", "3": "5 9 14", "4": "8", "5": "8 9 6", "6": "1 7 5", "7": "SU", "8": "13", "9": "12 2", "10": "ki6 le6"},
+            "normal-set2": {"1": "22 6", "2": "2 ban", "3": "2 4 6", "4": "9 5", "5": "6 12", "6": "24 6", "7": "BA B", "8": "10 5", "9": "h2-a2-h2", "10": "14 4"},
+            "normal-set3": {"1": "16 2 8", "2": "25", "3": "eAoc", "4": "15 8", "5": "7 7 2", "6": "7 9", "7": "5 23", "8": "6 5", "9": "[1, 2] [1, 2] [3]", "10": "8 9 5"},
+            "normal-set4": {"1": "a*b* 5", "2": "3 6", "3": "3", "4": "20 30", "5": "8 13", "6": "10 4", "7": "BNI", "8": "11", "9": "np", "10": "[4, 7, 10] 22"},
+            "normal-set5": {"1": "10 2 0", "2": "AxCyE C", "3": "10 3 7", "4": "134", "5": "1 5 2", "6": "4 7 2", "7": "AB12", "8": "4 6", "9": "ajccnp", "10": "6 5 3"},
             "hard-set1": {
                         "1": "5 4 6 8",
                         "2": "L:103\nr 159",
@@ -14777,7 +17402,7 @@ function updateInterfaceBadge() {
 
         function selectAIDifficulty(difficulty, options = {}) {
             const selected = ['easy', 'normal', 'hard'].includes(difficulty) ? difficulty : 'hard';
-            const hasSets = selected === 'easy' || selected === 'hard';
+            const hasSets = selected === 'easy' || selected === 'normal' || selected === 'hard';
 
             document.querySelectorAll('[data-ai-difficulty]').forEach((button) => {
                 button.classList.toggle('active', button.dataset.aiDifficulty === selected);
@@ -14820,7 +17445,7 @@ function updateInterfaceBadge() {
             const screen = getAIQuestionScreen(setId);
             if (!screen) return;
 
-            const difficulty = setId.startsWith('easy-set') ? 'easy' : (setId.startsWith('hard-set') ? 'hard' : 'hard');
+            const difficulty = setId.startsWith('easy-set') ? 'easy' : (setId.startsWith('normal-set') ? 'normal' : (setId.startsWith('hard-set') ? 'hard' : 'hard'));
             selectAIDifficulty(difficulty, { resetSet: false });
             hideAllAIProblemSets();
             screen.classList.remove('hidden');
@@ -14917,7 +17542,7 @@ function updateInterfaceBadge() {
         }
 
         function initAIQuestionSets() {
-            ['set1', 'set2', 'easy-set1', 'easy-set2', 'easy-set3', 'easy-set4', 'easy-set5', 'hard-set1', 'hard-set2', 'hard-set3', 'hard-set4', 'hard-set5'].forEach((setId) => {
+            ['set1', 'set2', 'easy-set1', 'easy-set2', 'easy-set3', 'easy-set4', 'easy-set5', 'normal-set1', 'normal-set2', 'normal-set3', 'normal-set4', 'normal-set5', 'hard-set1', 'hard-set2', 'hard-set3', 'hard-set4', 'hard-set5'].forEach((setId) => {
                 showAIQuestion(setId, 1, { skipSound: true });
             });
             showAIQuestionHome();
