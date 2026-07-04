@@ -1218,6 +1218,163 @@
             }
         }
         /* [추가] ai예상문제 난이도/회차 선택 화면 끝 */
+
+        /* [추가] AI 해설 PC 좌우 반반 배치 복구 및 모바일 상하 배치 유지 */
+
+        @media (min-width: 769px) {
+            .ai-question-block.is-current {
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block.is-current.is-open {
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+                align-items: flex-start !important;
+                justify-content: stretch !important;
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block.is-open .question-card,
+            .ai-question-block.is-open .solution-panel {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+                flex: none !important;
+            }
+            .ai-question-block.is-open .solution-panel {
+                display: block !important;
+            }
+            .ai-question-block.is-open pre,
+            .ai-question-block.is-open code,
+            .ai-question-block.is-open .answer-box,
+            .ai-question-block.is-open textarea,
+            .ai-question-block.is-open .answer-input {
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block.is-open pre,
+            .ai-question-block.is-open .answer-box {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        @media (max-width: 768px) {
+            .ai-question-block.is-current,
+            .ai-question-block.is-current.is-open {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block.is-open .question-card,
+            .ai-question-block.is-open .solution-panel {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block.is-open .solution-panel {
+                display: block !important;
+                margin-top: 1rem !important;
+            }
+        }
+
+        /* [추가] 개념(쉬움) 해설 영역 PC 좌우 배치 적용 및 모바일 상하 배치 유지 */
+
+        @media (min-width: 769px) {
+            .ai-question-block[data-ai-difficulty="easy"].is-current,
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current .question-layout {
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open .question-layout {
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+                align-items: flex-start !important;
+                justify-content: stretch !important;
+                gap: 1.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current .question-card,
+            .ai-question-block[data-ai-difficulty="easy"].is-current .solution-panel {
+                min-width: 0 !important;
+                max-width: 100% !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open .question-card,
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open .solution-panel {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+                flex: none !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current:not(.is-open) .solution-panel {
+                display: none !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open .solution-panel {
+                display: block !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"] pre,
+            .ai-question-block[data-ai-difficulty="easy"] code,
+            .ai-question-block[data-ai-difficulty="easy"] .answer-box,
+            .ai-question-block[data-ai-difficulty="easy"] textarea,
+            .ai-question-block[data-ai-difficulty="easy"] .answer-input {
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"] pre,
+            .ai-question-block[data-ai-difficulty="easy"] .answer-box {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+        @media (max-width: 768px) {
+            .ai-question-block[data-ai-difficulty="easy"].is-current,
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current .question-layout,
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open .question-layout {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current .question-card,
+            .ai-question-block[data-ai-difficulty="easy"].is-current .solution-panel {
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current.is-open .solution-panel {
+                display: block !important;
+                margin-top: 1rem !important;
+            }
+            .ai-question-block[data-ai-difficulty="easy"].is-current:not(.is-open) .solution-panel {
+                display: none !important;
+            }
+        }
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col md:flex-row selection:bg-indigo-100">
@@ -1400,44 +1557,40 @@
 </div>
 <!-- [복구] Category 3: Coding Study Toggle - 플래시카드암기 다음 배치 -->
 <div class="flex flex-col gap-1">
-    <button onclick="toggleCategoryGroup('codingGroup', 'codingArrow')" class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none">
-        <span>💻 코딩</span>
-        <span id="codingArrow" class="text-[9px] transition-transform duration-200 transform" style="transform: rotate(-90deg);">▼</span>
-    </button>
-
-    <div id="codingGroup" style="max-height: 0px; opacity: 0; pointer-events: none;" class="flex flex-col gap-1 mt-1 transition-all duration-300 ease-in-out overflow-hidden opacity-100">
-        <button onclick="changeSubject('CODE_PYTHON')" id="dir-CODE_PYTHON" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900">
-            <div class="flex items-center gap-2">
-                <span class="text-sm">🐍</span>
-                <span class="text-left">Python</span>
-            </div>
-            <span class="text-[9px] bg-sky-100 text-sky-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
-        </button>
-
-        <button onclick="changeSubject('CODE_JAVA')" id="dir-CODE_JAVA" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900">
-            <div class="flex items-center gap-2">
-                <span class="text-sm">☕</span>
-                <span class="text-left">Java</span>
-            </div>
-            <span class="text-[9px] bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
-        </button>
-
-        <button onclick="changeSubject('CODE_C')" id="dir-CODE_C" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900">
-            <div class="flex items-center gap-2">
-                <span class="text-sm">🔧</span>
-                <span class="text-left">C언어</span>
-            </div>
-            <span class="text-[9px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
-        </button>
-
-        <button onclick="changeSubject('AI_QUESTIONS_HOME'); showAIQuestionHome();" id="dir-AI_QUESTIONS_HOME" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900">
-            <div class="flex items-center gap-2">
-                <span class="text-sm">🤖</span>
-                <span class="text-left">ai예상문제</span>
-            </div>
-            <span class="text-[9px] bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded font-extrabold">5회</span>
-        </button>
-    </div>
+<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none" onclick="toggleCategoryGroup('codingGroup', 'codingArrow')">
+<span>💻 코딩</span>
+<span class="text-[9px] transition-transform duration-200 transform" id="codingArrow" style="transform: rotate(-90deg);">▼</span>
+</button>
+<div class="flex flex-col gap-1 mt-1 transition-all duration-300 ease-in-out overflow-hidden opacity-100" id="codingGroup" style="max-height: 0px; opacity: 0; pointer-events: none;">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_PYTHON" onclick="changeSubject('CODE_PYTHON')">
+<div class="flex items-center gap-2">
+<span class="text-sm">🐍</span>
+<span class="text-left">Python</span>
+</div>
+<span class="text-[9px] bg-sky-100 text-sky-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_JAVA" onclick="changeSubject('CODE_JAVA')">
+<div class="flex items-center gap-2">
+<span class="text-sm">☕</span>
+<span class="text-left">Java</span>
+</div>
+<span class="text-[9px] bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_C" onclick="changeSubject('CODE_C')">
+<div class="flex items-center gap-2">
+<span class="text-sm">🔧</span>
+<span class="text-left">C언어</span>
+</div>
+<span class="text-[9px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-AI_QUESTIONS_HOME" onclick="changeSubject('AI_QUESTIONS_HOME'); showAIQuestionHome();">
+<div class="flex items-center gap-2">
+<span class="text-sm">🤖</span>
+<span class="text-left">ai예상문제</span>
+</div>
+<span class="text-[9px] bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded font-extrabold">5회</span>
+</button>
+</div>
 </div>
 <!-- [복구] Category 3: Coding Study Toggle 끝 -->
 <div class="pt-4 mt-4 border-t border-slate-200">
@@ -1674,7 +1827,7 @@
 <div class="ai-difficulty-grid">
 <button class="ai-difficulty-btn" data-ai-difficulty="easy" onclick="selectAIDifficulty('easy')" type="button">
 <span class="ai-difficulty-title">개념(쉬움)</span>
-<span class="ai-difficulty-desc">기초 개념 문제 영역 · 아직 미등록</span>
+<span class="ai-difficulty-desc">출력 결과 작성 문제 1회~5회</span>
 </button>
 <button class="ai-difficulty-btn" data-ai-difficulty="normal" onclick="selectAIDifficulty('normal')" type="button">
 <span class="ai-difficulty-title">보통</span>
@@ -1682,19 +1835,2936 @@
 </button>
 <button class="ai-difficulty-btn active" data-ai-difficulty="hard" onclick="selectAIDifficulty('hard')" type="button">
 <span class="ai-difficulty-title">어려움</span>
-<span class="ai-difficulty-desc">출력 결과 작성 문제 1회~5회</span>
+<span class="ai-difficulty-desc">기존 출력 결과 작성 문제 1회~5회</span>
 </button>
 </div>
-<div aria-label="어려움 난이도 회차 선택" class="ai-round-row">
-<button class="ai-round-btn" data-ai-round="hard-set1" onclick="showAISet('hard-set1')" type="button">1회</button>
-<button class="ai-round-btn" data-ai-round="hard-set2" onclick="showAISet('hard-set2')" type="button">2회</button>
-<button class="ai-round-btn" data-ai-round="hard-set3" onclick="showAISet('hard-set3')" type="button">3회</button>
-<button class="ai-round-btn" data-ai-round="hard-set4" onclick="showAISet('hard-set4')" type="button">4회</button>
-<button class="ai-round-btn" data-ai-round="hard-set5" onclick="showAISet('hard-set5')" type="button">5회</button>
+<div aria-label="ai예상문제 회차 선택" class="ai-round-row">
+<button class="ai-round-btn hidden" data-ai-round="easy-set1" data-ai-round-difficulty="easy" onclick="showAISet('easy-set1')" type="button">1회</button>
+<button class="ai-round-btn hidden" data-ai-round="easy-set2" data-ai-round-difficulty="easy" onclick="showAISet('easy-set2')" type="button">2회</button>
+<button class="ai-round-btn hidden" data-ai-round="easy-set3" data-ai-round-difficulty="easy" onclick="showAISet('easy-set3')" type="button">3회</button>
+<button class="ai-round-btn hidden" data-ai-round="easy-set4" data-ai-round-difficulty="easy" onclick="showAISet('easy-set4')" type="button">4회</button>
+<button class="ai-round-btn hidden" data-ai-round="easy-set5" data-ai-round-difficulty="easy" onclick="showAISet('easy-set5')" type="button">5회</button>
+<button class="ai-round-btn" data-ai-round="hard-set1" data-ai-round-difficulty="hard" onclick="showAISet('hard-set1')" type="button">1회</button>
+<button class="ai-round-btn" data-ai-round="hard-set2" data-ai-round-difficulty="hard" onclick="showAISet('hard-set2')" type="button">2회</button>
+<button class="ai-round-btn" data-ai-round="hard-set3" data-ai-round-difficulty="hard" onclick="showAISet('hard-set3')" type="button">3회</button>
+<button class="ai-round-btn" data-ai-round="hard-set4" data-ai-round-difficulty="hard" onclick="showAISet('hard-set4')" type="button">4회</button>
+<button class="ai-round-btn" data-ai-round="hard-set5" data-ai-round-difficulty="hard" onclick="showAISet('hard-set5')" type="button">5회</button>
 </div>
 </section>
-<div class="ai-empty-message hidden" data-ai-empty-for="easy"><strong>개념(쉬움)</strong> 난이도 문제는 아직 등록되지 않았습니다.</div>
+
 <div class="ai-empty-message hidden" data-ai-empty-for="normal"><strong>보통</strong> 난이도 문제는 아직 등록되지 않았습니다.</div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="easy" data-ai-set="easy-set1" id="aiEasySet1"><div class="ai-top-nav-wrap"><nav aria-label="개념(쉬움) 1회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="개념(쉬움) 1회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 1)" type="button">1</button>
+<button aria-label="개념(쉬움) 1회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 2)" type="button">2</button>
+<button aria-label="개념(쉬움) 1회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 3)" type="button">3</button>
+<button aria-label="개념(쉬움) 1회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 4)" type="button">4</button>
+<button aria-label="개념(쉬움) 1회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 5)" type="button">5</button>
+<button aria-label="개념(쉬움) 1회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 6)" type="button">6</button>
+<button aria-label="개념(쉬움) 1회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 7)" type="button">7</button>
+<button aria-label="개념(쉬움) 1회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 8)" type="button">8</button>
+<button aria-label="개념(쉬움) 1회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 9)" type="button">9</button>
+<button aria-label="개념(쉬움) 1회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="easy-set1" onclick="showAIQuestion('easy-set1', 10)" type="button">10</button>
+</nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="easy" data-ai-question="1" data-ai-set="easy-set1" data-question="1" id="ai-easy-set1-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 포인터로 부분 배열 처리</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">포인터</span><span class="badge">배열</span><span class="badge">포인터 산술</span><span class="badge">역참조</span><span class="badge">함수</span>
+</div>
+<p><strong>출제 개념:</strong> 포인터, 배열, 포인터 산술, 역참조, 함수, 반환값, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int work(int *p, int n) {
+    int r = 0;
+    for (int i = 0; i &lt; n; i++) {
+        r += *(p + i) * (i + 1);
+        *(p + i) -= i;
+    }
+    return r;
+}
+
+int main() {
+    int a[5] = {2, 4, 6, 8, 10};
+    int r = work(a + 1, 3);
+    printf("%d %d %d %d", r, a[1], a[2], a[3]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-1">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-1" onclick="toggleAISolution('easy-set1', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">40 4 5 6</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>포인터, 배열, 포인터 산술, 역참조, 함수, 반환값, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="2" data-ai-set="easy-set1" data-question="2" id="ai-easy-set1-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자 배열과 널 문자</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자 배열</span><span class="badge">문자열</span><span class="badge">널 문자</span><span class="badge">반복문</span><span class="badge">조건문</span>
+</div>
+<p><strong>출제 개념:</strong> 문자 배열, 문자열, 널 문자, 반복문, 조건문, 증감 연산자, printf</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char s[10] = "code";
+    int i = 0;
+
+    while (s[i] != '\0') {
+        if (i % 2 == 0)
+            s[i] += 1;
+        else
+            s[i] -= 1;
+        i++;
+    }
+
+    printf("%s %d", s, i);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-2">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-2" onclick="toggleAISolution('easy-set1', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">dned 4</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자 배열, 문자열, 널 문자, 반복문, 조건문, 증감 연산자, printf</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="3" data-ai-set="easy-set1" data-question="3" id="ai-easy-set1-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 구조체 배열 값 변경</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">구조체 포인터</span><span class="badge">멤버 접근</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 구조체 포인터, 멤버 접근, 반복문, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct Node {
+    int a;
+    int b;
+};
+
+void change(struct Node *p) {
+    for (int i = 0; i &lt; 3; i++) {
+        (p + i)-&gt;b += (p + i)-&gt;a;
+        (p + i)-&gt;a = (p + i)-&gt;b - i;
+    }
+}
+
+int main() {
+    struct Node arr[3] = {{1, 2}, {3, 4}, {5, 6}};
+    change(arr);
+    printf("%d %d %d", arr[0].a + arr[1].b, arr[1].a, arr[2].b);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-3">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-3" onclick="toggleAISolution('easy-set1', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">10 6 11</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 구조체 포인터, 멤버 접근, 반복문, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="4" data-ai-set="easy-set1" data-question="4" id="ai-easy-set1-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 재귀와 숫자 문자 계산</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">재귀</span><span class="badge">함수</span><span class="badge">문자열</span><span class="badge">포인터</span><span class="badge">조건문</span>
+</div>
+<p><strong>출제 개념:</strong> 재귀, 함수, 문자열, 포인터, 조건문, 반환값, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int calc(char *s) {
+    if (*s == '\0')
+        return 0;
+
+    if (*s &gt;= '0' &amp;&amp; *s &lt;= '9')
+        return (*s - '0') + calc(s + 1);
+
+    return calc(s + 1) - 1;
+}
+
+int main() {
+    char str[] = "a2b34";
+    printf("%d", calc(str));
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-4">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-4" onclick="toggleAISolution('easy-set1', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">7</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>재귀 호출은 종료 조건에 도달한 뒤, 반환값이 거꾸로 합쳐지면서 최종 결과가 결정됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>재귀, 함수, 문자열, 포인터, 조건문, 반환값, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="5" data-ai-set="easy-set1" data-question="5" id="ai-easy-set1-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] 오버라이딩과 오버로딩 호출 기준</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">오버로딩</span><span class="badge">업캐스팅</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 상속, 오버라이딩, 오버로딩, 업캐스팅, 동적 바인딩, 메서드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class Parent {
+    String f(Object x) {
+        return "P";
+    }
+
+    String g() {
+        return f("java");
+    }
+}
+
+class Child extends Parent {
+    String f(Object x) {
+        return "C";
+    }
+
+    String f(String x) {
+        return "S";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        System.out.print(p.g() + " " + p.f("java") + " " + ((Child)p).f("java"));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-5">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-5" onclick="toggleAISolution('easy-set1', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">C C S</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 상속, 오버라이딩, 오버로딩, 업캐스팅, 동적 바인딩, 메서드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="6" data-ai-set="easy-set1" data-question="6" id="ai-easy-set1-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] static 공유와 생성자 실행 순서</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">static</span><span class="badge">생성자</span><span class="badge">상속</span><span class="badge">super</span><span class="badge">필드</span>
+</div>
+<p><strong>출제 개념:</strong> static, 생성자, 상속, super, 필드, 오버라이딩, 객체 생성</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class Count {
+    static int s = 1;
+    int v;
+
+    Count(int v) {
+        this.v = v;
+        s += v;
+    }
+
+    int add() {
+        return s + v;
+    }
+}
+
+class Sub extends Count {
+    int v = 5;
+
+    Sub(int v) {
+        super(v + 1);
+        s += this.v;
+    }
+
+    int add() {
+        return super.add() + v;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Count c = new Sub(2);
+        Sub d = new Sub(1);
+        System.out.print(c.add() + "," + d.add() + "," + Count.s);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-6">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-6" onclick="toggleAISolution('easy-set1', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">24,23,16</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>static 필드는 객체마다 따로 생기지 않고 클래스 전체에서 공유되므로 생성자 호출 순서에 따라 누적값이 달라집니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>static, 생성자, 상속, super, 필드, 오버라이딩, 객체 생성</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="7" data-ai-set="easy-set1" data-question="7" id="ai-easy-set1-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 배열 속 다형성과 값 변화</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">다형성</span><span class="badge">배열</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 상속, 오버라이딩, 다형성, 배열, 반복문, 증감 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class P {
+    int n;
+
+    P(int n) {
+        this.n = n;
+    }
+
+    int f() {
+        return n++;
+    }
+}
+
+class Q extends P {
+    Q(int n) {
+        super(n);
+    }
+
+    int f() {
+        return super.f() + n;
+    }
+
+    int f(int x) {
+        return f() + x;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        P[] arr = {new P(1), new Q(2)};
+        int sum = 0;
+
+        for (P p : arr) {
+            sum += p.f();
+            sum += p.n;
+        }
+
+        System.out.print(sum + " " + ((Q)arr[1]).f(3));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-7">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-7" onclick="toggleAISolution('easy-set1', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">11 10</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 상속, 오버라이딩, 다형성, 배열, 반복문, 증감 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="8" data-ai-set="easy-set1" data-question="8" id="ai-easy-set1-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 인터페이스 참조와 필드 은닉</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">인터페이스</span><span class="badge">클래스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">오버로딩</span>
+</div>
+<p><strong>출제 개념:</strong> 인터페이스, 클래스, 상속, 오버라이딩, 오버로딩, 필드 은닉, 동적 바인딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>interface Calc {
+    int m(int x);
+}
+
+class Base implements Calc {
+    int v = 2;
+
+    public int m(int x) {
+        return x + v;
+    }
+
+    int m(int x, int y) {
+        return m(x) + y;
+    }
+}
+
+class Derived extends Base {
+    int v = 4;
+
+    public int m(int x) {
+        return super.m(x + v) - v;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calc c = new Derived();
+        Base b = new Derived();
+        System.out.print(c.m(3) + ":" + b.m(1, 5) + ":" + b.v);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-8">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-8" onclick="toggleAISolution('easy-set1', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">5:8:2</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>인터페이스, 클래스, 상속, 오버라이딩, 오버로딩, 필드 은닉, 동적 바인딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="9" data-ai-set="easy-set1" data-question="9" id="ai-easy-set1-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 문자열 분리와 필터링</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">split</span><span class="badge">리스트</span><span class="badge">슬라이싱</span><span class="badge">join</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, split, 리스트, 슬라이싱, join, 조건 필터링, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>s = "open ai coding"
+x = []
+
+for word in s.split():
+    x.append(word[1:] + word[:1])
+
+y = '-'.join(x)
+z = ''.join(c for c in y[::-1] if c not in 'ae')
+
+print(y)
+print(z)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-9">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-9" onclick="toggleAISolution('easy-set1', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">peno-ia-odingc
+cgnido-i-onp</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, split, 리스트, 슬라이싱, join, 조건 필터링, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="10" data-ai-set="easy-set1" data-question="10" id="ai-easy-set1-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 클래스 변수와 기본값 리스트</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">객체</span><span class="badge">클래스 변수</span><span class="badge">기본값 매개변수</span><span class="badge">리스트</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 클래스 변수, 기본값 매개변수, 리스트, set, sum</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class Box:
+    count = 0
+
+    def __init__(self, items):
+        self.items = list(items)
+        Box.count += len(set(items))
+
+    def add(self, x, store=[]):
+        store.append(x)
+        self.items.append(sum(store))
+        return self.items[-2:]
+
+b1 = Box([1, 2, 2])
+b2 = Box([3, 1])
+
+print(b1.add(4))
+print(b2.add(1))
+print(Box.count)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set1-answer-10">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set1-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set1', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set1-solution-button-10" onclick="toggleAISolution('easy-set1', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set1-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-easy-set1-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">[2, 4]
+[1, 5]
+4</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 클래스 변수, 기본값 매개변수, 리스트, set, sum</p>
+</aside>
+</div>
+</section>
+</div></div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="easy" data-ai-set="easy-set2" id="aiEasySet2"><div class="ai-top-nav-wrap"><nav aria-label="개념(쉬움) 2회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="개념(쉬움) 2회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 1)" type="button">1</button>
+<button aria-label="개념(쉬움) 2회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 2)" type="button">2</button>
+<button aria-label="개념(쉬움) 2회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 3)" type="button">3</button>
+<button aria-label="개념(쉬움) 2회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 4)" type="button">4</button>
+<button aria-label="개념(쉬움) 2회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 5)" type="button">5</button>
+<button aria-label="개념(쉬움) 2회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 6)" type="button">6</button>
+<button aria-label="개념(쉬움) 2회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 7)" type="button">7</button>
+<button aria-label="개념(쉬움) 2회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 8)" type="button">8</button>
+<button aria-label="개념(쉬움) 2회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 9)" type="button">9</button>
+<button aria-label="개념(쉬움) 2회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="easy-set2" onclick="showAIQuestion('easy-set2', 10)" type="button">10</button>
+</nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="easy" data-ai-question="1" data-ai-set="easy-set2" data-question="1" id="ai-easy-set2-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 배열 전달과 누적값</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">배열</span><span class="badge">함수</span><span class="badge">매개변수</span><span class="badge">반환값</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 배열, 함수, 매개변수, 반환값, 반복문, 나머지 연산자, 복합 대입</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int mix(int a[], int n) {
+    int r = 1;
+    for (int i = 0; i &lt; n; i++) {
+        a[i] += r;
+        r += a[i] % 3;
+    }
+    return r;
+}
+
+int main() {
+    int a[4] = {1, 3, 5, 7};
+    int r = mix(a, 4);
+    printf("%d %d %d", r, a[0], a[3]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-1">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-1" onclick="toggleAISolution('easy-set2', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">5 2 12</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 함수, 매개변수, 반환값, 반복문, 나머지 연산자, 복합 대입</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="2" data-ai-set="easy-set2" data-question="2" id="ai-easy-set2-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자 포인터 산술</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">포인터</span><span class="badge">포인터 산술</span><span class="badge">역참조</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 포인터, 포인터 산술, 역참조, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char s[] = "ABCD";
+    char *p = s + 1;
+
+    for (int i = 0; i &lt; 3; i++) {
+        *(p + i) = *(p + i) + i + 1;
+    }
+
+    printf("%s %c", s, *p);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-2">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-2" onclick="toggleAISolution('easy-set2', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">ACEG C</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 포인터, 포인터 산술, 역참조, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="3" data-ai-set="easy-set2" data-question="3" id="ai-easy-set2-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 구조체 포인터와 문자 계산</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">구조체 포인터</span><span class="badge">포인터 산술</span><span class="badge">문자 연산</span>
+</div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 구조체 포인터, 포인터 산술, 문자 연산, 반복문</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct Score {
+    char c;
+    int n;
+};
+
+int f(struct Score *p, int k) {
+    int r = 0;
+    for (int i = 0; i &lt; k; i++) {
+        r += (p + i)-&gt;c - 'A';
+        (p + i)-&gt;n += r;
+    }
+    return (p + k - 1)-&gt;n;
+}
+
+int main() {
+    struct Score a[3] = {{'A', 1}, {'C', 2}, {'B', 3}};
+    int r = f(a, 3);
+    printf("%d %d", r, a[1].n);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-3">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-3" onclick="toggleAISolution('easy-set2', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">6 4</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 구조체 포인터, 포인터 산술, 문자 연산, 반복문</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="4" data-ai-set="easy-set2" data-question="4" id="ai-easy-set2-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 2차원 배열과 음수 나머지</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">2차원 배열</span><span class="badge">중첩 반복문</span><span class="badge">조건문</span><span class="badge">나머지 연산자</span><span class="badge">인덱싱</span>
+</div>
+<p><strong>출제 개념:</strong> 2차원 배열, 중첩 반복문, 조건문, 나머지 연산자, 인덱싱</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[3][2] = {{1, 2}, {3, 4}, {5, 6}};
+    int s = 0;
+
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 2; j++) {
+            if (i == j)
+                s += a[i][j];
+            else
+                s -= a[i][j];
+            a[i][j] += s % 2;
+        }
+    }
+
+    printf("%d %d %d", s, a[0][1], a[2][0]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-4">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-4" onclick="toggleAISolution('easy-set2', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">-11 1 4</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>중첩 반복문에서는 행과 열의 진행 순서에 따라 누적값과 배열 원소가 단계적으로 바뀝니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>2차원 배열, 중첩 반복문, 조건문, 나머지 연산자, 인덱싱</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="5" data-ai-set="easy-set2" data-question="5" id="ai-easy-set2-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] this 생성자와 필드 은닉</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">생성자</span><span class="badge">this</span><span class="badge">super</span><span class="badge">상속</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 생성자, this, super, 상속, 필드 은닉, 오버라이딩, 오버로딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int n;
+
+    A() {
+        this(2);
+    }
+
+    A(int n) {
+        this.n = n;
+    }
+
+    int f() {
+        return n;
+    }
+}
+
+class B extends A {
+    int n = 5;
+
+    B() {
+        super(3);
+        n += super.n;
+    }
+
+    int f() {
+        return n + super.f();
+    }
+
+    int f(int x) {
+        return f() * x;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        A a = b;
+        System.out.print(a.f() + " " + b.f(2) + " " + a.n);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-5">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-5" onclick="toggleAISolution('easy-set2', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">11 22 3</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 생성자, this, super, 상속, 필드 은닉, 오버라이딩, 오버로딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="6" data-ai-set="easy-set2" data-question="6" id="ai-easy-set2-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] 객체 배열과 static 누적</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">객체 배열</span><span class="badge">static</span><span class="badge">생성자</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 객체 배열, static, 생성자, 반복문, 메서드, 증감 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class T {
+    static int s = 0;
+    int n;
+
+    T(int n) {
+        this.n = n;
+        s += n;
+    }
+
+    int inc() {
+        return ++n + s;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        T[] arr = {new T(1), new T(2)};
+        int r = 0;
+
+        for (T t : arr) {
+            r += t.inc();
+        }
+
+        T.s += arr[0].n;
+        System.out.print(r + " " + T.s + " " + arr[1].n);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-6">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-6" onclick="toggleAISolution('easy-set2', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">11 5 3</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>static 필드는 객체마다 따로 생기지 않고 클래스 전체에서 공유되므로 생성자 호출 순서에 따라 누적값이 달라집니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체 배열, static, 생성자, 반복문, 메서드, 증감 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="7" data-ai-set="easy-set2" data-question="7" id="ai-easy-set2-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 추상 클래스 메서드 호출 흐름</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">추상 클래스</span><span class="badge">추상 메서드</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">super</span>
+</div>
+<p><strong>출제 개념:</strong> 추상 클래스, 추상 메서드, 상속, 오버라이딩, super, 증감 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>abstract class N {
+    int v;
+
+    N(int v) {
+        this.v = v;
+    }
+
+    abstract int f();
+
+    int g() {
+        return v += 2;
+    }
+}
+
+class M extends N {
+    M(int v) {
+        super(v);
+    }
+
+    int f() {
+        return g() + v;
+    }
+}
+
+class K extends M {
+    K(int v) {
+        super(v);
+    }
+
+    int f() {
+        return super.f() - g();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        N n = new K(1);
+        System.out.print(n.f() + " " + n.v);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-7">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-7" onclick="toggleAISolution('easy-set2', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">1 5</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>추상 클래스, 추상 메서드, 상속, 오버라이딩, super, 증감 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="8" data-ai-set="easy-set2" data-question="8" id="ai-easy-set2-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] Number 계층과 오버로딩</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">참조변수 타입</span><span class="badge">동적 바인딩</span>
+</div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 참조변수 타입, 동적 바인딩, 메서드 선택</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    String f(Object o) {
+        return "O";
+    }
+
+    String f(Number n) {
+        return "N";
+    }
+}
+
+class B extends A {
+    String f(Integer i) {
+        return "I";
+    }
+
+    String f(Number n) {
+        return "BN";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        B b = new B();
+        System.out.print(a.f(3) + " " + b.f(3) + " " + a.f(3.0));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-8">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-8" onclick="toggleAISolution('easy-set2', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">BN I BN</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 참조변수 타입, 동적 바인딩, 메서드 선택</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="9" data-ai-set="easy-set2" data-question="9" id="ai-easy-set2-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 리스트 컴프리헨션과 set</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">split</span><span class="badge">리스트 컴프리헨션</span><span class="badge">map</span><span class="badge">lambda</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, split, 리스트 컴프리헨션, map, lambda, join, set, 중복 제거</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>words = "to be or not".split()
+a = [w[::-1] for w in words if len(w) % 2 == 0]
+b = list(map(lambda x: x + str(len(x)), a))
+
+print('|'.join(b))
+print(len(set(''.join(b))))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-9">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-9" onclick="toggleAISolution('easy-set2', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">ot2|eb2|ro2
+6</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>map, lambda, 리스트 컴프리헨션은 각 원소에 적용되는 계산식을 순서대로 적용하면 됩니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, split, 리스트 컴프리헨션, map, lambda, join, set, 중복 제거</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="10" data-ai-set="easy-set2" data-question="10" id="ai-easy-set2-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 함수와 선택적 리스트 매개변수</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">함수</span><span class="badge">매개변수</span><span class="badge">리스트</span><span class="badge">조건문</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 함수, 매개변수, 리스트, 조건문, 반복문, 슬라이싱, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>def f(x, acc=None):
+    if acc is None:
+        acc = []
+
+    for n in x:
+        if n % 2:
+            acc.append(n * 2)
+        else:
+            acc.append(n // 2)
+
+    return acc[-3:]
+
+print(f([1, 2, 3, 4]))
+print(f([5, 6], [10]))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set2-answer-10">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set2-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set2', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set2-solution-button-10" onclick="toggleAISolution('easy-set2', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set2-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-easy-set2-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">[1, 6, 2]
+[10, 10, 3]</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>함수, 매개변수, 리스트, 조건문, 반복문, 슬라이싱, 산술 연산자</p>
+</aside>
+</div>
+</section>
+</div></div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="easy" data-ai-set="easy-set3" id="aiEasySet3"><div class="ai-top-nav-wrap"><nav aria-label="개념(쉬움) 3회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="개념(쉬움) 3회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 1)" type="button">1</button>
+<button aria-label="개념(쉬움) 3회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 2)" type="button">2</button>
+<button aria-label="개념(쉬움) 3회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 3)" type="button">3</button>
+<button aria-label="개념(쉬움) 3회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 4)" type="button">4</button>
+<button aria-label="개념(쉬움) 3회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 5)" type="button">5</button>
+<button aria-label="개념(쉬움) 3회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 6)" type="button">6</button>
+<button aria-label="개념(쉬움) 3회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 7)" type="button">7</button>
+<button aria-label="개념(쉬움) 3회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 8)" type="button">8</button>
+<button aria-label="개념(쉬움) 3회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 9)" type="button">9</button>
+<button aria-label="개념(쉬움) 3회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="easy-set3" onclick="showAIQuestion('easy-set3', 10)" type="button">10</button>
+</nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="easy" data-ai-question="1" data-ai-set="easy-set3" data-question="1" id="ai-easy-set3-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 재귀와 배열 원소 변경</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">재귀</span><span class="badge">배열</span><span class="badge">포인터</span><span class="badge">함수</span><span class="badge">반환값</span>
+</div>
+<p><strong>출제 개념:</strong> 재귀, 배열, 포인터, 함수, 반환값, 배열 전달, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int f(int *a, int n) {
+    if (n == 0)
+        return 0;
+
+    a[n - 1] += n;
+    return a[n - 1] + f(a, n - 1);
+}
+
+int main() {
+    int a[4] = {1, 1, 1, 1};
+    int r = f(a, 4);
+    printf("%d %d %d", r, a[0], a[3]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-1">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-1" onclick="toggleAISolution('easy-set3', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">14 2 5</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>재귀 호출은 종료 조건에 도달한 뒤, 반환값이 거꾸로 합쳐지면서 최종 결과가 결정됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>재귀, 배열, 포인터, 함수, 반환값, 배열 전달, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="2" data-ai-set="easy-set3" data-question="2" id="ai-easy-set3-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자열 내부 문자 변경</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">포인터</span><span class="badge">널 문자</span><span class="badge">조건문</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 포인터, 널 문자, 조건문, 반복문, 문자 연산</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char s[] = "banana";
+    int c = 0;
+
+    for (char *p = s; *p; p++) {
+        if (*p == 'a') {
+            *p = 'A';
+            c++;
+        } else if (*p == 'n') {
+            *p += c;
+        }
+    }
+
+    printf("%s %d", s, c);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-2">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-2" onclick="toggleAISolution('easy-set3', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">bAoApA 3</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 포인터, 널 문자, 조건문, 반복문, 문자 연산</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="3" data-ai-set="easy-set3" data-question="3" id="ai-easy-set3-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 구조체 포인터 함수 호출</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">구조체</span><span class="badge">구조체 포인터</span><span class="badge">함수</span><span class="badge">포인터 산술</span><span class="badge">멤버 접근</span>
+</div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 포인터, 함수, 포인터 산술, 멤버 접근, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct Point {
+    int x;
+    int y;
+};
+
+int move(struct Point *p) {
+    p-&gt;x += p-&gt;y;
+    p-&gt;y = p-&gt;x - p-&gt;y;
+    return p-&gt;x + p-&gt;y;
+}
+
+int main() {
+    struct Point a[2] = {{2, 3}, {4, 1}};
+    int r = move(&amp;a[0]);
+    r += move(a + 1);
+    printf("%d %d %d", r, a[0].y, a[1].x);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-3">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-3" onclick="toggleAISolution('easy-set3', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">16 2 5</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 포인터, 함수, 포인터 산술, 멤버 접근, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="4" data-ai-set="easy-set3" data-question="4" id="ai-easy-set3-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 중첩 반복문으로 2차원 배열 채우기</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">2차원 배열</span><span class="badge">중첩 반복문</span><span class="badge">인덱싱</span><span class="badge">산술 연산자</span><span class="badge">변수 변화</span>
+</div>
+<p><strong>출제 개념:</strong> 2차원 배열, 중첩 반복문, 인덱싱, 산술 연산자, 변수 변화</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[3][3] = {0};
+    int v = 1;
+
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = i; j &lt; 3; j++) {
+            a[i][j] = v;
+            v += i + j;
+        }
+    }
+
+    printf("%d %d %d", a[0][2], a[1][2], v);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-4">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-4" onclick="toggleAISolution('easy-set3', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">2 6 13</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>중첩 반복문에서는 행과 열의 진행 순서에 따라 누적값과 배열 원소가 단계적으로 바뀝니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>2차원 배열, 중첩 반복문, 인덱싱, 산술 연산자, 변수 변화</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="5" data-ai-set="easy-set3" data-question="5" id="ai-easy-set3-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] 필드 은닉과 super.f()</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">상속</span><span class="badge">필드 은닉</span><span class="badge">오버라이딩</span><span class="badge">super</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 상속, 필드 은닉, 오버라이딩, super, 업캐스팅</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int v = 1;
+
+    int f() {
+        return v + 1;
+    }
+}
+
+class B extends A {
+    int v = 4;
+
+    int f() {
+        return v + super.v;
+    }
+
+    int h() {
+        return f() + super.f();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        B b = (B)a;
+        System.out.print(a.v + " " + a.f() + " " + b.h());
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-5">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-5" onclick="toggleAISolution('easy-set3', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">1 5 7</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 상속, 필드 은닉, 오버라이딩, super, 업캐스팅</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="6" data-ai-set="easy-set3" data-question="6" id="ai-easy-set3-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] 인터페이스 배열과 반복 호출</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">인터페이스</span><span class="badge">객체 배열</span><span class="badge">오버라이딩</span><span class="badge">다형성</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 인터페이스, 객체 배열, 오버라이딩, 다형성, 반복문, 증감 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>interface R {
+    int run();
+}
+
+class A implements R {
+    int n;
+
+    A(int n) {
+        this.n = n;
+    }
+
+    public int run() {
+        return n++;
+    }
+}
+
+class B extends A {
+    B(int n) {
+        super(n);
+    }
+
+    public int run() {
+        return super.run() + n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        R[] r = {new A(2), new B(3)};
+        int s = 0;
+
+        for (R x : r) {
+            s += x.run();
+            s += x.run();
+        }
+
+        System.out.print(s);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-6">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-6" onclick="toggleAISolution('easy-set3', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">21</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>인터페이스, 객체 배열, 오버라이딩, 다형성, 반복문, 증감 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="7" data-ai-set="easy-set3" data-question="7" id="ai-easy-set3-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] static 누적과 동적 바인딩</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">static</span><span class="badge">생성자</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">super</span>
+</div>
+<p><strong>출제 개념:</strong> static, 생성자, 상속, 오버라이딩, super, 동적 바인딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    static int s = 1;
+    int n;
+
+    A(int n) {
+        this.n = n;
+        s += n;
+    }
+
+    int f() {
+        return s - n;
+    }
+}
+
+class B extends A {
+    B() {
+        super(2);
+        s += 3;
+    }
+
+    int f() {
+        return super.f() + s;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        A b = new A(1);
+        System.out.print(a.f() + " " + b.f() + " " + A.s);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-7">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-7" onclick="toggleAISolution('easy-set3', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">12 6 7</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>static 필드는 객체마다 따로 생기지 않고 클래스 전체에서 공유되므로 생성자 호출 순서에 따라 누적값이 달라집니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>static, 생성자, 상속, 오버라이딩, super, 동적 바인딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="8" data-ai-set="easy-set3" data-question="8" id="ai-easy-set3-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 문자열 인수의 오버로딩 선택</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">참조변수 타입</span><span class="badge">형 변환</span>
+</div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 참조변수 타입, 형 변환, 메서드 선택</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    String f(Object o) {
+        return "A";
+    }
+
+    String f(String s) {
+        return "S";
+    }
+}
+
+class B extends A {
+    String f(Object o) {
+        return "B";
+    }
+
+    String f(Integer i) {
+        return "I";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        B b = new B();
+        System.out.print(a.f("x") + "," + b.f((Object)"x") + "," + b.f(2));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-8">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-8" onclick="toggleAISolution('easy-set3', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">S,B,I</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 참조변수 타입, 형 변환, 메서드 선택</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="9" data-ai-set="easy-set3" data-question="9" id="ai-easy-set3-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] 문자열 조합과 정렬된 set</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">split</span><span class="badge">인덱싱</span><span class="badge">리스트</span><span class="badge">join</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, split, 인덱싱, 리스트, join, set, 중복 제거, 정렬</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>s = "korea code"
+parts = s.split()
+t = [p[0] + p[-1] for p in parts]
+u = ''.join(t)
+
+print(u)
+print(''.join(sorted(set(u))))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-9">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-9" onclick="toggleAISolution('easy-set3', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">kace
+acek</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, split, 인덱싱, 리스트, join, set, 중복 제거, 정렬</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="10" data-ai-set="easy-set3" data-question="10" id="ai-easy-set3-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 클래스 변수와 인스턴스 값 변화</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">객체</span><span class="badge">클래스 변수</span><span class="badge">메서드</span><span class="badge">기본값 매개변수</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 클래스 변수, 메서드, 기본값 매개변수, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A:
+    total = 0
+
+    def __init__(self, n):
+        self.n = n
+        A.total += n
+
+    def f(self, x=1):
+        self.n += x
+        A.total += self.n
+        return self.n
+
+a = A(2)
+b = A(3)
+
+print(a.f(2), A.total)
+print(b.f(), a.n + b.n)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set3-answer-10">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set3-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set3', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set3-solution-button-10" onclick="toggleAISolution('easy-set3', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set3-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-easy-set3-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">4 9
+4 8</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 클래스 변수, 메서드, 기본값 매개변수, 산술 연산자</p>
+</aside>
+</div>
+</section>
+</div></div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="easy" data-ai-set="easy-set4" id="aiEasySet4"><div class="ai-top-nav-wrap"><nav aria-label="개념(쉬움) 4회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="개념(쉬움) 4회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 1)" type="button">1</button>
+<button aria-label="개념(쉬움) 4회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 2)" type="button">2</button>
+<button aria-label="개념(쉬움) 4회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 3)" type="button">3</button>
+<button aria-label="개념(쉬움) 4회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 4)" type="button">4</button>
+<button aria-label="개념(쉬움) 4회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 5)" type="button">5</button>
+<button aria-label="개념(쉬움) 4회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 6)" type="button">6</button>
+<button aria-label="개념(쉬움) 4회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 7)" type="button">7</button>
+<button aria-label="개념(쉬움) 4회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 8)" type="button">8</button>
+<button aria-label="개념(쉬움) 4회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 9)" type="button">9</button>
+<button aria-label="개념(쉬움) 4회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="easy-set4" onclick="showAIQuestion('easy-set4', 10)" type="button">10</button>
+</nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="easy" data-ai-question="1" data-ai-set="easy-set4" data-question="1" id="ai-easy-set4-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 뒤에서부터 포인터 접근</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">배열</span><span class="badge">포인터</span><span class="badge">포인터 산술</span><span class="badge">역참조</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 배열, 포인터, 포인터 산술, 역참조, 반복문, 복합 대입 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[5] = {1, 2, 3, 4, 5};
+    int *p = a + 4;
+    int s = 0;
+
+    for (int i = 0; i &lt; 3; i++) {
+        s += *(p - i);
+        *(p - i) += s % 2;
+    }
+
+    printf("%d %d %d", s, a[2], a[4]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-1">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-1" onclick="toggleAISolution('easy-set4', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">12 3 6</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 포인터, 포인터 산술, 역참조, 반복문, 복합 대입 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="2" data-ai-set="easy-set4" data-question="2" id="ai-easy-set4-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자 포인터로 조건 계산</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">포인터</span><span class="badge">널 문자</span><span class="badge">while 반복문</span><span class="badge">조건문</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, 포인터, 널 문자, while 반복문, 조건문, 문자 비교, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int count(char *s) {
+    int r = 0;
+    while (*s) {
+        if (*s &gt; 'm')
+            r++;
+        else
+            r--;
+        s++;
+    }
+    return r;
+}
+
+int main() {
+    char s[] = "map";
+    printf("%d %c", count(s), s[1]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-2">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-2" onclick="toggleAISolution('easy-set4', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">-1 a</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 포인터, 널 문자, while 반복문, 조건문, 문자 비교, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="3" data-ai-set="easy-set4" data-question="3" id="ai-easy-set4-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 구조체 안의 배열 변경</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">구조체</span><span class="badge">배열</span><span class="badge">구조체 배열</span><span class="badge">함수</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 구조체, 배열, 구조체 배열, 함수, 반복문, 멤버 접근, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct T {
+    int a[2];
+};
+
+void f(struct T *t) {
+    for (int i = 0; i &lt; 2; i++) {
+        t[i].a[0] += t[i].a[1];
+        t[i].a[1] = t[i].a[0] - t[i].a[1];
+    }
+}
+
+int main() {
+    struct T x[2] = {{{1, 4}}, {{2, 5}}};
+    f(x);
+    printf("%d %d %d", x[0].a[0], x[1].a[1], x[0].a[1] + x[1].a[0]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-3">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-3" onclick="toggleAISolution('easy-set4', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">5 2 8</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 배열, 구조체 배열, 함수, 반복문, 멤버 접근, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="4" data-ai-set="easy-set4" data-question="4" id="ai-easy-set4-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 재귀식 결과 추적</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">재귀</span><span class="badge">함수</span><span class="badge">조건문</span><span class="badge">반환값</span><span class="badge">산술 연산자</span>
+</div>
+<p><strong>출제 개념:</strong> 재귀, 함수, 조건문, 반환값, 산술 연산자, printf</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int g(int n) {
+    if (n &lt;= 1)
+        return n + 1;
+
+    return g(n - 1) + g(n - 2) + n;
+}
+
+int main() {
+    printf("%d", g(4));
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-4">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-4" onclick="toggleAISolution('easy-set4', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">19</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>재귀 호출은 종료 조건에 도달한 뒤, 반환값이 거꾸로 합쳐지면서 최종 결과가 결정됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>재귀, 함수, 조건문, 반환값, 산술 연산자, printf</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="5" data-ai-set="easy-set4" data-question="5" id="ai-easy-set4-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] 생성자 this와 super 흐름</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">생성자</span><span class="badge">this</span><span class="badge">super</span><span class="badge">상속</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 생성자, this, super, 상속, 오버라이딩, 필드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int x;
+
+    A() {
+        this(1);
+    }
+
+    A(int x) {
+        this.x = x + 1;
+    }
+
+    int f() {
+        return x;
+    }
+}
+
+class B extends A {
+    B() {
+        super(3);
+        x += 2;
+    }
+
+    int f() {
+        return super.f() * 2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        System.out.print(a.f() + " " + a.x);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-5">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-5" onclick="toggleAISolution('easy-set4', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">12 6</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 생성자, this, super, 상속, 오버라이딩, 필드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="6" data-ai-set="easy-set4" data-question="6" id="ai-easy-set4-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] 객체 배열과 이전 객체 참조</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">객체 배열</span><span class="badge">메서드</span><span class="badge">반복문</span><span class="badge">length</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 객체 배열, 메서드, 반복문, length, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class C {
+    int n;
+
+    C(int n) {
+        this.n = n;
+    }
+
+    int inc() {
+        return n += 2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        C[] cs = {new C(1), new C(3)};
+        int r = 0;
+
+        for (int i = 0; i &lt; cs.length; i++) {
+            r += cs[i].inc();
+            if (i &gt; 0)
+                r += cs[i - 1].n;
+        }
+
+        System.out.print(r + " " + cs[0].n);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-6">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-6" onclick="toggleAISolution('easy-set4', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">11 3</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체 배열, 메서드, 반복문, length, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="7" data-ai-set="easy-set4" data-question="7" id="ai-easy-set4-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 기본형 인수 오버로딩</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">메서드 선택</span><span class="badge">문자열</span>
+</div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 메서드 선택, 문자열, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int f(int x) {
+        return x + 1;
+    }
+
+    int f(double x) {
+        return (int)x + 2;
+    }
+}
+
+class B extends A {
+    int f(int x) {
+        return x * 2;
+    }
+
+    int f(String s) {
+        return s.length() + f(1);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        B b = new B();
+        System.out.print(a.f(3) + " " + a.f(3.5) + " " + b.f("hi"));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-7">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-7" onclick="toggleAISolution('easy-set4', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">6 5 4</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 메서드 선택, 문자열, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="8" data-ai-set="easy-set4" data-question="8" id="ai-easy-set4-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] 추상 클래스와 감소 연산</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">추상 클래스</span><span class="badge">상속</span><span class="badge">오버라이딩</span><span class="badge">super</span><span class="badge">증감 연산자</span>
+</div>
+<p><strong>출제 개념:</strong> 추상 클래스, 상속, 오버라이딩, super, 증감 연산자, 동적 바인딩</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>abstract class A {
+    int n;
+
+    A(int n) {
+        this.n = n;
+    }
+
+    abstract int f();
+
+    int g() {
+        return n--;
+    }
+}
+
+class B extends A {
+    B(int n) {
+        super(n);
+    }
+
+    int f() {
+        return g() + n;
+    }
+}
+
+class C extends B {
+    C() {
+        super(4);
+    }
+
+    int f() {
+        return super.f() + g();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new C();
+        System.out.print(a.f() + " " + a.n);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-8">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-8" onclick="toggleAISolution('easy-set4', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">10 2</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>추상 클래스, 상속, 오버라이딩, super, 증감 연산자, 동적 바인딩</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="9" data-ai-set="easy-set4" data-question="9" id="ai-easy-set4-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] map과 조건식</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">리스트</span><span class="badge">map</span><span class="badge">lambda</span><span class="badge">조건식</span><span class="badge">문자열 결합</span>
+</div>
+<p><strong>출제 개념:</strong> 리스트, map, lambda, 조건식, 문자열 결합, join, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>nums = [1, 2, 3, 4]
+a = list(map(lambda x: x * x if x % 2 else x + 1, nums))
+b = [str(x) for x in a if x &gt; 3]
+
+print(a)
+print('-'.join(b))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-9">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-9" onclick="toggleAISolution('easy-set4', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">[1, 3, 9, 5]
+9-5</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>map, lambda, 리스트 컴프리헨션은 각 원소에 적용되는 계산식을 순서대로 적용하면 됩니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>리스트, map, lambda, 조건식, 문자열 결합, join, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="10" data-ai-set="easy-set4" data-question="10" id="ai-easy-set4-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 기본값 set과 문자열 누적</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">함수</span><span class="badge">기본값 매개변수</span><span class="badge">set</span><span class="badge">문자열</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 함수, 기본값 매개변수, set, 문자열, 반복문, 조건문, 대소문자 변환</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>def build(s, seen=set()):
+    out = []
+    for ch in s:
+        if ch not in seen:
+            seen.add(ch)
+            out.append(ch.upper())
+        else:
+            out.append(ch)
+    return ''.join(out)
+
+print(build("abca"))
+print(build("bd"))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set4-answer-10">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set4-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set4', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set4-solution-button-10" onclick="toggleAISolution('easy-set4', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set4-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-easy-set4-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">ABCa
+bD</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>함수, 기본값 매개변수, set, 문자열, 반복문, 조건문, 대소문자 변환</p>
+</aside>
+</div>
+</section>
+</div></div>
+<div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-difficulty="easy" data-ai-set="easy-set5" id="aiEasySet5"><div class="ai-top-nav-wrap"><nav aria-label="개념(쉬움) 5회 문제 번호 이동 메뉴" class="ai-top-nav"><button aria-label="개념(쉬움) 5회 문제 1" class="ai-nav-btn active" data-ai-question="1" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 1)" type="button">1</button>
+<button aria-label="개념(쉬움) 5회 문제 2" class="ai-nav-btn" data-ai-question="2" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 2)" type="button">2</button>
+<button aria-label="개념(쉬움) 5회 문제 3" class="ai-nav-btn" data-ai-question="3" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 3)" type="button">3</button>
+<button aria-label="개념(쉬움) 5회 문제 4" class="ai-nav-btn" data-ai-question="4" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 4)" type="button">4</button>
+<button aria-label="개념(쉬움) 5회 문제 5" class="ai-nav-btn" data-ai-question="5" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 5)" type="button">5</button>
+<button aria-label="개념(쉬움) 5회 문제 6" class="ai-nav-btn" data-ai-question="6" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 6)" type="button">6</button>
+<button aria-label="개념(쉬움) 5회 문제 7" class="ai-nav-btn" data-ai-question="7" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 7)" type="button">7</button>
+<button aria-label="개념(쉬움) 5회 문제 8" class="ai-nav-btn" data-ai-question="8" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 8)" type="button">8</button>
+<button aria-label="개념(쉬움) 5회 문제 9" class="ai-nav-btn" data-ai-question="9" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 9)" type="button">9</button>
+<button aria-label="개념(쉬움) 5회 문제 10" class="ai-nav-btn" data-ai-question="10" data-ai-set="easy-set5" onclick="showAIQuestion('easy-set5', 10)" type="button">10</button>
+</nav></div>
+<div class="ai-question-area"><section class="ai-question-block is-current" data-ai-difficulty="easy" data-ai-question="1" data-ai-set="easy-set5" data-question="1" id="ai-easy-set5-q1">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 1. [C] 인접 원소 교환</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">배열</span><span class="badge">포인터</span><span class="badge">함수</span><span class="badge">매개변수</span><span class="badge">역참조</span>
+</div>
+<p><strong>출제 개념:</strong> 배열, 포인터, 함수, 매개변수, 역참조, 조건문, 반복문, 정렬 흐름</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int main() {
+    int a[4] = {4, 1, 3, 2};
+
+    for (int i = 0; i &lt; 3; i++) {
+        if (a[i] &gt; a[i + 1])
+            swap(&amp;a[i], &amp;a[i + 1]);
+    }
+
+    printf("%d %d %d %d", a[0], a[1], a[2], a[3]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-1">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-1" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 1)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-1" onclick="toggleAISolution('easy-set5', 1)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-1"></div>
+</article>
+<aside aria-label="문제 1 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-1">
+<h3>문제 1 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">1 3 2 4</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>배열, 포인터, 함수, 매개변수, 역참조, 조건문, 반복문, 정렬 흐름</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="2" data-ai-set="easy-set5" data-question="2" id="ai-easy-set5-q2">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 2. [C] 문자열 변경과 포인터 거리</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">문자열</span><span class="badge">문자 배열</span><span class="badge">포인터</span><span class="badge">널 문자</span><span class="badge">반복문</span>
+</div>
+<p><strong>출제 개념:</strong> 문자열, 문자 배열, 포인터, 널 문자, 반복문, 포인터 산술, 형 변환</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char s[8] = "hello";
+    char *p = s;
+
+    while (*p) {
+        if (*p == 'l')
+            *p = 'x';
+        p++;
+    }
+
+    s[4] = '\0';
+    printf("%s %d", s, (int)(p - s));
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-2">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-2" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 2)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-2" onclick="toggleAISolution('easy-set5', 2)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-2"></div>
+</article>
+<aside aria-label="문제 2 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-2">
+<h3>문제 2 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">hexx 5</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>문자열, 문자 배열, 포인터, 널 문자, 반복문, 포인터 산술, 형 변환</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="3" data-ai-set="easy-set5" data-question="3" id="ai-easy-set5-q3">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 3. [C] 2차원 배열 포인터 매개변수</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">2차원 배열</span><span class="badge">배열 전달</span><span class="badge">포인터 매개변수</span><span class="badge">중첩 반복문</span><span class="badge">나머지 연산자</span>
+</div>
+<p><strong>출제 개념:</strong> 2차원 배열, 배열 전달, 포인터 매개변수, 중첩 반복문, 나머지 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int sum(int (*a)[3]) {
+    int s = 0;
+
+    for (int i = 0; i &lt; 2; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            s += a[i][j];
+            a[i][j] = s % 5;
+        }
+    }
+
+    return s;
+}
+
+int main() {
+    int x[2][3] = {{2, 4, 6}, {1, 3, 5}};
+    int r = sum(x);
+    printf("%d %d %d", r, x[0][2], x[1][2]);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-3">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-3" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 3)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-3" onclick="toggleAISolution('easy-set5', 3)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-3"></div>
+</article>
+<aside aria-label="문제 3 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-3">
+<h3>문제 3 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">21 2 1</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>중첩 반복문에서는 행과 열의 진행 순서에 따라 누적값과 배열 원소가 단계적으로 바뀝니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>2차원 배열, 배열 전달, 포인터 매개변수, 중첩 반복문, 나머지 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="4" data-ai-set="easy-set5" data-question="4" id="ai-easy-set5-q4">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 4. [C] 구조체 문자열 첫 글자 계산</h2>
+<div class="badge-row">
+<span class="badge lang">C</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">구조체</span><span class="badge">구조체 배열</span><span class="badge">구조체 포인터</span><span class="badge">문자열</span><span class="badge">문자 연산</span>
+</div>
+<p><strong>출제 개념:</strong> 구조체, 구조체 배열, 구조체 포인터, 문자열, 문자 연산, 반복문, 반환값</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+struct A {
+    char name[6];
+    int n;
+};
+
+int f(struct A *p) {
+    int s = 0;
+    for (int i = 0; i &lt; 2; i++) {
+        s += p[i].name[0] - 'A';
+        p[i].n += s;
+    }
+    return p[0].n + p[1].n;
+}
+
+int main() {
+    struct A a[2] = {{"Bob", 1}, {"Dan", 2}};
+    int r = f(a);
+    printf("%d %d", r, a[1].n);
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-4">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-4" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 4)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-4" onclick="toggleAISolution('easy-set5', 4)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-4"></div>
+</article>
+<aside aria-label="문제 4 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-4">
+<h3>문제 4 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">8 6</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>포인터가 가리키는 위치가 원본 배열 또는 구조체의 실제 저장 공간이므로, 함수 안에서 바꾼 값이 main의 출력에도 반영됩니다.</li><li>문자열은 널 문자(\0)를 만날 때까지 출력되며, 문자 연산은 문자 코드값을 기준으로 계산됩니다.</li><li>마지막 printf에서 지정한 순서대로 값이 출력되므로, 변경된 최종 값을 기준으로 정답을 작성해야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>구조체, 구조체 배열, 구조체 포인터, 문자열, 문자 연산, 반복문, 반환값</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="5" data-ai-set="easy-set5" data-question="5" id="ai-easy-set5-q5">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 5. [Java] 상속 생성자와 필드 유지</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">객체</span><span class="badge">생성자</span><span class="badge">상속</span><span class="badge">오버라이딩</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 생성자, 상속, 오버라이딩, super, 필드</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    int x = 2;
+
+    A() {
+        x++;
+    }
+
+    int f() {
+        return x;
+    }
+}
+
+class B extends A {
+    int y;
+
+    B() {
+        y = x + 2;
+    }
+
+    int f() {
+        return y + super.f();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        A a = b;
+        System.out.print(a.f() + " " + b.x + " " + b.y);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-5">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-5" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 5)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-5" onclick="toggleAISolution('easy-set5', 5)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-5"></div>
+</article>
+<aside aria-label="문제 5 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-5">
+<h3>문제 5 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">8 3 5</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 생성자, 상속, 오버라이딩, super, 필드</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="6" data-ai-set="easy-set5" data-question="6" id="ai-easy-set5-q6">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 6. [Java] static 필드와 객체 배열</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">static</span><span class="badge">생성자</span><span class="badge">객체 배열</span><span class="badge">상속</span><span class="badge">오버라이딩</span>
+</div>
+<p><strong>출제 개념:</strong> static, 생성자, 객체 배열, 상속, 오버라이딩, 반복문, 다형성</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    static int s = 0;
+    int n;
+
+    A(int n) {
+        this.n = n;
+        s += n;
+    }
+
+    int f() {
+        return s + n;
+    }
+}
+
+class B extends A {
+    B(int n) {
+        super(n);
+        s += n * 2;
+    }
+
+    int f() {
+        return super.f() - n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A[] a = {new A(1), new B(2), new A(3)};
+        int r = 0;
+
+        for (A x : a) {
+            r += x.f();
+        }
+
+        System.out.print(r + " " + A.s);
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-6">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-6" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 6)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-6" onclick="toggleAISolution('easy-set5', 6)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-6"></div>
+</article>
+<aside aria-label="문제 6 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-6">
+<h3>문제 6 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">34 10</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>static 필드는 객체마다 따로 생기지 않고 클래스 전체에서 공유되므로 생성자 호출 순서에 따라 누적값이 달라집니다.</li><li>자식 객체를 만들 때는 부모 생성자가 먼저 실행되고, super 호출은 부모 클래스의 필드나 메서드를 기준으로 계산합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>static, 생성자, 객체 배열, 상속, 오버라이딩, 반복문, 다형성</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="7" data-ai-set="easy-set5" data-question="7" id="ai-easy-set5-q7">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 7. [Java] 인터페이스와 필드 접근 기준</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">인터페이스</span><span class="badge">상속</span><span class="badge">필드 은닉</span><span class="badge">오버라이딩</span><span class="badge">동적 바인딩</span>
+</div>
+<p><strong>출제 개념:</strong> 인터페이스, 상속, 필드 은닉, 오버라이딩, 동적 바인딩, 업캐스팅</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>interface X {
+    int f(int n);
+}
+
+class A implements X {
+    int v = 1;
+
+    public int f(int n) {
+        return n + v;
+    }
+}
+
+class B extends A {
+    int v = 3;
+
+    public int f(int n) {
+        return super.f(n + v) + this.v;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        X x = new B();
+        A a = new B();
+        System.out.print(x.f(2) + " " + a.v + " " + a.f(2));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-7">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-7" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 7)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-7" onclick="toggleAISolution('easy-set5', 7)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-7"></div>
+</article>
+<aside aria-label="문제 7 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-7">
+<h3>문제 7 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">9 1 9</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>필드는 메서드와 달리 참조 변수 타입을 기준으로 접근되므로, 같은 이름의 필드가 부모와 자식에 있으면 주의해야 합니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>인터페이스, 상속, 필드 은닉, 오버라이딩, 동적 바인딩, 업캐스팅</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="8" data-ai-set="easy-set5" data-question="8" id="ai-easy-set5-q8">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 8. [Java] CharSequence 오버로딩 선택</h2>
+<div class="badge-row">
+<span class="badge lang">Java</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">오버로딩</span><span class="badge">오버라이딩</span><span class="badge">상속</span><span class="badge">참조변수 타입</span><span class="badge">문자열</span>
+</div>
+<p><strong>출제 개념:</strong> 오버로딩, 오버라이딩, 상속, 참조변수 타입, 문자열, 인터페이스 타입</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class A {
+    String f(Object o) {
+        return "O";
+    }
+
+    String f(CharSequence s) {
+        return "C";
+    }
+}
+
+class B extends A {
+    String f(String s) {
+        return "S";
+    }
+
+    String f(CharSequence s) {
+        return "BC";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new B();
+        B b = new B();
+        System.out.print(a.f("ab") + " " + b.f("ab") + " " + b.f((CharSequence)"ab"));
+    }
+}</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-8">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-8" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 8)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-8" onclick="toggleAISolution('easy-set5', 8)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-8"></div>
+</article>
+<aside aria-label="문제 8 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-8">
+<h3>문제 8 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">BC S BC</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>오버로딩은 참조 변수의 컴파일 시점 타입을 기준으로 후보가 결정되고, 오버라이딩된 메서드는 실제 객체 타입을 기준으로 실행됩니다.</li><li>최종 출력은 System.out.print에 연결된 표현식을 왼쪽부터 계산한 결과입니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>오버로딩, 오버라이딩, 상속, 참조변수 타입, 문자열, 인터페이스 타입</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="9" data-ai-set="easy-set5" data-question="9" id="ai-easy-set5-q9">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 9. [Python] enumerate와 set 합계</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">리스트</span><span class="badge">map</span><span class="badge">형 변환</span><span class="badge">split</span><span class="badge">enumerate</span>
+</div>
+<p><strong>출제 개념:</strong> 리스트, map, 형 변환, split, enumerate, set, 산술 연산자</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>data = "3 1 4 1"
+nums = list(map(int, data.split()))
+res = []
+
+for i, n in enumerate(nums):
+    res.append(n + i)
+
+print(res)
+print(sum(set(res)))</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-9">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-9" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 9)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-9" onclick="toggleAISolution('easy-set5', 9)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-9"></div>
+</article>
+<aside aria-label="문제 9 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-9">
+<h3>문제 9 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">[3, 2, 6, 4]
+15</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>map, lambda, 리스트 컴프리헨션은 각 원소에 적용되는 계산식을 순서대로 적용하면 됩니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>리스트, map, 형 변환, split, enumerate, set, 산술 연산자</p>
+</aside>
+</div>
+</section>
+<section class="ai-question-block" data-ai-difficulty="easy" data-ai-question="10" data-ai-set="easy-set5" data-question="10" id="ai-easy-set5-q10">
+<div class="question-layout">
+<article class="question-card">
+<h2 class="question-title">문제 10. [Python] 문자열 회전과 클래스 변수</h2>
+<div class="badge-row">
+<span class="badge lang">Python</span>
+<span class="badge difficulty">난이도: 개념확인</span>
+<span class="badge">클래스</span><span class="badge">객체</span><span class="badge">클래스 변수</span><span class="badge">메서드</span><span class="badge">기본값 매개변수</span>
+</div>
+<p><strong>출제 개념:</strong> 클래스, 객체, 클래스 변수, 메서드, 기본값 매개변수, 문자열, 슬라이싱</p>
+<p class="section-label">문제:</p>
+<p>다음 코드의 출력 결과를 작성하시오.</p>
+<p class="section-label">코드:</p>
+<pre><code>class S:
+    total = 0
+
+    def __init__(self, text):
+        self.text = text
+        S.total += len(text)
+
+    def cut(self, n=2):
+        self.text = self.text[n:] + self.text[:n]
+        return self.text[::2]
+
+a = S("coding")
+b = S("test")
+
+print(a.cut(3))
+print(b.cut())
+print(S.total)</code></pre>
+<p class="section-label">답안 작성란:</p>
+<label class="answer-label" for="ai-easy-set5-answer-10">내 답안</label>
+<textarea class="answer-input" id="ai-easy-set5-answer-10" placeholder="출력 결과를 입력하세요. 여러 줄 출력은 줄바꿈까지 맞춰 입력하세요." rows="5"></textarea>
+<div class="button-row">
+<button class="check-btn" onclick="checkAIAnswer('easy-set5', 10)" type="button">정답 확인</button>
+<button class="toggle-btn" id="ai-easy-set5-solution-button-10" onclick="toggleAISolution('easy-set5', 10)" type="button">정답 및 해설 보기</button>
+</div>
+<div aria-live="polite" class="ai-answer-result" id="ai-easy-set5-result-10"></div>
+</article>
+<aside aria-label="문제 10 정답 및 해설" class="solution-panel" id="ai-easy-set5-solution-10">
+<h3>문제 10 정답 및 해설</h3>
+<h4>정답 출력 결과</h4>
+<div class="answer-box">igo
+st
+10</div>
+<h4>해설</h4>
+<ol class="solution-list">
+<li>초기 변수와 배열 또는 객체의 값을 먼저 확인한 뒤, 코드가 실행되는 순서대로 값을 갱신합니다.</li><li>문자열은 split, 슬라이싱, join이 적용되는 순서를 따라가면 중간 문자열을 확인할 수 있습니다.</li><li>기본값 객체와 클래스 변수는 호출 또는 객체 생성 사이에서 공유될 수 있으므로 누적 여부를 확인해야 합니다.</li><li>print가 여러 번 있으면 각 출력이 줄바꿈되어 표시되므로 줄 순서를 정확히 맞춰야 합니다.</li><li>따라서 최종 출력 결과는 정답 박스와 같습니다.</li>
+</ol>
+<h4>관련 핵심 개념</h4>
+<p>클래스, 객체, 클래스 변수, 메서드, 기본값 매개변수, 문자열, 슬라이싱</p>
+</aside>
+</div>
+</section>
+</div></div>
 <div class="hidden flex flex-col gap-6 animate-slide-up ai-question-set" data-ai-set="hard-set1" id="aiHardSet1">
 <div class="ai-top-nav-wrap">
 <nav aria-label="어려움 1회 문제 번호 이동 메뉴" class="ai-top-nav">
@@ -7878,14 +10948,15 @@ EEl
 <button aria-label="업데이트 로그 닫기" class="update-log-close-btn" id="updateLogCloseBtn" type="button">×</button>
 </div>
 <div class="update-log-body">
-<p class="update-log-guide">새 수정 내역은 아래 형식에 맞춰 한 줄씩 추가하면 됩니다.</p>
 <ul class="update-log-list">
-<!-- 업데이트 로그 시작: 새 수정 내역은 아래 li 태그를 복사해서 추가하세요 -->
 <!-- 형식: YYYY-MM-DD HH:MM:SS - 수정 내용 -->
 <li><strong>2026-07-04 16:17:43</strong> - 업데이트 로그 기능 추가</li>
 <li><strong>2026-07-04 16:43:39</strong> - ai예상문제 난이도/회차 선택 화면 추가 및 어려움 3회~5회 문제 세트 병합</li>
 <li><strong>2026-07-04 16:55:13</strong> - 코딩 목차 복구 및 ai예상문제 하위 메뉴 배치, 불필요한 설명 블록 제거</li>
 <!-- 업데이트 로그 끝 -->
+<li><strong>2026-07-04 22:59:39</strong> - 개념(쉬움) 1회~5회 문제 세트 추가 및 기존 어려움 세트 유지, ai예상문제 난이도/회차 구조 확장</li>
+<li><strong>2026-07-04 23:17:01</strong> - 문제 해설 영역 PC 좌우 반반 배치 복구 및 모바일 상하 배치 유지</li>
+<li><strong>2026-07-04 23:24:29</strong> - 개념(쉬움) 회차 해설 영역 PC 좌우 배치 적용 및 모바일 상하 배치 유지</li>
 </ul>
 </div>
 </div>
@@ -11572,6 +14643,11 @@ function updateInterfaceBadge() {
 
         // [추가] AI 예상문제 1/2 전용 스크립트: 기존 코딩/플래시카드 함수와 충돌하지 않도록 setId 기반으로 분리
         const AI_ANSWER_DATA = {
+            "easy-set1": {"1": "40 4 5 6", "2": "dned 4", "3": "10 6 11", "4": "7", "5": "C C S", "6": "24,23,16", "7": "11 10", "8": "5:8:2", "9": "peno-ia-odingc\ncgnido-i-onp", "10": "[2, 4]\n[1, 5]\n4"},
+            "easy-set2": {"1": "5 2 12", "2": "ACEG C", "3": "6 4", "4": "-11 1 4", "5": "11 22 3", "6": "11 5 3", "7": "1 5", "8": "BN I BN", "9": "ot2|eb2|ro2\n6", "10": "[1, 6, 2]\n[10, 10, 3]"},
+            "easy-set3": {"1": "14 2 5", "2": "bAoApA 3", "3": "16 2 5", "4": "2 6 13", "5": "1 5 7", "6": "21", "7": "12 6 7", "8": "S,B,I", "9": "kace\nacek", "10": "4 9\n4 8"},
+            "easy-set4": {"1": "12 3 6", "2": "-1 a", "3": "5 2 8", "4": "19", "5": "12 6", "6": "11 3", "7": "6 5 4", "8": "10 2", "9": "[1, 3, 9, 5]\n9-5", "10": "ABCa\nbD"},
+            "easy-set5": {"1": "1 3 2 4", "2": "hexx 5", "3": "21 2 1", "4": "8 6", "5": "8 3 5", "6": "34 10", "7": "9 1 9", "8": "BC S BC", "9": "[3, 2, 6, 4]\n15", "10": "igo\nst\n10"},
             "set1": {
                         "1": "5 4 6 8",
                         "2": "L:103\nr 159",
@@ -11701,7 +14777,7 @@ function updateInterfaceBadge() {
 
         function selectAIDifficulty(difficulty, options = {}) {
             const selected = ['easy', 'normal', 'hard'].includes(difficulty) ? difficulty : 'hard';
-            const isHard = selected === 'hard';
+            const hasSets = selected === 'easy' || selected === 'hard';
 
             document.querySelectorAll('[data-ai-difficulty]').forEach((button) => {
                 button.classList.toggle('active', button.dataset.aiDifficulty === selected);
@@ -11713,24 +14789,27 @@ function updateInterfaceBadge() {
             });
 
             document.querySelectorAll('[data-ai-round]').forEach((button) => {
-                button.disabled = !isHard;
-                button.setAttribute('aria-disabled', String(!isHard));
-                if (!isHard || options.resetSet) {
+                const roundDifficulty = button.dataset.aiRoundDifficulty || (button.dataset.aiRound && button.dataset.aiRound.startsWith('hard') ? 'hard' : 'easy');
+                const isVisible = hasSets && roundDifficulty === selected;
+                button.disabled = !isVisible;
+                button.classList.toggle('hidden', !isVisible);
+                button.setAttribute('aria-disabled', String(!isVisible));
+                if (!isVisible || options.resetSet) {
                     button.classList.remove('active');
                     button.removeAttribute('aria-current');
                 }
             });
 
             document.querySelectorAll('[data-ai-empty-for]').forEach((message) => {
-                message.classList.toggle('hidden', message.dataset.aiEmptyFor !== selected || isHard);
+                message.classList.toggle('hidden', message.dataset.aiEmptyFor !== selected || hasSets);
             });
 
             const prompt = document.getElementById('aiHardRoundPrompt');
             if (prompt) {
-                prompt.classList.toggle('hidden', !isHard || !options.resetSet);
+                prompt.classList.toggle('hidden', !hasSets || !options.resetSet);
             }
 
-            if (!isHard || options.resetSet) {
+            if (!hasSets || options.resetSet) {
                 hideAllAIProblemSets();
             }
 
@@ -11741,7 +14820,8 @@ function updateInterfaceBadge() {
             const screen = getAIQuestionScreen(setId);
             if (!screen) return;
 
-            selectAIDifficulty('hard', { resetSet: false });
+            const difficulty = setId.startsWith('easy-set') ? 'easy' : (setId.startsWith('hard-set') ? 'hard' : 'hard');
+            selectAIDifficulty(difficulty, { resetSet: false });
             hideAllAIProblemSets();
             screen.classList.remove('hidden');
 
@@ -11804,7 +14884,7 @@ function updateInterfaceBadge() {
             const userAnswer = normalizeAIAnswer(input.value);
             const correctAnswer = normalizeAIAnswer(expected);
 
-            result.classList.remove('correct', 'incorrect', 'empty');
+            result.classList.remove('correct', 'incorrect', 'wrong', 'empty');
 
             if (!userAnswer) {
                 result.textContent = '답안을 먼저 입력해 주세요.';
@@ -11837,7 +14917,7 @@ function updateInterfaceBadge() {
         }
 
         function initAIQuestionSets() {
-            ['set1', 'set2', 'hard-set1', 'hard-set2', 'hard-set3', 'hard-set4', 'hard-set5'].forEach((setId) => {
+            ['set1', 'set2', 'easy-set1', 'easy-set2', 'easy-set3', 'easy-set4', 'easy-set5', 'hard-set1', 'hard-set2', 'hard-set3', 'hard-set4', 'hard-set5'].forEach((setId) => {
                 showAIQuestion(setId, 1, { skipSound: true });
             });
             showAIQuestionHome();
@@ -12952,5 +16032,3 @@ function updateInterfaceBadge() {
     </script>
 </body>
 </html>
-
-<!-- force redeploy -->
