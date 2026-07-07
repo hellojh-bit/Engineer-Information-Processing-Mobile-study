@@ -1651,7 +1651,7 @@
 </div>
 </button>
 <!-- Sidebar Close Button -->
-<button class="p-1.5 hover:bg-slate-100 rounded-xl text-slate-500 transition-all" onclick="toggleSidebar()" title="목차 접기">
+<button class="p-1.5 hover:bg-slate-100 rounded-xl text-slate-500 transition-all" data-ui-action="toggle-sidebar" title="목차 접기">
 <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -1661,13 +1661,13 @@
 <nav class="flex-grow p-4 flex flex-col gap-3 overflow-y-auto" id="mainDirectory">
 <!-- Category 1: Concept Learning (상위 배치) -->
 <div class="flex flex-col gap-1">
-<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none sidebar-category-header concept-section-header" onclick="toggleCategoryGroup('conceptGroup', 'conceptArrow')">
+<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none sidebar-category-header concept-section-header" data-category-group="conceptGroup" data-category-arrow="conceptArrow">
 <span>📖 핵심 개념 학습</span>
 <span class="text-[9px] transition-transform duration-200 transform" id="conceptArrow" style="transform: rotate(-90deg);">▼</span>
 </button>
 <div class="flex flex-col gap-1 mt-1 transition-all duration-300 ease-in-out overflow-hidden opacity-100" id="conceptGroup" style="max-height: 0px; opacity: 0; pointer-events: none;">
 <!-- Item: UML Diagram -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-UML_DIAGRAM" onclick="changeSubject('UML_DIAGRAM')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-UML_DIAGRAM" data-subject-key="UML_DIAGRAM">
 <div class="flex items-center gap-2">
 <span class="text-sm">📐</span>
 <span class="text-left">UML다이어그램</span>
@@ -1675,7 +1675,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Test Coverage (신설!) -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-TESTCOVERAGE" onclick="changeSubject('TESTCOVERAGE')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-TESTCOVERAGE" data-subject-key="TESTCOVERAGE">
 <div class="flex items-center gap-2">
 <span class="text-sm">🎯</span>
 <span class="text-left">테스트 커버리지</span>
@@ -1683,7 +1683,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Normalization -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-NORMALIZATION" onclick="changeSubject('NORMALIZATION')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-NORMALIZATION" data-subject-key="NORMALIZATION">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔄</span>
 <span class="text-left">정규화 &amp; 반정규화</span>
@@ -1691,7 +1691,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Data Model Components -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DATAMODEL" onclick="changeSubject('DATAMODEL')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DATAMODEL" data-subject-key="DATAMODEL">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧩</span>
 <span class="text-left">데이터모델의 구성요소</span>
@@ -1699,7 +1699,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Blackbox Test Concept -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-BLACKBOX_CONCEPT" onclick="changeSubject('BLACKBOX_CONCEPT')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-BLACKBOX_CONCEPT" data-subject-key="BLACKBOX_CONCEPT">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧪</span>
 <span class="text-left">테스트레벨 &amp; V모델</span>
@@ -1707,7 +1707,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Routing Protocol -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ROUTING" onclick="changeSubject('ROUTING')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ROUTING" data-subject-key="ROUTING">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧭</span>
 <span class="text-left">라우팅 프로토콜</span>
@@ -1715,7 +1715,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Relational Data Language -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-REL_DATA_LANG" onclick="changeSubject('REL_DATA_LANG')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-REL_DATA_LANG" data-subject-key="REL_DATA_LANG">
 <div class="flex items-center gap-2">
 <span class="text-sm">🗣️</span>
 <span class="text-left">관계 데이터 언어</span>
@@ -1723,7 +1723,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Database Design -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DBDESIGN" onclick="changeSubject('DBDESIGN')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DBDESIGN" data-subject-key="DBDESIGN">
 <div class="flex items-center gap-2">
 <span class="text-sm">🏗️</span>
 <span class="text-left">데이터베이스 설계</span>
@@ -1731,7 +1731,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Network Transmission -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-NETTRANS" onclick="changeSubject('NETTRANS')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-NETTRANS" data-subject-key="NETTRANS">
 <div class="flex items-center gap-2">
 <span class="text-sm">📡</span>
 <span class="text-left">네트워크 전송방식</span>
@@ -1739,7 +1739,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Configuration Management -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CONFIG_MGMT" onclick="changeSubject('CONFIG_MGMT')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CONFIG_MGMT" data-subject-key="CONFIG_MGMT">
 <div class="flex items-center gap-2">
 <span class="text-sm">🗂️</span>
 <span class="text-left">형상관리</span>
@@ -1747,7 +1747,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Transaction -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-TRANSACTION" onclick="changeSubject('TRANSACTION')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-TRANSACTION" data-subject-key="TRANSACTION">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔁</span>
 <span class="text-left">트랜잭션</span>
@@ -1755,7 +1755,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Database Keys -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DBKEYS" onclick="changeSubject('DBKEYS')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DBKEYS" data-subject-key="DBKEYS">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔑</span>
 <span class="text-left">데이터베이스 키</span>
@@ -1763,7 +1763,7 @@
 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-extrabold">개념</span>
 </button>
 <!-- Item: Etc -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ETC_CONCEPT" onclick="changeSubject('ETC_CONCEPT')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ETC_CONCEPT" data-subject-key="ETC_CONCEPT">
 <div class="flex items-center gap-2">
 <span class="text-sm">📌</span>
 <span class="text-left">기타</span>
@@ -1774,13 +1774,13 @@
 </div>
 <!-- Category 2: Flashcard Study (하위 배치) -->
 <div class="flex flex-col gap-1">
-<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none sidebar-category-header flashcard-section-header" onclick="toggleCategoryGroup('cardGroup', 'cardArrow')">
+<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none sidebar-category-header flashcard-section-header" data-category-group="cardGroup" data-category-arrow="cardArrow">
 <span>🗂️ 플래시 카드 암기</span>
 <span class="text-[9px] transition-transform duration-200 transform" id="cardArrow" style="transform: rotate(-90deg);">▼</span>
 </button>
 <div class="flex flex-col gap-1 mt-1 transition-all duration-300 ease-in-out overflow-hidden opacity-100" id="cardGroup" style="max-height: 0px; opacity: 0; pointer-events: none;">
 <!-- Item: GoF Design Patterns -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-GOF" onclick="changeSubject('GOF')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-GOF" data-subject-key="GOF">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧱</span>
 <span class="text-left">GoF디자인 패턴</span>
@@ -1788,7 +1788,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-GOF">23</span>
 </button>
 <!-- Item: Cohesion & Coupling -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-COHESION" onclick="changeSubject('COHESION')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-COHESION" data-subject-key="COHESION">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧲</span>
 <span class="text-left">응집도 &amp; 결합도</span>
@@ -1796,7 +1796,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-COHESION">13</span>
 </button>
 <!-- Item: Blackbox Test -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-BLACKBOX" onclick="changeSubject('BLACKBOX')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-BLACKBOX" data-subject-key="BLACKBOX">
 <div class="flex items-center gap-2">
 <span class="text-sm">🎁</span>
 <span class="text-left">블랙박스 테스트</span>
@@ -1804,7 +1804,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-BLACKBOX">10</span>
 </button>
 <!-- Item: Interface -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INTERFACE" onclick="changeSubject('INTERFACE')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INTERFACE" data-subject-key="INTERFACE">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔌</span>
 <span class="text-left">인터페이스</span>
@@ -1812,7 +1812,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-INTERFACE">19</span>
 </button>
 <!-- Item: Information Security Basic -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INFO_SECURITY_BASIC" onclick="changeSubject('INFO_SECURITY_BASIC')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INFO_SECURITY_BASIC" data-subject-key="INFO_SECURITY_BASIC">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔒</span>
 <span class="text-left">정보보안</span>
@@ -1820,7 +1820,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-INFO_SECURITY_BASIC">12</span>
 </button>
 <!-- Item: UI -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-UI" onclick="changeSubject('UI')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-UI" data-subject-key="UI">
 <div class="flex items-center gap-2">
 <span class="text-sm">🖥️</span>
 <span class="text-left">UI</span>
@@ -1828,7 +1828,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-UI">13</span>
 </button>
 <!-- Item: Integrity Constraint -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INTEGRITY_CONSTRAINT" onclick="changeSubject('INTEGRITY_CONSTRAINT')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INTEGRITY_CONSTRAINT" data-subject-key="INTEGRITY_CONSTRAINT">
 <div class="flex items-center gap-2">
 <span class="text-sm">✅</span>
 <span class="text-left">무결성 제약조건</span>
@@ -1836,7 +1836,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-INTEGRITY_CONSTRAINT">7</span>
 </button>
 <!-- Item: Cyber Attacks -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ATTACK" onclick="changeSubject('ATTACK')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ATTACK" data-subject-key="ATTACK">
 <div class="flex items-center gap-2">
 <span class="text-sm">🛡️</span>
 <span class="text-left">침해 공격 유형</span>
@@ -1844,7 +1844,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-ATTACK">40</span>
 </button>
 <!-- Item: Protocol -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-PROTOCOL" onclick="changeSubject('PROTOCOL')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-PROTOCOL" data-subject-key="PROTOCOL">
 <div class="flex items-center gap-2">
 <span class="text-sm">📬</span>
 <span class="text-left">프로토콜</span>
@@ -1852,7 +1852,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-PROTOCOL">25</span>
 </button>
 <!-- Item: Cryptography -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ALGO" onclick="changeSubject('ALGO')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ALGO" data-subject-key="ALGO">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔐</span>
 <span class="text-left">암호화</span>
@@ -1860,7 +1860,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-ALGO">11</span>
 </button>
 <!-- Item: Test -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-TEST_CARD" onclick="changeSubject('TEST_CARD')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-TEST_CARD" data-subject-key="TEST_CARD">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧪</span>
 <span class="text-left">테스트</span>
@@ -1868,7 +1868,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-TEST_CARD">17</span>
 </button>
 <!-- Item: Information Security Misc -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INFO_SECURITY_MISC" onclick="changeSubject('INFO_SECURITY_MISC')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-INFO_SECURITY_MISC" data-subject-key="INFO_SECURITY_MISC">
 <div class="flex items-center gap-2">
 <span class="text-sm">🧰</span>
 <span class="text-left">정보보안 - 기타</span>
@@ -1876,7 +1876,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-INFO_SECURITY_MISC">22</span>
 </button>
 <!-- Item: DB / Network -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DB_NETWORK" onclick="changeSubject('DB_NETWORK')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-DB_NETWORK" data-subject-key="DB_NETWORK">
 <div class="flex items-center gap-2">
 <span class="text-sm">🌐</span>
 <span class="text-left">DB/네트워크/객체지향</span>
@@ -1884,7 +1884,7 @@
 <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-DB_NETWORK">24</span>
 </button>
 <!-- Item: Flashcard Etc -->
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-FLASH_ETC" onclick="changeSubject('FLASH_ETC')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-FLASH_ETC" data-subject-key="FLASH_ETC">
 <div class="flex items-center gap-2">
 <span class="text-sm">📎</span>
 <span class="text-left">기타</span>
@@ -1895,33 +1895,33 @@
 </div>
 <!-- [복구] Category 3: Coding Study Toggle - 플래시 카드 암기 다음 배치 -->
 <div class="flex flex-col gap-1">
-<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none sidebar-category-header coding-section-header" onclick="toggleCategoryGroup('codingGroup', 'codingArrow')">
+<button class="flex items-center justify-between w-full px-3 py-1 text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider select-none sidebar-category-header coding-section-header" data-category-group="codingGroup" data-category-arrow="codingArrow">
 <span>💻 코딩</span>
 <span class="text-[9px] transition-transform duration-200 transform" id="codingArrow" style="transform: rotate(-90deg);">▼</span>
 </button>
 <div class="flex flex-col gap-1 mt-1 transition-all duration-300 ease-in-out overflow-hidden opacity-100" id="codingGroup" style="max-height: 0px; opacity: 0; pointer-events: none;">
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_PYTHON" onclick="changeSubject('CODE_PYTHON')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_PYTHON" data-subject-key="CODE_PYTHON">
 <div class="flex items-center gap-2">
 <span class="text-sm">🐍</span>
 <span class="text-left">Python</span>
 </div>
 <span class="text-[9px] bg-sky-100 text-sky-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
 </button>
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_JAVA" onclick="changeSubject('CODE_JAVA')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_JAVA" data-subject-key="CODE_JAVA">
 <div class="flex items-center gap-2">
 <span class="text-sm">☕</span>
 <span class="text-left">Java</span>
 </div>
 <span class="text-[9px] bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
 </button>
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_C" onclick="changeSubject('CODE_C')">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-CODE_C" data-subject-key="CODE_C">
 <div class="flex items-center gap-2">
 <span class="text-sm">🔧</span>
 <span class="text-left">C언어</span>
 </div>
 <span class="text-[9px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded font-extrabold">코딩</span>
 </button>
-<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-AI_QUESTIONS_HOME" onclick="changeSubject('AI_QUESTIONS_HOME'); showAIQuestionHome();">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-AI_QUESTIONS_HOME" data-subject-key="AI_QUESTIONS_HOME">
 <div class="flex items-center gap-2">
 <span class="text-sm">🤖</span>
 <span class="text-left">ai예상문제</span>
@@ -1933,14 +1933,14 @@
 <!-- [복구] Category 3: Coding Study Toggle 끝 -->
 <div class="pt-4 mt-4 border-t border-slate-200">
 <span class="px-3 text-[10px] font-black text-slate-400 tracking-wider uppercase block mb-2">최종암기</span>
-<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100 mb-1" id="dir-FINAL_CARD" onclick="changeSubject('FINAL_CARD')">
+<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100 mb-1" id="dir-FINAL_CARD" data-subject-key="FINAL_CARD">
 <div class="flex items-center gap-2">
 <span class="text-base">🏆</span>
 <span>최종 카드 암기</span>
 </div>
 <span class="bg-indigo-100 text-indigo-700 text-[10px] px-1.5 py-0.5 rounded-md font-mono" id="badge-FINAL_CARD">253</span>
 </button>
-<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100" id="dir-FINAL_QUESTIONS" onclick="changeSubject('FINAL_QUESTIONS')">
+<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100" id="dir-FINAL_QUESTIONS" data-subject-key="FINAL_QUESTIONS">
 <div class="flex items-center gap-2">
 <span class="text-base">❓</span>
 <span>최종 암기 문제</span>
@@ -1950,14 +1950,14 @@
 </div>
 <div class="pt-4 mt-4 border-t border-slate-200">
 <span class="px-3 text-[10px] font-black text-slate-400 tracking-wider uppercase block mb-2">참고</span>
-<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100 mb-1" id="dir-FINAL_CARD_REF" onclick="changeSubject('FINAL_CARD_REF')">
+<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100 mb-1" id="dir-FINAL_CARD_REF" data-subject-key="FINAL_CARD_REF">
 <div class="flex items-center gap-2">
 <span class="text-base">📚</span>
 <span>카드 암기 참고용</span>
 </div>
 <span class="bg-indigo-100 text-indigo-700 text-[10px] px-1.5 py-0.5 rounded-md font-mono" id="badge-FINAL_CARD_REF">107</span>
 </button>
-<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100" id="dir-FINAL_SUMMARY" onclick="changeSubject('FINAL_SUMMARY')">
+<button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100" id="dir-FINAL_SUMMARY" data-subject-key="FINAL_SUMMARY">
 <div class="flex items-center gap-2">
 <span class="text-base">📝</span>
 <span>카드 요약 참고용</span>
@@ -1989,7 +1989,7 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm" id="subjectHeaderCard">
 <div class="flex items-center gap-3">
 <!-- Sidebar Open Button (hidden by default) -->
-<button class="hidden p-2.5 bg-indigo-50 border border-indigo-100/50 hover:bg-indigo-100 text-indigo-600 rounded-xl transition-all shadow-sm shrink-0" id="openSidebarBtn" onclick="toggleSidebar()" title="목차 펼치기">
+<button class="hidden p-2.5 bg-indigo-50 border border-indigo-100/50 hover:bg-indigo-100 text-indigo-600 rounded-xl transition-all shadow-sm shrink-0" id="openSidebarBtn" data-ui-action="toggle-sidebar" title="목차 펼치기">
 <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
@@ -2009,10 +2009,7 @@
 <span class="text-xs text-slate-500 font-semibold" id="filterSummaryText">전체 23개의 카드 중 학습 대기 중</span>
 <div class="flex items-center gap-2">
 <button class="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-bold border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl transition-all" id="shuffleBtn" onclick="toggleShuffle()">
-<svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 15.89M9.555 14.12l-1.39 1.392m0 0l-1.39-1.393M8.165 15.511l2.78-2.779" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-<span>무작위 순서: <span class="text-slate-400" id="shuffleStatus">꺼짐</span></span>
+<span>무작위순서: <span class="text-slate-400" id="shuffleStatus">꺼짐</span></span>
 </button>
 </div>
 </div>
@@ -14751,18 +14748,21 @@ EEl
 </div>
 <div class="update-log-body">
 <ul class="update-log-list">
+
+<li><strong>2026-07-08 00:00:00</strong> - 최종 카드 암기 무작위순서 표시 및 단축키 상태 연동 수정</li>
+<li><strong>2026-07-07 23:59:50</strong> - 코드 리팩토링</li>
 <li><strong>2026-07-07 21:45:00</strong> - 최종 카드 암기 학습완료 목록 및 단축키 기능 추가</li>
 <li><strong>2026-07-07 21:30:00</strong> - 최종 카드 암기 다시보기 저장소와 알고있음 연동 기능 보완</li>
 <li><strong>2026-07-07 21:15:00</strong> - 침해 공격 유형 카드 추가 및 최종 카드 암기·참고 섹션 재구성</li>
 <li><strong>2026-07-07 21:00:00</strong> - 최종 암기 문제 정답처리, 정답 다시보기 및 기록 안정성 보완</li>
-<!-- 형식: YYYY-MM-DD HH:MM:SS - 수정 내용 / 최신 항목을 맨 위에 추가 -->
 <li><strong>2026-07-07 20:45:00</strong> - 최종 암기 문제 버튼 위치 수정 및 누락 문제 보강</li>
 <li><strong>2026-07-07 20:30:00</strong> - 최종 암기 문제 생성, 풀이 통계 및 질문 저장소 기능 추가</li>
 <li><strong>2026-07-07 20:11:00</strong> - 왼쪽 목차 섹션 배경색 적용 및 최종 암기 문제 목차 추가</li>
 <li><strong>2026-07-07 19:40:00</strong> - 플래시 카드 암기 기타 카드 내용 추가</li>
 <li><strong>2026-07-07 19:25:00</strong> - 트랜잭션 ACID 표기 보완, DB/네트워크/객체지향 카드 추가 및 메인화면 배치 수정</li>
 <li><strong>2026-07-07 19:10:00</strong> - 핵심 개념 학습 기타 내용 가독성 개선 및 플래시 카드 암기 기타 항목 추가</li>
-<li><strong>2026-07-07 18:55:00</strong> - 핵심 개념 학습 기타 항목 사진 기반 구성 및 플래시 카드 암기 명칭 변경</li><li><strong>2026-07-07 18:40:00</strong> - 핵심 개념 학습 기타 항목 구성 및 플래시 카드 암기 명칭 변경</li>
+<li><strong>2026-07-07 18:55:00</strong> - 핵심 개념 학습 기타 항목 사진 기반 구성 및 플래시 카드 암기 명칭 변경</li>
+<li><strong>2026-07-07 18:40:00</strong> - 핵심 개념 학습 기타 항목 구성 및 플래시 카드 암기 명칭 변경</li>
 <li><strong>2026-07-07 18:25:00</strong> - 목차 초기 접힘 상태 및 업데이트 로그 정렬 방식 수정</li>
 <li><strong>2026-07-07 18:10:00</strong> - 정규화·데이터모델·V모델 핵심 개념 보완</li>
 <li><strong>2026-07-07 17:56:00</strong> - DB/네트워크 카드 일부 정리</li>
@@ -14784,6 +14784,7 @@ EEl
 <li><strong>2026-07-04 16:55:13</strong> - 어려움 난이도 문제 세트 추가</li>
 <li><strong>2026-07-04 16:43:39</strong> - ai예상문제 기능 추가</li>
 <li><strong>2026-07-04 16:17:43</strong> - 업데이트 로그 기능 추가</li>
+
 </ul>
 </div>
 </div>
@@ -17433,6 +17434,8 @@ EEl
                 `;
         const ACCORDION_EXPANDED_STYLE = { maxHeight: '1200px', opacity: '1', pointerEvents: 'auto' };
         const ACCORDION_COLLAPSED_STYLE = { maxHeight: '0px', opacity: '0', pointerEvents: 'none' };
+        const SIDEBAR_VISIBLE_CLASSES = ['md:w-72', 'w-full'];
+        const SIDEBAR_HIDDEN_CLASSES = ['md:w-0', 'w-0', 'h-0', 'opacity-0', 'p-0', 'pointer-events-none'];
         const RESET_TRANSITION_DELAY_MS = 50;
         const CARD_NAVIGATION_DELAY_MS = 100;
         const CARD_EVALUATION_DELAY_MS = 150;
@@ -17699,9 +17702,199 @@ EEl
             return domCache[id];
         };
 
+        // [1차 리팩토링] 공통 유틸 함수: DOM 접근, 스타일, 이벤트 연결, 메시지 표시를 한 곳에서 처리
+        const eventBindingRegistry = new WeakMap();
+
+        function resolveElement(target) {
+            return typeof target === 'string' ? $(target) : target;
+        }
+
+        function applyStyles(target, styles) {
+            const el = resolveElement(target);
+            if (!el || !styles) return el;
+            Object.assign(el.style, styles);
+            return el;
+        }
+
+        function bindEventIfExists(target, eventName, handler, options) {
+            const el = resolveElement(target);
+            if (!el || typeof el.addEventListener !== 'function') return el;
+            el.addEventListener(eventName, handler, options);
+            return el;
+        }
+
+        function bindEventOnce(target, eventName, bindingKey, handler, options) {
+            const el = resolveElement(target);
+            if (!el || typeof el.addEventListener !== 'function') return el;
+
+            const registryKey = `${eventName}:${bindingKey}`;
+            let bindings = eventBindingRegistry.get(el);
+            if (!bindings) {
+                bindings = new Set();
+                eventBindingRegistry.set(el, bindings);
+            }
+            if (bindings.has(registryKey)) return el;
+
+            bindings.add(registryKey);
+            el.addEventListener(eventName, handler, options);
+            return el;
+        }
+
+        function isEditableTarget(target) {
+            return Boolean(
+                target &&
+                (['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName) || target.isContentEditable)
+            );
+        }
+
+        function scrollPageToTop() {
+            const mainEl = document.querySelector('main');
+            if (mainEl && typeof mainEl.scrollTo === 'function') {
+                mainEl.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderInlineMessage(target, message, className, options = {}) {
+            const el = resolveElement(target);
+            if (!el) return null;
+
+            if (!message) {
+                setHidden(el, true);
+                return null;
+            }
+
+            el.textContent = message;
+            if (className) el.className = className;
+            setHidden(el, false);
+
+            if (options.autoHideMs) {
+                return window.setTimeout(() => setHidden(el, true), options.autoHideMs);
+            }
+
+            return null;
+        }
+
+
+        function readJsonFromStorage(key, fallback) {
+            try {
+                const raw = localStorage.getItem(key);
+                if (!raw) return fallback;
+                const parsed = JSON.parse(raw);
+                return parsed ?? fallback;
+            } catch (error) {
+                return fallback;
+            }
+        }
+
+        function writeJsonToStorage(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function setModalActive(modalId, active) {
+            const modal = resolveElement(modalId);
+            if (!modal) return null;
+
+            modal.classList.toggle('active', active);
+            modal.setAttribute('aria-hidden', active ? 'false' : 'true');
+            document.body.classList.toggle('update-log-open', active);
+
+            return modal;
+        }
+
+        // [1차 리팩토링] 목차 관련 함수: 접힘/펼침, 화살표, 목차 클릭 이벤트를 공통 처리
+        function setCategoryExpanded(groupId, arrowId, expanded, options = {}) {
+            categoryGroups[groupId] = expanded;
+            applyStyles(arrowId, { transform: expanded ? 'rotate(0deg)' : 'rotate(-90deg)' });
+            adjustAccordionHeight(groupId, expanded);
+            if (options.playSound) sfx.playFlip();
+        }
+
+        function collapseAllCategoryGroups() {
+            [
+                ['conceptGroup', 'conceptArrow'],
+                ['cardGroup', 'cardArrow'],
+                ['codingGroup', 'codingArrow']
+            ].forEach(([groupId, arrowId]) => setCategoryExpanded(groupId, arrowId, false));
+        }
+
+        function handleDirectoryNavigationClick(event) {
+            const target = event.target instanceof Element ? event.target : null;
+            if (!target) return;
+
+            const sidebarToggle = target.closest('[data-ui-action="toggle-sidebar"]');
+            if (sidebarToggle) {
+                event.preventDefault();
+                toggleSidebar();
+                return;
+            }
+
+            const categoryButton = target.closest('[data-category-group][data-category-arrow]');
+            if (categoryButton) {
+                event.preventDefault();
+                toggleCategoryGroup(categoryButton.dataset.categoryGroup, categoryButton.dataset.categoryArrow);
+                return;
+            }
+
+            const subjectButton = target.closest('[data-subject-key]');
+            if (subjectButton) {
+                event.preventDefault();
+                const subjectKey = subjectButton.dataset.subjectKey;
+                changeSubject(subjectKey);
+                if (subjectKey === 'AI_QUESTIONS_HOME') showAIQuestionHome();
+            }
+        }
+
+        function setupDirectoryNavigationEvents() {
+            bindEventOnce(document, 'click', 'directoryNavigation', handleDirectoryNavigationClick);
+        }
+
         function getDeck(subject = currentSubject) {
             return DECK_BY_SUBJECT[subject] || [];
         }
+
+        // [2차 리팩토링] 카드/최종 카드 공통 처리: 저장소, 목록 모드, 카드 표시 로직을 한곳에서 관리
+        const FINAL_CARD_COLLECTION_TYPE = Object.freeze({
+            REVIEW: 'review',
+            COMPLETED: 'completed'
+        });
+        const FINAL_CARD_COLLECTION_CONFIG = Object.freeze({
+            review: {
+                storageKey: FINAL_CARD_REVIEW_STORAGE_KEY,
+                countId: 'finalCardReviewCount',
+                modeTitle: '최종 카드 암기 다시보기',
+                modeSubtitle: 'SAVED REVIEW CARDS',
+                emptyCategory: '다시보기',
+                emptyQuestion: '저장된 카드가 없습니다.',
+                activeSummary: (count) => `다시 공부 목록 ${count}장의 카드 중 복습 중입니다.`,
+                emptyMessage: '저장된 카드가 없습니다.',
+                clearConfirm: '저장된 다시 공부 카드가 모두 삭제됩니다. 계속하시겠습니까?',
+                clearSuccess: '다시 공부 목록을 비웠습니다.',
+                duplicateMessage: '이미 다시 공부 목록에 저장된 카드입니다.',
+                saveSuccess: '다시 공부 목록에 저장되었습니다.',
+                saveError: '저장소 저장에 실패했지만 카드 기능은 계속 사용할 수 있습니다.'
+            },
+            completed: {
+                storageKey: FINAL_CARD_COMPLETED_STORAGE_KEY,
+                countId: 'finalCardCompletedCount',
+                modeTitle: '최종 카드 암기 학습완료',
+                modeSubtitle: 'COMPLETED CARDS',
+                emptyCategory: '학습완료',
+                emptyQuestion: '학습완료된 카드가 없습니다.',
+                activeSummary: (count) => `학습완료 목록 ${count}장의 카드 중 확인 중입니다.`,
+                emptyMessage: '학습완료된 카드가 없습니다.',
+                clearConfirm: '학습완료 목록이 모두 삭제됩니다. 계속하시겠습니까?',
+                clearSuccess: '학습완료 목록을 비웠습니다.',
+                duplicateMessage: '이미 학습완료 목록에 저장된 카드입니다.',
+                saveSuccess: '학습완료 목록에 저장되었습니다.',
+                saveError: '저장소 저장에 실패했지만 카드 기능은 계속 사용할 수 있습니다.'
+            }
+        });
 
         function normalizeFinalCardReviewText(value) {
             return String(value || '').trim().replace(/\s+/g, ' ');
@@ -17757,52 +17950,34 @@ EEl
             return { ...item, id };
         }
 
-        function getStoredFinalCardReviewList() {
-            try {
-                const parsed = JSON.parse(localStorage.getItem(FINAL_CARD_REVIEW_STORAGE_KEY) || '[]');
-                if (!Array.isArray(parsed)) return [];
-                const seen = new Set();
-                return parsed.map(normalizeFinalCardReviewItem).filter((item) => {
-                    if (!item || seen.has(item.id)) return false;
-                    seen.add(item.id);
-                    return true;
-                });
-            } catch (error) {
-                return [];
-            }
+        function getFinalCardCollectionConfig(type) {
+            return FINAL_CARD_COLLECTION_CONFIG[type] || FINAL_CARD_COLLECTION_CONFIG.review;
         }
 
-        function setStoredFinalCardReviewList(items) {
-            try {
-                localStorage.setItem(FINAL_CARD_REVIEW_STORAGE_KEY, JSON.stringify(items || []));
+        function getStoredFinalCardCollectionList(type) {
+            const config = getFinalCardCollectionConfig(type);
+            const parsed = readJsonFromStorage(config.storageKey, []);
+            if (!Array.isArray(parsed)) return [];
+
+            const seen = new Set();
+            return parsed.map(normalizeFinalCardReviewItem).filter((item) => {
+                if (!item || seen.has(item.id)) return false;
+                seen.add(item.id);
                 return true;
-            } catch (error) {
-                return false;
-            }
+            });
+        }
+
+        function setStoredFinalCardCollectionList(type, items) {
+            const config = getFinalCardCollectionConfig(type);
+            return writeJsonToStorage(config.storageKey, items || []);
+        }
+
+        function getStoredFinalCardReviewList() {
+            return getStoredFinalCardCollectionList(FINAL_CARD_COLLECTION_TYPE.REVIEW);
         }
 
         function getStoredFinalCardCompletedList() {
-            try {
-                const parsed = JSON.parse(localStorage.getItem(FINAL_CARD_COMPLETED_STORAGE_KEY) || '[]');
-                if (!Array.isArray(parsed)) return [];
-                const seen = new Set();
-                return parsed.map(normalizeFinalCardReviewItem).filter((item) => {
-                    if (!item || seen.has(item.id)) return false;
-                    seen.add(item.id);
-                    return true;
-                });
-            } catch (error) {
-                return [];
-            }
-        }
-
-        function setStoredFinalCardCompletedList(items) {
-            try {
-                localStorage.setItem(FINAL_CARD_COMPLETED_STORAGE_KEY, JSON.stringify(items || []));
-                return true;
-            } catch (error) {
-                return false;
-            }
+            return getStoredFinalCardCollectionList(FINAL_CARD_COLLECTION_TYPE.COMPLETED);
         }
 
         function getFinalCardCurrentDeckMap() {
@@ -17829,209 +18004,238 @@ EEl
             }).filter((card) => card && card.id && card.q && !/추가예정/.test(`${card.q || ''} ${card.a || ''} ${card.aEng || ''}`));
         }
 
-        function getFinalCardReviewDeck() {
-            return hydrateFinalCardStoredDeck(getStoredFinalCardReviewList());
+        function getFinalCardCollectionDeck(type) {
+            return hydrateFinalCardStoredDeck(getStoredFinalCardCollectionList(type));
         }
 
-        function getFinalCardCompletedDeck() {
-            return hydrateFinalCardStoredDeck(getStoredFinalCardCompletedList());
+        function syncFinalCardCollectionEntries() {
+            finalCardReviewEntries = getStoredFinalCardReviewList();
+            finalCardCompletedEntries = getStoredFinalCardCompletedList();
+            return {
+                review: finalCardReviewEntries,
+                completed: finalCardCompletedEntries
+            };
+        }
+
+        function isFinalCardSubjectActive() {
+            return currentSubject === 'FINAL_CARD';
+        }
+
+        function getActiveFinalCardCollectionType() {
+            if (!isFinalCardSubjectActive()) return null;
+            if (isFinalCardReviewMode) return FINAL_CARD_COLLECTION_TYPE.REVIEW;
+            if (isFinalCardCompletedMode) return FINAL_CARD_COLLECTION_TYPE.COMPLETED;
+            return null;
+        }
+
+        function isFinalCardCollectionModeActive(type = null) {
+            const activeType = getActiveFinalCardCollectionType();
+            return type ? activeType === type : Boolean(activeType);
+        }
+
+        function setFinalCardCollectionMode(type = null) {
+            isFinalCardReviewMode = type === FINAL_CARD_COLLECTION_TYPE.REVIEW;
+            isFinalCardCompletedMode = type === FINAL_CARD_COLLECTION_TYPE.COMPLETED;
+        }
+
+        function getFinalCardReturnState(type) {
+            return type === FINAL_CARD_COLLECTION_TYPE.COMPLETED ? finalCardCompletedReturnState : finalCardReviewReturnState;
+        }
+
+        function setFinalCardReturnState(type, state) {
+            if (type === FINAL_CARD_COLLECTION_TYPE.COMPLETED) finalCardCompletedReturnState = state;
+            else finalCardReviewReturnState = state;
+        }
+
+        function rememberFinalCardReturnState(type) {
+            setFinalCardReturnState(type, {
+                index: currentCardIndex,
+                subFilter: currentSubFilter,
+                shuffled: isShuffled
+            });
+        }
+
+        function getDisplayDeck(deck, options = {}) {
+            const nextDeck = [...(deck || [])];
+            if (isShuffled) return nextDeck.sort(() => Math.random() - 0.5);
+            return options.sortById ? sortCardsById(nextDeck) : nextDeck;
+        }
+
+        function renderLearningCardContent(card) {
+            setTextMap({
+                currentCardIndex: currentCardIndex + 1,
+                totalFilteredCards: filteredCards.length,
+                frontCategory: card?.category || '구분',
+                frontQuestion: card?.q || '',
+                backCategory: card?.category || '정답',
+                backAnswerKo: card?.a || '',
+                backAnswerEng: card?.aEng || ''
+            });
+        }
+
+        function renderFinalCardCollectionEmpty(type) {
+            const config = getFinalCardCollectionConfig(type);
+            setTextMap({
+                currentCardIndex: 0,
+                totalFilteredCards: 0,
+                frontCategory: config.emptyCategory,
+                frontQuestion: config.emptyQuestion,
+                backCategory: config.emptyCategory,
+                backAnswerKo: config.emptyQuestion,
+                backAnswerEng: ''
+            });
+            isFlipped = false;
+            renderCardFlipControls();
+            renderFinalCardReviewControls();
+        }
+
+        function renderActiveEmptyCardState() {
+            const activeType = getActiveFinalCardCollectionType();
+            if (activeType) {
+                renderFinalCardCollectionEmpty(activeType);
+                return;
+            }
+            renderCompletionMetrics();
         }
 
         function showFinalCardReviewMessage(message, type = 'info') {
-            const el = $('finalCardReviewMessage');
-            if (!el) return;
             if (finalCardReviewMessageTimer) clearTimeout(finalCardReviewMessageTimer);
-            el.textContent = message || '';
             const classByType = {
                 success: 'border-emerald-200 bg-emerald-50 text-emerald-700',
                 error: 'border-rose-200 bg-rose-50 text-rose-700',
                 info: 'border-amber-200 bg-amber-50 text-amber-800'
             };
-            el.className = `text-center text-xs font-bold px-3 py-2 rounded-xl border ${classByType[type] || classByType.info}`;
-            setHidden(el, !message);
-            if (message) finalCardReviewMessageTimer = setTimeout(() => setHidden(el, true), 2200);
+            finalCardReviewMessageTimer = renderInlineMessage(
+                'finalCardReviewMessage',
+                message || '',
+                `text-center text-xs font-bold px-3 py-2 rounded-xl border ${classByType[type] || classByType.info}`,
+                { autoHideMs: message ? 2200 : 0 }
+            );
         }
 
         function renderFinalCardReviewControls() {
             const toolbar = $('finalCardReviewToolbar');
             if (!toolbar) return;
-            const isFinalCard = currentSubject === 'FINAL_CARD';
+            const isFinalCard = isFinalCardSubjectActive();
             setHidden(toolbar, !isFinalCard);
             if (!isFinalCard) return;
 
-            const storedReviewList = getStoredFinalCardReviewList();
-            const storedCompletedList = getStoredFinalCardCompletedList();
-            finalCardReviewEntries = storedReviewList;
-            finalCardCompletedEntries = storedCompletedList;
-            const reviewCount = storedReviewList.length;
-            const completedCount = storedCompletedList.length;
-            const isCollectionMode = isFinalCardReviewMode || isFinalCardCompletedMode;
+            const stored = syncFinalCardCollectionEntries();
+            const reviewCount = stored.review.length;
+            const completedCount = stored.completed.length;
+            const activeType = getActiveFinalCardCollectionType();
+            const isCollectionMode = Boolean(activeType);
 
             setText('finalCardReviewCount', reviewCount);
             setText('finalCardCompletedCount', completedCount);
             setHidden('finalCardReviewOpenBtn', isCollectionMode);
             setHidden('finalCardCompletedOpenBtn', isCollectionMode);
             setHidden('finalCardReviewBackBtn', !isCollectionMode);
-            setHidden('finalCardReviewClearBtn', !(isFinalCardReviewMode && reviewCount > 0));
-            setHidden('finalCardCompletedRestoreBtn', !(isFinalCardCompletedMode && filteredCards.length > 0));
-            setHidden('finalCardCompletedClearBtn', !(isFinalCardCompletedMode && completedCount > 0));
+            setHidden('finalCardReviewClearBtn', !(activeType === FINAL_CARD_COLLECTION_TYPE.REVIEW && reviewCount > 0));
+            setHidden('finalCardCompletedRestoreBtn', !(activeType === FINAL_CARD_COLLECTION_TYPE.COMPLETED && filteredCards.length > 0));
+            setHidden('finalCardCompletedClearBtn', !(activeType === FINAL_CARD_COLLECTION_TYPE.COMPLETED && completedCount > 0));
 
-            const summaryText = isFinalCardReviewMode
-                ? `다시 공부 목록 ${reviewCount}장의 카드 중 복습 중입니다.`
-                : isFinalCardCompletedMode
-                    ? `학습완료 목록 ${completedCount}장의 카드 중 확인 중입니다.`
-                    : `현재 대기열 총 ${filteredCards.length}장의 카드가 필터링되었습니다.`;
+            const summaryText = activeType
+                ? getFinalCardCollectionConfig(activeType).activeSummary(activeType === FINAL_CARD_COLLECTION_TYPE.REVIEW ? reviewCount : completedCount)
+                : `현재 대기열 총 ${filteredCards.length}장의 카드가 필터링되었습니다.`;
             setText('filterSummaryText', summaryText);
         }
 
-        function addFinalCardToReviewList(card) {
-            if (currentSubject !== 'FINAL_CARD' || !card) return false;
-            const payload = getFinalCardReviewPayload(card);
-            const stored = getStoredFinalCardReviewList();
+        function addFinalCardToCollection(type, card, options = {}) {
+            if (!isFinalCardSubjectActive() || !card) return false;
+            const config = getFinalCardCollectionConfig(type);
+            const payload = { ...getFinalCardReviewPayload(card), ...(options.extraPayload || {}) };
+            const stored = getStoredFinalCardCollectionList(type);
+            const showMessage = options.showMessage !== false;
 
             if (stored.some((item) => item.id === payload.id)) {
-                showFinalCardReviewMessage('이미 다시 공부 목록에 저장된 카드입니다.', 'info');
+                if (showMessage) showFinalCardReviewMessage(options.duplicateMessage || config.duplicateMessage, 'info');
                 renderFinalCardReviewControls();
                 return false;
             }
 
-            const saved = setStoredFinalCardReviewList([...stored, payload]);
+            const saved = setStoredFinalCardCollectionList(type, [...stored, payload]);
             renderFinalCardReviewControls();
-            showFinalCardReviewMessage(saved ? '다시 공부 목록에 저장되었습니다.' : '저장소 저장에 실패했지만 카드 기능은 계속 사용할 수 있습니다.', saved ? 'success' : 'error');
+            if (showMessage) {
+                showFinalCardReviewMessage(saved ? (options.successMessage || config.saveSuccess) : (options.errorMessage || config.saveError), saved ? 'success' : 'error');
+            }
             return saved;
+        }
+
+        function removeFinalCardFromCollection(type, card) {
+            const cardId = typeof card === 'string' ? card : getCardStableId(card);
+            const stored = getStoredFinalCardCollectionList(type);
+            const next = stored.filter((item) => item.id !== cardId);
+            if (next.length === stored.length) return false;
+            setStoredFinalCardCollectionList(type, next);
+            renderFinalCardReviewControls();
+            return true;
+        }
+
+        function addFinalCardToReviewList(card) {
+            return addFinalCardToCollection(FINAL_CARD_COLLECTION_TYPE.REVIEW, card);
         }
 
         function removeFinalCardFromReviewList(card) {
-            const cardId = typeof card === 'string' ? card : getCardStableId(card);
-            const stored = getStoredFinalCardReviewList();
-            const next = stored.filter((item) => item.id !== cardId);
-            if (next.length === stored.length) return false;
-            setStoredFinalCardReviewList(next);
-            renderFinalCardReviewControls();
-            return true;
+            return removeFinalCardFromCollection(FINAL_CARD_COLLECTION_TYPE.REVIEW, card);
         }
 
         function addFinalCardToCompletedList(card, showMessage = false) {
-            if (currentSubject !== 'FINAL_CARD' || !card) return false;
-            const payload = getFinalCardReviewPayload(card);
-            const stored = getStoredFinalCardCompletedList();
-
-            if (stored.some((item) => item.id === payload.id)) {
-                if (showMessage) showFinalCardReviewMessage('이미 학습완료 목록에 저장된 카드입니다.', 'info');
-                renderFinalCardReviewControls();
-                return false;
-            }
-
-            const saved = setStoredFinalCardCompletedList([...stored, { ...payload, completedAt: new Date().toISOString() }]);
-            renderFinalCardReviewControls();
-            if (showMessage) showFinalCardReviewMessage(saved ? '학습완료 목록에 저장되었습니다.' : '저장소 저장에 실패했지만 카드 기능은 계속 사용할 수 있습니다.', saved ? 'success' : 'error');
-            return saved;
+            return addFinalCardToCollection(FINAL_CARD_COLLECTION_TYPE.COMPLETED, card, {
+                showMessage,
+                extraPayload: { completedAt: new Date().toISOString() }
+            });
         }
 
         function removeFinalCardFromCompletedList(card) {
-            const cardId = typeof card === 'string' ? card : getCardStableId(card);
-            const stored = getStoredFinalCardCompletedList();
-            const next = stored.filter((item) => item.id !== cardId);
-            if (next.length === stored.length) return false;
-            setStoredFinalCardCompletedList(next);
-            renderFinalCardReviewControls();
-            return true;
-        }
-
-        function renderFinalCardReviewEmpty() {
-            setTextMap({
-                currentCardIndex: 0,
-                totalFilteredCards: 0,
-                frontCategory: '다시보기',
-                frontQuestion: '저장된 카드가 없습니다.',
-                backCategory: '다시보기',
-                backAnswerKo: '저장된 카드가 없습니다.',
-                backAnswerEng: ''
-            });
-            isFlipped = false;
-            renderCardFlipControls();
-            renderFinalCardReviewControls();
+            return removeFinalCardFromCollection(FINAL_CARD_COLLECTION_TYPE.COMPLETED, card);
         }
 
         function renderFinalCardCompletedEmpty() {
-            setTextMap({
-                currentCardIndex: 0,
-                totalFilteredCards: 0,
-                frontCategory: '학습완료',
-                frontQuestion: '학습완료된 카드가 없습니다.',
-                backCategory: '학습완료',
-                backAnswerKo: '학습완료된 카드가 없습니다.',
-                backAnswerEng: ''
-            });
-            isFlipped = false;
-            renderCardFlipControls();
+            renderFinalCardCollectionEmpty(FINAL_CARD_COLLECTION_TYPE.COMPLETED);
+        }
+
+        function openFinalCardCollection(type) {
+            if (!isFinalCardSubjectActive()) changeSubject('FINAL_CARD');
+
+            const config = getFinalCardCollectionConfig(type);
+            const collectionDeck = getFinalCardCollectionDeck(type);
+            if (collectionDeck.length === 0) {
+                showFinalCardReviewMessage(config.emptyMessage, 'info');
+                renderFinalCardReviewControls();
+                return;
+            }
+
+            rememberFinalCardReturnState(type);
+            setFinalCardCollectionMode(type);
+            setSubjectHeader({ title: config.modeTitle, subtitle: config.modeSubtitle });
+            currentSubFilter = FILTER_ALL;
+            filteredCards = getDisplayDeck(collectionDeck);
+            currentCardIndex = 0;
+            resetCardFlipState(true);
+            updateCardDisplay();
+            adjustSubView();
             renderFinalCardReviewControls();
+            triggerCardAnimation(0);
         }
 
         function openFinalCardReview() {
-            if (currentSubject !== 'FINAL_CARD') changeSubject('FINAL_CARD');
-
-            const reviewDeck = getFinalCardReviewDeck();
-            if (reviewDeck.length === 0) {
-                showFinalCardReviewMessage('저장된 카드가 없습니다.', 'info');
-                renderFinalCardReviewControls();
-                return;
-            }
-
-            finalCardReviewReturnState = {
-                index: currentCardIndex,
-                subFilter: currentSubFilter,
-                shuffled: isShuffled
-            };
-            isFinalCardReviewMode = true;
-            isFinalCardCompletedMode = false;
-            setSubjectHeader({ title: '최종 카드 암기 다시보기', subtitle: 'SAVED REVIEW CARDS' });
-            currentSubFilter = FILTER_ALL;
-            filteredCards = isShuffled ? reviewDeck.sort(() => Math.random() - 0.5) : reviewDeck;
-            currentCardIndex = 0;
-            resetCardFlipState(true);
-            updateCardDisplay();
-            adjustSubView();
-            renderFinalCardReviewControls();
-            triggerCardAnimation(0);
+            openFinalCardCollection(FINAL_CARD_COLLECTION_TYPE.REVIEW);
         }
 
         function openFinalCardCompleted() {
-            if (currentSubject !== 'FINAL_CARD') changeSubject('FINAL_CARD');
-
-            const completedDeck = getFinalCardCompletedDeck();
-            if (completedDeck.length === 0) {
-                showFinalCardReviewMessage('학습완료된 카드가 없습니다.', 'info');
-                renderFinalCardReviewControls();
-                return;
-            }
-
-            finalCardCompletedReturnState = {
-                index: currentCardIndex,
-                subFilter: currentSubFilter,
-                shuffled: isShuffled
-            };
-            isFinalCardReviewMode = false;
-            isFinalCardCompletedMode = true;
-            setSubjectHeader({ title: '최종 카드 암기 학습완료', subtitle: 'COMPLETED CARDS' });
-            currentSubFilter = FILTER_ALL;
-            filteredCards = isShuffled ? completedDeck.sort(() => Math.random() - 0.5) : completedDeck;
-            currentCardIndex = 0;
-            resetCardFlipState(true);
-            updateCardDisplay();
-            adjustSubView();
-            renderFinalCardReviewControls();
-            triggerCardAnimation(0);
+            openFinalCardCollection(FINAL_CARD_COLLECTION_TYPE.COMPLETED);
         }
 
         function returnToFinalCardFullDeck() {
-            if (currentSubject !== 'FINAL_CARD') return;
-            const returnState = isFinalCardCompletedMode ? finalCardCompletedReturnState : finalCardReviewReturnState;
+            if (!isFinalCardSubjectActive()) return;
+            const activeType = getActiveFinalCardCollectionType();
+            const returnState = getFinalCardReturnState(activeType || FINAL_CARD_COLLECTION_TYPE.REVIEW);
             const targetIndex = returnState.index || 0;
-            isFinalCardReviewMode = false;
-            isFinalCardCompletedMode = false;
+            setFinalCardCollectionMode(null);
             setSubjectHeader(getSubjectConfig('FINAL_CARD'));
             currentSubFilter = returnState.subFilter || FILTER_ALL;
+            isShuffled = returnState.shuffled || false;
             applyFilterAndReset(false);
             if (filteredCards.length > 0) {
                 currentCardIndex = Math.min(Math.max(targetIndex, 0), filteredCards.length - 1);
@@ -18042,54 +18246,46 @@ EEl
             triggerCardAnimation(0);
         }
 
-        function clearFinalCardReviewList() {
-            const currentCount = getStoredFinalCardReviewList().length;
+        function clearFinalCardCollection(type) {
+            const config = getFinalCardCollectionConfig(type);
+            const currentCount = getStoredFinalCardCollectionList(type).length;
             if (currentCount === 0) {
-                showFinalCardReviewMessage('저장된 카드가 없습니다.', 'info');
+                showFinalCardReviewMessage(config.emptyMessage, 'info');
                 return;
             }
-            if (!confirm('저장된 다시 공부 카드가 모두 삭제됩니다. 계속하시겠습니까?')) return;
-            setStoredFinalCardReviewList([]);
-            if (isFinalCardReviewMode) {
+            if (!confirm(config.clearConfirm)) return;
+            setStoredFinalCardCollectionList(type, []);
+            if (isFinalCardCollectionModeActive(type)) {
                 filteredCards = [];
                 currentCardIndex = 0;
-                renderFinalCardReviewEmpty();
+                renderFinalCardCollectionEmpty(type);
             }
             renderFinalCardReviewControls();
-            showFinalCardReviewMessage('다시 공부 목록을 비웠습니다.', 'success');
+            showFinalCardReviewMessage(config.clearSuccess, 'success');
+        }
+
+        function clearFinalCardReviewList() {
+            clearFinalCardCollection(FINAL_CARD_COLLECTION_TYPE.REVIEW);
         }
 
         function clearFinalCardCompletedList() {
-            const currentCount = getStoredFinalCardCompletedList().length;
-            if (currentCount === 0) {
-                showFinalCardReviewMessage('학습완료된 카드가 없습니다.', 'info');
-                return;
-            }
-            if (!confirm('학습완료 목록이 모두 삭제됩니다. 계속하시겠습니까?')) return;
-            setStoredFinalCardCompletedList([]);
-            if (isFinalCardCompletedMode) {
-                filteredCards = [];
-                currentCardIndex = 0;
-                renderFinalCardCompletedEmpty();
-            }
-            renderFinalCardReviewControls();
-            showFinalCardReviewMessage('학습완료 목록을 비웠습니다.', 'success');
+            clearFinalCardCollection(FINAL_CARD_COLLECTION_TYPE.COMPLETED);
         }
 
         function moveCurrentCompletedCardToReview() {
-            if (currentSubject !== 'FINAL_CARD' || !isFinalCardCompletedMode) return;
+            if (!isFinalCardSubjectActive() || !isFinalCardCollectionModeActive(FINAL_CARD_COLLECTION_TYPE.COMPLETED)) return;
             const current = filteredCards[currentCardIndex];
             if (!current) {
-                showFinalCardReviewMessage('학습완료된 카드가 없습니다.', 'info');
+                showFinalCardReviewMessage(getFinalCardCollectionConfig(FINAL_CARD_COLLECTION_TYPE.COMPLETED).emptyMessage, 'info');
                 renderFinalCardCompletedEmpty();
                 return;
             }
 
             const cardId = getCardStableId(current);
-            const reviewStored = getStoredFinalCardReviewList();
-            if (!reviewStored.some((item) => item.id === cardId)) {
-                setStoredFinalCardReviewList([...reviewStored, { ...getFinalCardReviewPayload(current), restoredAt: new Date().toISOString() }]);
-            }
+            addFinalCardToCollection(FINAL_CARD_COLLECTION_TYPE.REVIEW, current, {
+                showMessage: false,
+                extraPayload: { restoredAt: new Date().toISOString() }
+            });
             removeFinalCardFromCompletedList(cardId);
             masteryState[cardId] = 'again';
             saveProgress();
@@ -18111,8 +18307,7 @@ EEl
         }
 
         function loadFinalCardReviewList() {
-            finalCardReviewEntries = getStoredFinalCardReviewList();
-            finalCardCompletedEntries = getStoredFinalCardCompletedList();
+            syncFinalCardCollectionEntries();
         }
 
         function updateFinalCardReviewToolbar() {
@@ -18120,9 +18315,31 @@ EEl
         }
 
         function isFinalCardReviewModeActive() {
-            return currentSubject === 'FINAL_CARD' && (isFinalCardReviewMode || isFinalCardCompletedMode);
+            return isFinalCardCollectionModeActive();
         }
 
+
+
+        function isFinalCardKeyboardReady() {
+            return isFinalCardSubjectActive() && isCardSubject() && filteredCards.length > 0;
+        }
+
+        function runFinalCardKeyboardShortcut(key) {
+            if (!isFinalCardKeyboardReady()) return false;
+
+            if (key === 'q' || key === '.') {
+                if (isFinalCardCollectionModeActive(FINAL_CARD_COLLECTION_TYPE.COMPLETED)) moveCurrentCompletedCardToReview();
+                else handleEvaluation('again');
+                return true;
+            }
+
+            if (key === 'e' || key === '/') {
+                handleEvaluation('easy');
+                return true;
+            }
+
+            return false;
+        }
         function getStableCardId(card) {
             return getCardStableId(card);
         }
@@ -18144,7 +18361,7 @@ EEl
         }
 
         function setHidden(target, hidden) {
-            const el = typeof target === 'string' ? $(target) : target;
+            const el = resolveElement(target);
             if (el) el.classList.toggle(CLASS_HIDDEN, hidden);
         }
 
@@ -18161,7 +18378,8 @@ EEl
             Object.entries(textById).forEach(([id, value]) => setText(id, value));
         }
 
-        function replaceClasses(el, removeClasses, addClasses) {
+        function replaceClasses(target, removeClasses, addClasses) {
+            const el = resolveElement(target);
             if (!el) return;
             el.classList.remove(...removeClasses);
             el.classList.add(...addClasses);
@@ -18392,72 +18610,28 @@ function updateInterfaceBadge() {
                 showStartScreen();
             }
 
-            const mainEl = document.querySelector('main');
-            if (mainEl && typeof mainEl.scrollTo === 'function') {
-                mainEl.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            scrollPageToTop();
         }
 
         function openUpdateLog() {
-            const modal = document.getElementById('updateLogModal');
-            const closeBtn = document.getElementById('updateLogCloseBtn');
-            if (!modal) return;
-
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('update-log-open');
-
-            if (closeBtn) closeBtn.focus({ preventScroll: true });
+            const modal = setModalActive('updateLogModal', true);
+            const closeBtn = $('updateLogCloseBtn');
+            if (modal && closeBtn) closeBtn.focus({ preventScroll: true });
         }
 
         function closeUpdateLog() {
-            const modal = document.getElementById('updateLogModal');
-            if (!modal) return;
-
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('update-log-open');
-        }
-
-        function toggleUpdateLog() {
-            const modal = document.getElementById('updateLogModal');
-            if (!modal) return;
-
-            if (modal.classList.contains('active')) {
-                closeUpdateLog();
-            } else {
-                openUpdateLog();
-            }
+            setModalActive('updateLogModal', false);
         }
 
         function setupHomeAndUpdateLogFeatures() {
-            const homeTitleButton = document.getElementById('homeTitleButton');
-            const openButton = document.getElementById('updateLogOpenBtn');
-            const closeButton = document.getElementById('updateLogCloseBtn');
-            const modal = document.getElementById('updateLogModal');
-
-            if (homeTitleButton) {
-                homeTitleButton.addEventListener('click', goToHomeScreen);
-            }
-            if (openButton) {
-                openButton.addEventListener('click', openUpdateLog);
-            }
-            if (closeButton) {
-                closeButton.addEventListener('click', closeUpdateLog);
-            }
-            if (modal) {
-                modal.addEventListener('click', (event) => {
-                    if (event.target === modal) {
-                        closeUpdateLog();
-                    }
-                });
-            }
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') {
-                    closeUpdateLog();
-                }
+            bindEventOnce('homeTitleButton', 'click', 'homeNavigation', goToHomeScreen);
+            bindEventOnce('updateLogOpenBtn', 'click', 'updateLogOpen', openUpdateLog);
+            bindEventOnce('updateLogCloseBtn', 'click', 'updateLogClose', closeUpdateLog);
+            bindEventOnce('updateLogModal', 'click', 'updateLogBackdropClose', (event) => {
+                if (event.target === event.currentTarget) closeUpdateLog();
+            });
+            bindEventOnce(document, 'keydown', 'updateLogEscapeClose', (event) => {
+                if (event.key === 'Escape') closeUpdateLog();
             });
         }
 
@@ -19756,15 +19930,6 @@ function updateInterfaceBadge() {
                 .replace(/'/g, '&#39;');
         }
 
-        function getCodingAccentClasses(langKey, selected) {
-            const map = {
-                PYTHON: selected ? 'border-sky-300 bg-sky-50 text-sky-900' : 'border-slate-200 bg-white text-slate-700 hover:border-sky-200 hover:bg-sky-50/50',
-                JAVA: selected ? 'border-orange-300 bg-orange-50 text-orange-900' : 'border-slate-200 bg-white text-slate-700 hover:border-orange-200 hover:bg-orange-50/50',
-                C: selected ? 'border-rose-300 bg-rose-50 text-rose-900' : 'border-slate-200 bg-white text-slate-700 hover:border-rose-200 hover:bg-rose-50/50'
-            };
-            return map[langKey] || map.PYTHON;
-        }
-
         function getCodingBadgeClass(langKey) {
             const map = {
                 PYTHON: 'bg-sky-100 text-sky-800',
@@ -20103,10 +20268,6 @@ function updateInterfaceBadge() {
                 .trim();
         }
 
-        function normalizeAIAnswerForCompare(value) {
-            return normalizeAIAnswer(value);
-        }
-
         function getAIQuestionScreen(setId) {
             return document.querySelector(`.ai-question-set[data-ai-set="${setId}"]`);
         }
@@ -20120,13 +20281,6 @@ function updateInterfaceBadge() {
             const scope = home || document;
             scope.querySelectorAll('.ai-question-set[data-ai-set]').forEach((screen) => {
                 screen.classList.add('hidden');
-            });
-        }
-
-        function clearAIRoundActive() {
-            document.querySelectorAll('[data-ai-round]').forEach((button) => {
-                button.classList.remove('active');
-                button.removeAttribute('aria-current');
             });
         }
 
@@ -20284,7 +20438,7 @@ function updateInterfaceBadge() {
 
         // [수정] ai예상문제 난이도/회차 선택 및 1회~5회 전용 스크립트 끝
 
-        window.addEventListener('DOMContentLoaded', () => {
+        function initializeApp() {
             initMasteryState();
             loadFinalCardReviewList();
             updateFinalCardReviewToolbar();
@@ -20296,42 +20450,22 @@ function updateInterfaceBadge() {
             // [추가] AI 예상문제 기본 1번 문제 활성화
             initAIQuestionSets();
             showStartScreen();
+            setupDirectoryNavigationEvents();
             setupHomeAndUpdateLogFeatures();
             setupSoundToggle();
             setupKeyboardShortcuts();
 
             // [수정] 목차 섹션은 최초 실행 시 모두 접힘 상태(▶)로 통일
-            categoryGroups.conceptGroup = false;
-            categoryGroups.cardGroup = false;
-            categoryGroups.codingGroup = false;
-            adjustAccordionHeight('conceptGroup', false);
-            adjustAccordionHeight('cardGroup', false);
-            adjustAccordionHeight('codingGroup', false);
-            ['conceptArrow', 'cardArrow', 'codingArrow'].forEach((arrowId) => {
-                const arrow = $(arrowId);
-                if (arrow) arrow.style.transform = 'rotate(-90deg)';
-            });
-        });
+            collapseAllCategoryGroups();
+        }
+
+        bindEventIfExists(window, 'DOMContentLoaded', initializeApp);
 
         function initMasteryState() {
-            let saved = null;
-
-            try {
-                saved = localStorage.getItem(STORAGE_KEY);
-            } catch (e) {
-                saved = null;
-            }
-
-            if (saved) {
-                try {
-                    const parsedState = JSON.parse(saved);
-                    masteryState = parsedState && typeof parsedState === 'object' && !Array.isArray(parsedState)
-                        ? parsedState
-                        : {};
-                } catch (e) {
-                    masteryState = {};
-                }
-            }
+            const parsedState = readJsonFromStorage(STORAGE_KEY, {});
+            masteryState = parsedState && typeof parsedState === 'object' && !Array.isArray(parsedState)
+                ? parsedState
+                : {};
 
             Object.values(DECK_BY_SUBJECT).forEach((deck) => {
                 deck.forEach((card) => {
@@ -20340,53 +20474,31 @@ function updateInterfaceBadge() {
                 });
             });
 
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(masteryState));
-            } catch (e) {}
+            writeJsonToStorage(STORAGE_KEY, masteryState);
         }
 
         function saveProgress() {
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(masteryState));
-            } catch (e) {}
-
+            writeJsonToStorage(STORAGE_KEY, masteryState);
             updateMetricsBoard();
             updateFinalCardReviewToolbar();
         }
 
         function toggleCategoryGroup(groupId, arrowId) {
-            categoryGroups[groupId] = !categoryGroups[groupId];
-
-            const arrow = $(arrowId);
-            if (arrow) {
-                arrow.style.transform = categoryGroups[groupId] ? 'rotate(0deg)' : 'rotate(-90deg)';
-            }
-
-            adjustAccordionHeight(groupId, categoryGroups[groupId]);
-            sfx.playFlip();
+            setCategoryExpanded(groupId, arrowId, !categoryGroups[groupId], { playSound: true });
         }
 
         function adjustAccordionHeight(groupId, expand) {
-            const el = $(groupId);
-            if (!el) return;
-
-            Object.assign(el.style, expand ? ACCORDION_EXPANDED_STYLE : ACCORDION_COLLAPSED_STYLE);
+            applyStyles(groupId, expand ? ACCORDION_EXPANDED_STYLE : ACCORDION_COLLAPSED_STYLE);
         }
 
+        function setSidebarOpenState(open) {
+            isSidebarOpen = open;
+            replaceClasses('sidebar', open ? SIDEBAR_HIDDEN_CLASSES : SIDEBAR_VISIBLE_CLASSES, open ? SIDEBAR_VISIBLE_CLASSES : SIDEBAR_HIDDEN_CLASSES);
+            setHidden('openSidebarBtn', open);
+        }
 
         function toggleSidebar() {
-            isSidebarOpen = !isSidebarOpen;
-
-            const sidebar = $('sidebar');
-            const openSidebarBtn = $('openSidebarBtn');
-
-            if (isSidebarOpen) {
-                replaceClasses(sidebar, ['md:w-0', 'w-0', 'h-0', 'opacity-0', 'p-0', 'pointer-events-none'], ['md:w-72', 'w-full']);
-                setHidden(openSidebarBtn, true);
-            } else {
-                replaceClasses(sidebar, ['md:w-72', 'w-full'], ['md:w-0', 'w-0', 'h-0', 'opacity-0', 'p-0', 'pointer-events-none']);
-                setHidden(openSidebarBtn, false);
-            }
+            setSidebarOpenState(!isSidebarOpen);
         }
 
         function setDetailToggle(detailsId, arrowId, activeClasses, inactiveClasses, expanded) {
@@ -21005,10 +21117,7 @@ function updateInterfaceBadge() {
             triggerCardAnimation(0);
         }
 
-        function toggleShuffle() {
-            if (isFinalCardReviewModeActive()) return;
-            isShuffled = !isShuffled;
-
+        function syncShuffleControlState() {
             const statusEl = $('shuffleStatus');
             const btnEl = $('shuffleBtn');
 
@@ -21020,10 +21129,39 @@ function updateInterfaceBadge() {
             if (btnEl) {
                 btnEl.classList.toggle('border-indigo-200', isShuffled);
                 btnEl.classList.toggle('bg-indigo-50/40', isShuffled);
+                btnEl.setAttribute('aria-pressed', isShuffled ? 'true' : 'false');
+            }
+        }
+
+        function setShuffleState(nextState, options = {}) {
+            if (isFinalCardReviewModeActive()) return false;
+
+            isShuffled = Boolean(nextState);
+            syncShuffleControlState();
+
+            if (options.refresh !== false) {
+                applyFilterAndReset(options.syncLayout !== false);
+                triggerCardAnimation(0);
             }
 
+            return true;
+        }
+
+        function toggleShuffle() {
+            setShuffleState(!isShuffled);
+        }
+
+        function enableShuffleFromShortcut() {
+            if (!isCardSubject() || isFinalCardReviewModeActive()) return false;
+
+            if (!isShuffled) {
+                return setShuffleState(true);
+            }
+
+            syncShuffleControlState();
             applyFilterAndReset();
             triggerCardAnimation(0);
+            return true;
         }
 
         function sortCardsById(deck) {
@@ -21042,13 +21180,9 @@ function updateInterfaceBadge() {
 
 
         function getFilteredDeck() {
-            if (currentSubject === 'FINAL_CARD' && isFinalCardReviewMode) {
-                const reviewDeck = getFinalCardReviewDeck();
-                return isShuffled ? reviewDeck.sort(() => Math.random() - 0.5) : reviewDeck;
-            }
-            if (currentSubject === 'FINAL_CARD' && isFinalCardCompletedMode) {
-                const completedDeck = getFinalCardCompletedDeck();
-                return isShuffled ? completedDeck.sort(() => Math.random() - 0.5) : completedDeck;
+            const activeFinalCardCollectionType = getActiveFinalCardCollectionType();
+            if (activeFinalCardCollectionType) {
+                return getDisplayDeck(getFinalCardCollectionDeck(activeFinalCardCollectionType));
             }
 
             const sourceDeck = currentSubFilter === FILTER_ALL
@@ -21057,7 +21191,7 @@ function updateInterfaceBadge() {
             const notMasteredDeck = sourceDeck.filter((item) => masteryState[getCardStableId(item)] !== 'master');
             const activeDeck = notMasteredDeck.length > 0 ? notMasteredDeck : sourceDeck;
 
-            return isShuffled ? activeDeck.sort(() => Math.random() - 0.5) : sortCardsById(activeDeck);
+            return getDisplayDeck(activeDeck, { sortById: true });
         }
 
 
@@ -21090,6 +21224,7 @@ function updateInterfaceBadge() {
         function applyFilterAndReset(syncLayout = true) {
     if (!isCardSubject()) return;
 
+    syncShuffleControlState();
     filteredCards = getFilteredDeck();
     currentCardIndex = 0;
     resetCardFlipState(true);
@@ -21097,13 +21232,7 @@ function updateInterfaceBadge() {
     setText('filterSummaryText', `현재 대기열 총 ${filteredCards.length}장의 카드가 필터링되었습니다.`);
 
     if (filteredCards.length === 0) {
-        if (currentSubject === 'FINAL_CARD' && isFinalCardReviewMode) {
-            renderFinalCardReviewEmpty();
-        } else if (currentSubject === 'FINAL_CARD' && isFinalCardCompletedMode) {
-            renderFinalCardCompletedEmpty();
-        } else {
-            renderCompletionMetrics();
-        }
+        renderActiveEmptyCardState();
     } else {
         updateCardDisplay();
     }
@@ -21119,23 +21248,14 @@ function updateInterfaceBadge() {
         function updateCardDisplay() {
             if (!isCardSubject()) return;
             if (filteredCards.length === 0) {
-                if (currentSubject === 'FINAL_CARD' && isFinalCardReviewMode) renderFinalCardReviewEmpty();
-                else if (currentSubject === 'FINAL_CARD' && isFinalCardCompletedMode) renderFinalCardCompletedEmpty();
+                renderActiveEmptyCardState();
                 return;
             }
 
             const current = filteredCards[currentCardIndex];
             if (!current) return;
 
-            setTextMap({
-                currentCardIndex: currentCardIndex + 1,
-                totalFilteredCards: filteredCards.length,
-                frontCategory: current.category || '구분',
-                frontQuestion: current.q || '',
-                backCategory: current.category || '정답',
-                backAnswerKo: current.a || '',
-                backAnswerEng: current.aEng || ''
-            });
+            renderLearningCardContent(current);
             renderFinalCardReviewControls();
         }
 
@@ -21222,14 +21342,10 @@ function updateInterfaceBadge() {
 
             setTimeout(() => {
                 if (filteredCards.length === 0) {
-                    if (currentSubject === 'FINAL_CARD' && isFinalCardReviewMode) {
-                        renderFinalCardReviewEmpty();
-                        showFinalCardReviewMessage('저장된 카드가 없습니다.', 'info');
-                    } else if (currentSubject === 'FINAL_CARD' && isFinalCardCompletedMode) {
-                        renderFinalCardCompletedEmpty();
-                        showFinalCardReviewMessage('학습완료된 카드가 없습니다.', 'info');
-                    } else {
-                        renderCompletionMetrics();
+                    const activeFinalCardCollectionType = getActiveFinalCardCollectionType();
+                    renderActiveEmptyCardState();
+                    if (activeFinalCardCollectionType) {
+                        showFinalCardReviewMessage(getFinalCardCollectionConfig(activeFinalCardCollectionType).emptyMessage, 'info');
                     }
                 } else {
                     updateCardDisplay();
@@ -21309,14 +21425,13 @@ function updateInterfaceBadge() {
         }
 
         function setupSoundToggle() {
-            const toggle = $('soundToggle');
             const onIcon = $('soundOnIcon');
             const offIcon = $('soundOffIcon');
-            if (!toggle || !onIcon || !offIcon) return;
+            if (!$('soundToggle') || !onIcon || !offIcon) return;
 
             syncSoundToggleIcons(onIcon, offIcon);
 
-            toggle.addEventListener('click', () => {
+            bindEventOnce('soundToggle', 'click', 'soundToggle', () => {
                 sfx.enabled = !sfx.enabled;
                 syncSoundToggleIcons(onIcon, offIcon);
             });
@@ -21324,27 +21439,14 @@ function updateInterfaceBadge() {
 
 
         function setupKeyboardShortcuts() {
-            window.addEventListener('keydown', (e) => {
-                const activeElement = document.activeElement;
-                if (activeElement && (['INPUT', 'TEXTAREA', 'SELECT'].includes(activeElement.tagName) || activeElement.isContentEditable)) return;
+            bindEventOnce(window, 'keydown', 'cardKeyboardShortcuts', (e) => {
+                if (isEditableTarget(document.activeElement)) return;
 
                 const key = e.key.toLowerCase();
                 const code = e.code;
-                const isFinalCard = currentSubject === 'FINAL_CARD' && isCardSubject() && filteredCards.length > 0;
 
-                if (isFinalCard && (key === 'q' || key === '.')) {
+                if (runFinalCardKeyboardShortcut(key)) {
                     e.preventDefault();
-                    if (isFinalCardCompletedMode) {
-                        moveCurrentCompletedCardToReview();
-                    } else {
-                        handleEvaluation('again');
-                    }
-                    return;
-                }
-
-                if (isFinalCard && (key === 'e' || key === '/')) {
-                    e.preventDefault();
-                    handleEvaluation('easy');
                     return;
                 }
 
@@ -21359,10 +21461,9 @@ function updateInterfaceBadge() {
                     navigateCard(1);
                 } else if (code === 'ArrowUp' || key === 'w') {
                     e.preventDefault();
-                    if (!isCardSubject()) return;
-                    applyFilterAndReset();
-                    sfx.playFlip();
-                    triggerCardAnimation(0);
+                    if (enableShuffleFromShortcut()) {
+                        sfx.playFlip();
+                    }
                 }
             });
         }
@@ -23682,45 +23783,134 @@ function updateInterfaceBadge() {
             finalQuizQuestionMap = finalQuizQuestions.reduce((acc, item) => { acc[item.id] = item; return acc; }, {});
         }
 
+        // [3차 리팩토링] 최종 암기 문제 공통 상태/저장소 관리 함수
+        const FINAL_QUIZ_MODE = {
+            ALL: 'all',
+            WRONG: 'wrong',
+            CORRECT: 'correct'
+        };
+
+        const FINAL_QUIZ_MODE_LABEL = {
+            all: '전체 문제',
+            wrong: '오답 다시 풀기',
+            correct: '정답 문제 다시보기'
+        };
+
+        function getFinalQuizAllQuestionIds() {
+            return finalQuizQuestions.map((item) => item.id);
+        }
+
+        function isFinalQuizValidQuestionId(id) {
+            return Boolean(id && finalQuizQuestionMap[id]);
+        }
+
+        function filterValidFinalQuizIds(ids, fallback = []) {
+            const source = Array.isArray(ids) ? ids : fallback;
+            const seen = new Set();
+            return source
+                .filter((id) => isFinalQuizValidQuestionId(id))
+                .filter((id) => {
+                    if (seen.has(id)) return false;
+                    seen.add(id);
+                    return true;
+                });
+        }
+
+        function clampFinalQuizIndex(index, length) {
+            const parsed = Number.parseInt(index, 10);
+            const safeIndex = Number.isFinite(parsed) ? parsed : 0;
+            return Math.min(Math.max(safeIndex, 0), Math.max(length - 1, 0));
+        }
+
+        function createFinalQuizState(overrides = {}) {
+            const allIds = getFinalQuizAllQuestionIds();
+            const order = filterValidFinalQuizIds(overrides.order, allIds);
+            const normalizedOrder = order.length ? order : allIds;
+            const activeIds = filterValidFinalQuizIds(overrides.activeIds, normalizedOrder);
+            const normalizedActiveIds = activeIds.length ? activeIds : normalizedOrder;
+            return {
+                mode: Object.values(FINAL_QUIZ_MODE).includes(overrides.mode) ? overrides.mode : FINAL_QUIZ_MODE.ALL,
+                order: normalizedOrder,
+                activeIds: normalizedActiveIds,
+                index: clampFinalQuizIndex(overrides.index, normalizedActiveIds.length),
+                answers: sanitizeFinalQuizRecordMap(overrides.answers, ''),
+                checked: sanitizeFinalQuizRecordMap(overrides.checked, false),
+                results: sanitizeFinalQuizRecordMap(overrides.results, false),
+                manualCorrect: sanitizeFinalQuizRecordMap(overrides.manualCorrect, false)
+            };
+        }
+
         function defaultFinalQuizState() {
-            const order = finalQuizQuestions.map((item) => item.id);
-            return { mode: 'all', order, activeIds: [...order], index: 0, answers: {}, checked: {}, results: {}, manualCorrect: {} };
+            return createFinalQuizState();
+        }
+
+        function sanitizeFinalQuizRecordMap(record, defaultValue) {
+            if (!record || typeof record !== 'object' || Array.isArray(record)) return {};
+            return Object.entries(record).reduce((acc, [id, value]) => {
+                if (!isFinalQuizValidQuestionId(id)) return acc;
+                if (typeof defaultValue === 'boolean') acc[id] = value === true;
+                else acc[id] = String(value ?? '');
+                return acc;
+            }, {});
+        }
+
+        function readFinalQuizStorage(key, fallback) {
+            return readJsonFromStorage(key, fallback);
+        }
+
+        function writeFinalQuizStorage(key, value) {
+            writeJsonToStorage(key, value);
         }
 
         function loadFinalQuizState() {
-            try {
-                const parsed = JSON.parse(localStorage.getItem(FINAL_QUIZ_STORAGE_KEY) || 'null');
-                const validIds = new Set(finalQuizQuestions.map((item) => item.id));
-                if (!parsed || !Array.isArray(parsed.order)) return defaultFinalQuizState();
-                const order = parsed.order.filter((id) => validIds.has(id));
-                const missing = finalQuizQuestions.map((item) => item.id).filter((id) => !order.includes(id));
-                const mergedOrder = [...order, ...missing];
-                const activeIds = (parsed.activeIds || mergedOrder).filter((id) => validIds.has(id));
-                return {
-                    mode: ['wrong', 'correct'].includes(parsed.mode) ? parsed.mode : 'all',
-                    order: mergedOrder,
-                    activeIds: activeIds.length ? activeIds : mergedOrder,
-                    index: Math.min(Math.max(parseInt(parsed.index || 0, 10), 0), Math.max((activeIds.length || mergedOrder.length) - 1, 0)),
-                    answers: parsed.answers || {},
-                    checked: parsed.checked || {},
-                    results: parsed.results || {},
-                    manualCorrect: parsed.manualCorrect || {}
-                };
-            } catch (error) {
-                return defaultFinalQuizState();
-            }
+            const parsed = readFinalQuizStorage(FINAL_QUIZ_STORAGE_KEY, null);
+            if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return defaultFinalQuizState();
+            const allIds = getFinalQuizAllQuestionIds();
+            const storedOrder = filterValidFinalQuizIds(parsed.order, []);
+            const missingIds = allIds.filter((id) => !storedOrder.includes(id));
+            const mergedOrder = [...storedOrder, ...missingIds];
+            return createFinalQuizState({
+                ...parsed,
+                order: mergedOrder,
+                activeIds: filterValidFinalQuizIds(parsed.activeIds, mergedOrder)
+            });
         }
 
         function saveFinalQuizState() {
-            try { localStorage.setItem(FINAL_QUIZ_STORAGE_KEY, JSON.stringify(finalQuizState)); } catch (error) {}
+            writeFinalQuizStorage(FINAL_QUIZ_STORAGE_KEY, finalQuizState);
+        }
+
+        function normalizeFinalQuizSavedQuestion(item) {
+            if (!item || typeof item !== 'object' || !isFinalQuizValidQuestionId(item.id)) return null;
+            const question = finalQuizQuestionMap[item.id] || {};
+            return {
+                id: item.id,
+                question: String(item.question || question.question || ''),
+                answer: String(item.answer || question.answer || question.answers?.[0] || ''),
+                answers: Array.isArray(item.answers) ? item.answers : (question.answers || []),
+                explanation: String(item.explanation || question.explanation || ''),
+                source: String(item.source || question.source || ''),
+                topic: String(item.topic || question.topic || ''),
+                savedAt: item.savedAt || new Date().toISOString()
+            };
         }
 
         function getFinalQuizSavedQuestions() {
-            try { return JSON.parse(localStorage.getItem(FINAL_QUIZ_SAVED_KEY) || '[]'); } catch (error) { return []; }
+            const parsed = readFinalQuizStorage(FINAL_QUIZ_SAVED_KEY, []);
+            if (!Array.isArray(parsed)) return [];
+            const seen = new Set();
+            return parsed
+                .map(normalizeFinalQuizSavedQuestion)
+                .filter(Boolean)
+                .filter((item) => {
+                    if (seen.has(item.id)) return false;
+                    seen.add(item.id);
+                    return true;
+                });
         }
 
         function setFinalQuizSavedQuestions(items) {
-            try { localStorage.setItem(FINAL_QUIZ_SAVED_KEY, JSON.stringify(items)); } catch (error) {}
+            writeFinalQuizStorage(FINAL_QUIZ_SAVED_KEY, Array.isArray(items) ? items : []);
         }
 
         function getCurrentFinalQuizQuestion() {
@@ -23728,66 +23918,131 @@ function updateInterfaceBadge() {
             return finalQuizQuestionMap[id];
         }
 
-        function showFinalQuizMessage(message, type = 'info') {
-            const el = $('finalQuizMessage');
-            if (!el) return;
-            if (!message) { setHidden(el, true); return; }
-            el.textContent = message;
-            el.className = `rounded-2xl border text-xs font-bold px-4 py-3 ${type === 'error' ? 'border-rose-200 bg-rose-50 text-rose-700' : 'border-amber-200 bg-amber-50 text-amber-800'}`;
-            setHidden(el, false);
+        function getFinalQuizModeLabel(mode = finalQuizState.mode) {
+            return FINAL_QUIZ_MODE_LABEL[mode] || FINAL_QUIZ_MODE_LABEL.all;
         }
 
-        function renderFinalQuizStats() {
-            const checkedIds = Object.keys(finalQuizState.checked || {}).filter((id) => finalQuizState.checked[id]);
+        function getFinalQuizResultIds(resultValue) {
+            return Object.keys(finalQuizState.results || {}).filter((id) => finalQuizState.results[id] === resultValue && isFinalQuizValidQuestionId(id));
+        }
+
+        function persistCurrentFinalQuizInput() {
+            const question = getCurrentFinalQuizQuestion();
+            const input = $('finalQuizAnswerInput');
+            if (question && input && !finalQuizState.checked[question.id]) finalQuizState.answers[question.id] = input.value;
+        }
+
+        function refreshFinalQuizActiveIdsForCurrentMode() {
+            if (finalQuizState.mode === FINAL_QUIZ_MODE.WRONG) {
+                finalQuizState.activeIds = finalQuizState.activeIds.filter((id) => finalQuizState.results[id] === false && isFinalQuizValidQuestionId(id));
+            } else if (finalQuizState.mode === FINAL_QUIZ_MODE.CORRECT) {
+                finalQuizState.activeIds = finalQuizState.activeIds.filter((id) => finalQuizState.results[id] === true && isFinalQuizValidQuestionId(id));
+            } else {
+                finalQuizState.activeIds = filterValidFinalQuizIds(finalQuizState.order, getFinalQuizAllQuestionIds());
+            }
+            finalQuizState.index = clampFinalQuizIndex(finalQuizState.index, finalQuizState.activeIds.length);
+        }
+
+        function setFinalQuizMode(mode, ids = null) {
+            finalQuizState.mode = Object.values(FINAL_QUIZ_MODE).includes(mode) ? mode : FINAL_QUIZ_MODE.ALL;
+            finalQuizState.activeIds = ids ? filterValidFinalQuizIds(ids, []) : [...finalQuizState.order];
+            if (!finalQuizState.activeIds.length && finalQuizState.mode === FINAL_QUIZ_MODE.ALL) finalQuizState.activeIds = [...finalQuizState.order];
+            finalQuizState.index = 0;
+        }
+
+        function showFinalQuizMessage(message, type = 'info') {
+            renderInlineMessage(
+                'finalQuizMessage',
+                message,
+                `rounded-2xl border text-xs font-bold px-4 py-3 ${type === 'error' ? 'border-rose-200 bg-rose-50 text-rose-700' : 'border-amber-200 bg-amber-50 text-amber-800'}`
+            );
+        }
+
+        function getFinalQuizStats() {
+            const checkedIds = Object.keys(finalQuizState.checked || {}).filter((id) => finalQuizState.checked[id] && isFinalQuizValidQuestionId(id));
             const solved = checkedIds.length;
             const correct = checkedIds.filter((id) => finalQuizState.results[id] === true).length;
             const wrong = checkedIds.filter((id) => finalQuizState.results[id] === false).length;
-            const acc = solved ? Math.round((correct / solved) * 100) : 0;
+            return {
+                solved,
+                correct,
+                wrong,
+                accuracy: solved ? Math.round((correct / solved) * 100) : 0
+            };
+        }
+
+        function renderFinalQuizStats() {
+            const stats = getFinalQuizStats();
             setTextMap({
-                finalQuizSolvedCount: solved,
-                finalQuizCorrectCount: correct,
-                finalQuizWrongCount: wrong,
-                finalQuizAccuracy: `${acc}%`
+                finalQuizSolvedCount: stats.solved,
+                finalQuizCorrectCount: stats.correct,
+                finalQuizWrongCount: stats.wrong,
+                finalQuizAccuracy: `${stats.accuracy}%`
             });
         }
 
-        function renderFinalQuizQuestion() {
-            const total = finalQuizState.activeIds.length;
-            const question = getCurrentFinalQuizQuestion();
+        function syncFinalQuizHeaderState() {
             const badge = $('badge-FINAL_QUESTIONS');
             if (badge) badge.textContent = finalQuizQuestions.length;
             renderFinalQuizStats();
-            setHidden('finalQuizAllModeBtn', finalQuizState.mode === 'all');
-            const modeLabelMap = { all: '전체 문제', wrong: '오답 다시 풀기', correct: '정답 문제 다시보기' };
-            setText('finalQuizModeBadge', modeLabelMap[finalQuizState.mode] || '전체 문제');
-            setHidden('finalQuizQuestionView', false);
-            setHidden('finalQuizSavedView', true);
-            finalQuizStorageView = false;
+            setHidden('finalQuizAllModeBtn', finalQuizState.mode === FINAL_QUIZ_MODE.ALL);
+            setText('finalQuizModeBadge', getFinalQuizModeLabel());
+        }
+
+        function setFinalQuizStorageView(active) {
+            finalQuizStorageView = active;
+            setHidden('finalQuizQuestionView', active);
+            setHidden('finalQuizSavedView', !active);
             const storageBtn = $('finalQuizStorageToggleBtn');
-            if (storageBtn) storageBtn.textContent = '질문 저장소';
-            if (!question) {
-                setText('finalQuizProgressText', `0 / ${total}`);
-                setText('finalQuizQuestionText', finalQuizState.mode === 'wrong' ? '오답 문제가 없습니다.' : (finalQuizState.mode === 'correct' ? '정답 처리된 문제가 없습니다.' : '문제가 없습니다.'));
-                setHidden('finalQuizResultBox', true);
-                return;
-            }
-            setText('finalQuizProgressText', `${finalQuizState.index + 1} / ${total}`);
-            setText('finalQuizSourceBadge', question.source || '출처');
-            setText('finalQuizTopicBadge', question.topic || '주제');
-            setText('finalQuizQuestionText', question.question);
+            if (storageBtn) storageBtn.textContent = active ? '질문으로 돌아가기' : '질문 저장소';
+        }
+
+        function renderFinalQuizEmptyQuestion(total) {
+            setText('finalQuizProgressText', `0 / ${total}`);
+            setText('finalQuizQuestionText', finalQuizState.mode === FINAL_QUIZ_MODE.WRONG ? '오답 문제가 없습니다.' : (finalQuizState.mode === FINAL_QUIZ_MODE.CORRECT ? '정답 처리된 문제가 없습니다.' : '문제가 없습니다.'));
+            setHidden('finalQuizResultBox', true);
+        }
+
+        function renderFinalQuizInputState(question) {
             const input = $('finalQuizAnswerInput');
-            const isReviewMode = finalQuizState.mode === 'correct';
+            const isReviewMode = finalQuizState.mode === FINAL_QUIZ_MODE.CORRECT;
             if (input) {
                 input.value = finalQuizState.answers[question.id] || '';
                 input.disabled = isReviewMode;
                 input.classList.toggle('bg-slate-100', isReviewMode);
             }
             setHidden('finalQuizCheckBtn', isReviewMode);
-            const isChecked = finalQuizState.checked[question.id];
+        }
+
+        function renderFinalQuizQuestionMeta(question, total) {
+            setText('finalQuizProgressText', `${finalQuizState.index + 1} / ${total}`);
+            setText('finalQuizSourceBadge', question.source || '출처');
+            setText('finalQuizTopicBadge', question.topic || '주제');
+            setText('finalQuizQuestionText', question.question);
+        }
+
+        function renderFinalQuizActionState(question) {
+            const isReviewMode = finalQuizState.mode === FINAL_QUIZ_MODE.CORRECT;
+            const isChecked = !!finalQuizState.checked[question.id];
             setHidden('finalQuizResultBox', !isChecked);
             setHidden('finalQuizSaveBtn', !isChecked || isReviewMode);
             setHidden('finalQuizSkipBtn', !isChecked || isReviewMode);
             if (isChecked) renderFinalQuizResult(question);
+        }
+
+        function renderFinalQuizQuestion() {
+            const total = finalQuizState.activeIds.length;
+            const question = getCurrentFinalQuizQuestion();
+            syncFinalQuizHeaderState();
+            setFinalQuizStorageView(false);
+            if (!question) {
+                renderFinalQuizEmptyQuestion(total);
+                saveFinalQuizState();
+                return;
+            }
+            renderFinalQuizQuestionMeta(question, total);
+            renderFinalQuizInputState(question);
+            renderFinalQuizActionState(question);
             saveFinalQuizState();
         }
 
@@ -23810,18 +24065,26 @@ function updateInterfaceBadge() {
             setText('finalQuizExplanation', question.explanation || '핵심 개념을 다시 확인해 주세요.');
         }
 
-        function checkFinalQuizAnswer() {
-            const question = getCurrentFinalQuizQuestion();
-            if (!question || finalQuizState.mode === 'correct') return;
-            const input = $('finalQuizAnswerInput');
-            const userAnswer = input ? input.value : '';
+        function isFinalQuizAnswerCorrect(question, userAnswer) {
             const normalizedInput = finalNormalizeAnswer(userAnswer);
-            const isCorrect = question.answers.some((answer) => finalNormalizeAnswer(answer) === normalizedInput);
+            return (question.answers || []).some((answer) => finalNormalizeAnswer(answer) === normalizedInput);
+        }
+
+        function applyFinalQuizAnswerResult(question, userAnswer, isCorrect) {
             finalQuizState.answers[question.id] = userAnswer;
             finalQuizState.checked[question.id] = true;
             finalQuizState.results[question.id] = isCorrect;
             if (!finalQuizState.manualCorrect) finalQuizState.manualCorrect = {};
             delete finalQuizState.manualCorrect[question.id];
+        }
+
+        function checkFinalQuizAnswer() {
+            const question = getCurrentFinalQuizQuestion();
+            if (!question || finalQuizState.mode === FINAL_QUIZ_MODE.CORRECT) return;
+            const input = $('finalQuizAnswerInput');
+            const userAnswer = input ? input.value : '';
+            const isCorrect = isFinalQuizAnswerCorrect(question, userAnswer);
+            applyFinalQuizAnswerResult(question, userAnswer, isCorrect);
             saveFinalQuizState();
             renderFinalQuizQuestion();
             showFinalQuizMessage(isCorrect ? '정답 처리되었습니다.' : '오답 처리되었습니다. 정답과 해설을 확인해 주세요.', isCorrect ? 'info' : 'error');
@@ -23833,10 +24096,7 @@ function updateInterfaceBadge() {
             if (!finalQuizState.manualCorrect) finalQuizState.manualCorrect = {};
             finalQuizState.results[question.id] = true;
             finalQuizState.manualCorrect[question.id] = true;
-            if (finalQuizState.mode === 'wrong') {
-                finalQuizState.activeIds = finalQuizState.activeIds.filter((id) => id !== question.id);
-                if (finalQuizState.index >= finalQuizState.activeIds.length) finalQuizState.index = Math.max(finalQuizState.activeIds.length - 1, 0);
-            }
+            refreshFinalQuizActiveIdsForCurrentMode();
             saveFinalQuizState();
             renderFinalQuizQuestion();
             showFinalQuizMessage('정답 처리되었습니다. 오답 목록에서 제거되었습니다.');
@@ -23848,37 +24108,33 @@ function updateInterfaceBadge() {
             delete finalQuizState.manualCorrect[question.id];
             finalQuizState.checked[question.id] = true;
             finalQuizState.results[question.id] = false;
-            if (finalQuizState.mode === 'correct') {
-                finalQuizState.activeIds = finalQuizState.activeIds.filter((id) => id !== question.id);
-                if (finalQuizState.index >= finalQuizState.activeIds.length) finalQuizState.index = Math.max(finalQuizState.activeIds.length - 1, 0);
-            }
+            refreshFinalQuizActiveIdsForCurrentMode();
             saveFinalQuizState();
             renderFinalQuizQuestion();
             showFinalQuizMessage('수동 정답처리를 취소했습니다. 오답 목록에 다시 포함됩니다.', 'error');
         }
 
         function moveFinalQuizQuestion(direction) {
-            const current = getCurrentFinalQuizQuestion();
-            const input = $('finalQuizAnswerInput');
-            if (current && input && !finalQuizState.checked[current.id]) finalQuizState.answers[current.id] = input.value;
-            if (finalQuizState.mode === 'wrong') {
-                const filtered = finalQuizState.activeIds.filter((id) => finalQuizState.results[id] === false);
-                if (filtered.length !== finalQuizState.activeIds.length) {
-                    finalQuizState.activeIds = filtered;
-                    if (finalQuizState.index >= finalQuizState.activeIds.length) finalQuizState.index = Math.max(finalQuizState.activeIds.length - 1, 0);
-                }
-            } else if (finalQuizState.mode === 'correct') {
-                const filtered = finalQuizState.activeIds.filter((id) => finalQuizState.results[id] === true);
-                if (filtered.length !== finalQuizState.activeIds.length) {
-                    finalQuizState.activeIds = filtered;
-                    if (finalQuizState.index >= finalQuizState.activeIds.length) finalQuizState.index = Math.max(finalQuizState.activeIds.length - 1, 0);
-                }
-            }
+            persistCurrentFinalQuizInput();
+            refreshFinalQuizActiveIdsForCurrentMode();
             if (direction < 0 && finalQuizState.index <= 0) { showFinalQuizMessage('더 이상 이전 문제가 없습니다.'); return; }
             if (direction > 0 && finalQuizState.index >= finalQuizState.activeIds.length - 1) { showFinalQuizMessage('더 이상 다음 문제가 없습니다.'); return; }
             finalQuizState.index += direction;
             showFinalQuizMessage('');
             renderFinalQuizQuestion();
+        }
+
+        function getFinalQuizSavedPayload(question) {
+            return {
+                id: question.id,
+                question: question.question,
+                answer: question.answer || question.answers[0],
+                answers: question.answers,
+                explanation: question.explanation,
+                source: question.source,
+                topic: question.topic,
+                savedAt: new Date().toISOString()
+            };
         }
 
         function saveCurrentFinalQuizQuestion() {
@@ -23889,23 +24145,14 @@ function updateInterfaceBadge() {
                 showFinalQuizMessage('이미 저장된 질문입니다.');
                 return;
             }
-            saved.unshift({
-                id: question.id,
-                question: question.question,
-                answer: question.answer || question.answers[0],
-                answers: question.answers,
-                explanation: question.explanation,
-                source: question.source,
-                topic: question.topic,
-                savedAt: new Date().toISOString()
-            });
+            saved.unshift(getFinalQuizSavedPayload(question));
             setFinalQuizSavedQuestions(saved);
             showFinalQuizMessage('질문 저장소에 저장했습니다.');
         }
 
         function resetFinalQuizRecords(keepOrder = true) {
-            const order = keepOrder ? finalQuizState.order : finalQuizQuestions.map((item) => item.id);
-            finalQuizState = { mode: 'all', order, activeIds: [...order], index: 0, answers: {}, checked: {}, results: {}, manualCorrect: {} };
+            const order = keepOrder ? finalQuizState.order : getFinalQuizAllQuestionIds();
+            finalQuizState = createFinalQuizState({ mode: FINAL_QUIZ_MODE.ALL, order, activeIds: [...order] });
             saveFinalQuizState();
             renderFinalQuizQuestion();
         }
@@ -23913,8 +24160,8 @@ function updateInterfaceBadge() {
         function shuffleFinalQuizQuestions() {
             const hasProgress = Object.keys(finalQuizState.checked || {}).length > 0 || Object.values(finalQuizState.answers || {}).some(Boolean);
             if (hasProgress && !confirm('문제를 섞으면 현재 풀이 진행 상태가 초기화됩니다. 계속하시겠습니까?')) return;
-            const order = finalQuizQuestions.map((item) => item.id).sort(() => Math.random() - 0.5);
-            finalQuizState = { mode: 'all', order, activeIds: [...order], index: 0, answers: {}, checked: {}, results: {}, manualCorrect: {} };
+            const order = getFinalQuizAllQuestionIds().sort(() => Math.random() - 0.5);
+            finalQuizState = createFinalQuizState({ mode: FINAL_QUIZ_MODE.ALL, order, activeIds: [...order] });
             saveFinalQuizState();
             showFinalQuizMessage('문제 순서를 섞었습니다.');
             renderFinalQuizQuestion();
@@ -23927,52 +24174,38 @@ function updateInterfaceBadge() {
         }
 
         function startWrongFinalQuizMode() {
-            const wrongIds = Object.keys(finalQuizState.results || {}).filter((id) => finalQuizState.results[id] === false && finalQuizQuestionMap[id]);
+            const wrongIds = getFinalQuizResultIds(false);
             if (!wrongIds.length) { showFinalQuizMessage('오답 문제가 없습니다.'); return; }
-            finalQuizState.mode = 'wrong';
-            finalQuizState.activeIds = wrongIds;
-            finalQuizState.index = 0;
+            setFinalQuizMode(FINAL_QUIZ_MODE.WRONG, wrongIds);
             saveFinalQuizState();
             showFinalQuizMessage('오답 다시 풀기 모드입니다.');
             renderFinalQuizQuestion();
         }
 
         function startCorrectFinalQuizMode() {
-            const correctIds = Object.keys(finalQuizState.results || {}).filter((id) => finalQuizState.results[id] === true && finalQuizQuestionMap[id]);
+            const correctIds = getFinalQuizResultIds(true);
             if (!correctIds.length) { showFinalQuizMessage('정답 처리된 문제가 없습니다.'); return; }
-            finalQuizState.mode = 'correct';
-            finalQuizState.activeIds = correctIds;
-            finalQuizState.index = 0;
+            setFinalQuizMode(FINAL_QUIZ_MODE.CORRECT, correctIds);
             saveFinalQuizState();
             showFinalQuizMessage('정답 문제 다시보기 모드입니다. 수동 정답처리 문제는 취소할 수 있습니다.');
             renderFinalQuizQuestion();
         }
 
         function returnFinalQuizAllMode() {
-            finalQuizState.mode = 'all';
-            finalQuizState.activeIds = [...finalQuizState.order];
-            finalQuizState.index = 0;
+            setFinalQuizMode(FINAL_QUIZ_MODE.ALL, [...finalQuizState.order]);
             saveFinalQuizState();
             showFinalQuizMessage('전체 문제 모드로 돌아왔습니다.');
             renderFinalQuizQuestion();
         }
 
         function showFinalQuizQuestionView() {
-            finalQuizStorageView = false;
-            setHidden('finalQuizQuestionView', false);
-            setHidden('finalQuizSavedView', true);
-            const btn = $('finalQuizStorageToggleBtn');
-            if (btn) btn.textContent = '질문 저장소';
+            setFinalQuizStorageView(false);
             renderFinalQuizQuestion();
         }
 
         function toggleFinalQuizStorageView() {
             if (finalQuizStorageView) { showFinalQuizQuestionView(); return; }
-            finalQuizStorageView = true;
-            setHidden('finalQuizQuestionView', true);
-            setHidden('finalQuizSavedView', false);
-            const btn = $('finalQuizStorageToggleBtn');
-            if (btn) btn.textContent = '질문으로 돌아가기';
+            setFinalQuizStorageView(true);
             renderFinalQuizSavedList();
         }
 
@@ -24026,26 +24259,24 @@ function updateInterfaceBadge() {
             buildFinalQuizQuestions();
             finalQuizState = loadFinalQuizState();
             finalQuizInitialized = true;
-            const input = $('finalQuizAnswerInput');
-            if (input && !input.dataset.boundFinalQuizEnter) {
-                input.dataset.boundFinalQuizEnter = 'true';
-                input.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter') { event.preventDefault(); checkFinalQuizAnswer(); }
-                });
-            }
-            if (!window.__finalQuizArrowBound) {
-                window.__finalQuizArrowBound = true;
-                document.addEventListener('keydown', (event) => {
-                    if (currentSubject !== 'FINAL_QUESTIONS' || finalQuizStorageView) return;
-                    const target = event.target;
-                    const isTyping = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable);
-                    if (isTyping) return;
-                    if (event.key === 'ArrowLeft') { event.preventDefault(); moveFinalQuizQuestion(-1); }
-                    if (event.key === 'ArrowRight') { event.preventDefault(); moveFinalQuizQuestion(1); }
-                });
-            }
+
+            bindEventOnce('finalQuizAnswerInput', 'keydown', 'finalQuizEnter', (event) => {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    checkFinalQuizAnswer();
+                }
+            });
+
+            bindEventOnce(document, 'keydown', 'finalQuizArrowNavigation', (event) => {
+                if (currentSubject !== 'FINAL_QUESTIONS' || finalQuizStorageView) return;
+                if (isEditableTarget(event.target)) return;
+                if (event.key === 'ArrowLeft') { event.preventDefault(); moveFinalQuizQuestion(-1); }
+                if (event.key === 'ArrowRight') { event.preventDefault(); moveFinalQuizQuestion(1); }
+            });
+
             renderFinalQuizQuestion();
         }
+
 
     </script>
 </body>
