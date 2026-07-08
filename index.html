@@ -1817,7 +1817,7 @@
 <span class="text-sm">🔒</span>
 <span class="text-left">정보보안</span>
 </div>
-<span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-INFO_SECURITY_BASIC">12</span>
+<span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-INFO_SECURITY_BASIC">14</span>
 </button>
 <!-- Item: UI -->
 <button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-UI" data-subject-key="UI">
@@ -1841,7 +1841,7 @@
 <span class="text-sm">🛡️</span>
 <span class="text-left">침해 공격 유형</span>
 </div>
-<span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-ATTACK">40</span>
+<span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-ATTACK">38</span>
 </button>
 <!-- Item: Protocol -->
 <button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-PROTOCOL" data-subject-key="PROTOCOL">
@@ -1849,7 +1849,7 @@
 <span class="text-sm">📬</span>
 <span class="text-left">프로토콜</span>
 </div>
-<span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-PROTOCOL">25</span>
+<span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded" id="badge-PROTOCOL">24</span>
 </button>
 <!-- Item: Cryptography -->
 <button class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="dir-ALGO" data-subject-key="ALGO">
@@ -1938,7 +1938,7 @@
 <span class="text-base">🏆</span>
 <span>최종 카드 암기</span>
 </div>
-<span class="bg-indigo-100 text-indigo-700 text-[10px] px-1.5 py-0.5 rounded-md font-mono" id="badge-FINAL_CARD">253</span>
+<span class="bg-indigo-100 text-indigo-700 text-[10px] px-1.5 py-0.5 rounded-md font-mono" id="badge-FINAL_CARD">252</span>
 </button>
 <button class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl transition-all text-slate-600 hover:bg-slate-100" id="dir-FINAL_QUESTIONS" data-subject-key="FINAL_QUESTIONS">
 <div class="flex items-center gap-2">
@@ -14749,6 +14749,8 @@ EEl
 <div class="update-log-body">
 <ul class="update-log-list">
 
+<li><strong>2026-07-08 11:51:31</strong> - 카드 위치 변경 및 프로토콜 카드 정리</li>
+
 <li><strong>2026-07-08 00:00:00</strong> - 최종 카드 암기 무작위순서 표시 및 단축키 상태 연동 수정</li>
 <li><strong>2026-07-07 23:59:50</strong> - 코드 리팩토링</li>
 <li><strong>2026-07-07 21:45:00</strong> - 최종 카드 암기 학습완료 목록 및 단축키 기능 추가</li>
@@ -15284,235 +15286,226 @@ EEl
             }
 ];
 
-        // Protocol Dataset (21 Items)
+        // Protocol Dataset (24 Items)
                 // Protocol Dataset
-        const protocolDeck = [
+                const protocolDeck = [
             {
-                        "id": "p_1",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "IP",
-                        "q": "논리 주소를 이용해 패킷을 목적지까지 전달하는 비연결·비신뢰성 프로토콜은?",
-                        "a": "IP",
-                        "aEng": "Internet Protocol"
+                "id": "p_1",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "IP",
+                "q": "논리 주소를 이용해 패킷을 목적지까지 전달하는 비연결·비신뢰성 프로토콜은?",
+                "a": "IP",
+                "aEng": "Internet Protocol"
             },
             {
-                        "id": "p_2",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "ARP",
-                        "q": "IP 주소를 MAC 주소로 변환하는 주소 결정 프로토콜은?",
-                        "a": "ARP",
-                        "aEng": "Address Resolution Protocol"
+                "id": "p_2",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "ARP",
+                "q": "IP 주소를 MAC 주소로 변환하는 주소 결정 프로토콜은?",
+                "a": "ARP",
+                "aEng": "Address Resolution Protocol"
             },
             {
-                        "id": "p_3",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "RARP",
-                        "q": "MAC 주소를 이용해 IP 주소를 알아내는 ARP의 역방향 프로토콜은?",
-                        "a": "RARP",
-                        "aEng": "Reverse Address Resolution Protocol"
+                "id": "p_3",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "RARP",
+                "q": "MAC 주소를 이용해 IP 주소를 알아내는 ARP의 역방향 프로토콜은?",
+                "a": "RARP",
+                "aEng": "Reverse Address Resolution Protocol"
             },
             {
-                        "id": "p_4",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "ICMP",
-                        "q": "IP 전송 오류 보고와 네트워크 상태 진단 메시지를 전달하는 프로토콜은?",
-                        "a": "ICMP",
-                        "aEng": "Internet Control Message Protocol"
+                "id": "p_4",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "ICMP",
+                "q": "IP 전송 오류 보고와 네트워크 상태 진단 메시지를 전달하는 프로토콜은?",
+                "a": "ICMP",
+                "aEng": "Internet Control Message Protocol"
             },
             {
-                        "id": "p_5",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "IGMP",
-                        "q": "멀티캐스트 그룹 가입과 탈퇴를 관리하는 인터넷 그룹 관리 프로토콜은?",
-                        "a": "IGMP",
-                        "aEng": "Internet Group Management Protocol"
+                "id": "p_5",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "IGMP",
+                "q": "멀티캐스트 그룹 가입과 탈퇴를 관리하는 인터넷 그룹 관리 프로토콜은?",
+                "a": "IGMP",
+                "aEng": "Internet Group Management Protocol"
             },
             {
-                        "id": "p_6",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "라우팅",
-                        "q": "패킷이 목적지까지 갈 최적 경로를 선택·교환하기 위한 프로토콜의 총칭은?",
-                        "a": "라우팅 프로토콜",
-                        "aEng": "Routing Protocol"
+                "id": "p_6",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "라우팅",
+                "q": "패킷이 목적지까지 갈 최적 경로를 선택·교환하기 위한 프로토콜의 총칭은?",
+                "a": "라우팅 프로토콜",
+                "aEng": "Routing Protocol"
             },
             {
-                        "id": "p_7",
-                        "category": "네트워크 계층",
-                        "categoryEng": "Network Layer",
-                        "clue": "NAT",
-                        "q": "사설 IP 주소와 공인 IP 주소를 변환해 내부 네트워크가 외부와 통신하게 하는 기술은?",
-                        "a": "NAT",
-                        "aEng": "Network Address Translation"
+                "id": "p_7",
+                "category": "네트워크 계층",
+                "categoryEng": "Network Layer",
+                "clue": "NAT",
+                "q": "사설 IP 주소와 공인 IP 주소를 변환해 내부 네트워크가 외부와 통신하게 하는 기술은?",
+                "a": "NAT",
+                "aEng": "Network Address Translation"
             },
             {
-                        "id": "p_8",
-                        "category": "응용 계층",
-                        "categoryEng": "Application Layer",
-                        "clue": "SSH",
-                        "q": "원격 접속 시 인증과 전송 내용을 암호화하는 보안 프로토콜은?",
-                        "a": "SSH",
-                        "aEng": "Secure Shell"
+                "id": "p_8",
+                "category": "응용 계층",
+                "categoryEng": "Application Layer",
+                "clue": "SSH",
+                "q": "원격 접속 시 인증과 전송 내용을 암호화하는 보안 프로토콜은?",
+                "a": "SSH",
+                "aEng": "Secure Shell"
             },
             {
-                        "id": "p_9",
-                        "category": "응용 계층",
-                        "categoryEng": "Application Layer",
-                        "clue": "Telnet",
-                        "q": "원격 호스트 접속을 제공하지만 암호화가 없어 보안에 취약한 프로토콜은?",
-                        "a": "Telnet",
-                        "aEng": "Teletype Network"
+                "id": "p_9",
+                "category": "응용 계층",
+                "categoryEng": "Application Layer",
+                "clue": "Telnet",
+                "q": "원격 호스트 접속을 제공하지만 암호화가 없어 보안에 취약한 프로토콜은?",
+                "a": "Telnet",
+                "aEng": "Teletype Network"
             },
             {
-                        "id": "p_10",
-                        "category": "응용 계층",
-                        "categoryEng": "Application Layer",
-                        "clue": "HTTP",
-                        "q": "웹에서 하이퍼텍스트 문서를 주고받는 응용 계층 프로토콜은?",
-                        "a": "HTTP",
-                        "aEng": "HyperText Transfer Protocol"
+                "id": "p_10",
+                "category": "응용 계층",
+                "categoryEng": "Application Layer",
+                "clue": "HTTP",
+                "q": "웹에서 하이퍼텍스트 문서를 주고받는 응용 계층 프로토콜은?",
+                "a": "HTTP",
+                "aEng": "HyperText Transfer Protocol"
             },
             {
-                        "id": "p_11",
-                        "category": "응용 계층",
-                        "categoryEng": "Application Layer",
-                        "clue": "HTTPS",
-                        "q": "HTTP에 SSL/TLS 보안을 적용해 암호화 통신을 제공하는 프로토콜은?",
-                        "a": "HTTPS",
-                        "aEng": "HTTP Secure"
+                "id": "p_11",
+                "category": "응용 계층",
+                "categoryEng": "Application Layer",
+                "clue": "HTTPS",
+                "q": "HTTP에 SSL/TLS 보안을 적용해 암호화 통신을 제공하는 프로토콜은?",
+                "a": "HTTPS",
+                "aEng": "HTTP Secure"
             },
             {
-                        "id": "p_12",
-                        "category": "응용 계층",
-                        "categoryEng": "Application Layer",
-                        "clue": "FTP",
-                        "q": "서버와 클라이언트 사이에서 파일을 송수신하는 프로토콜은?",
-                        "a": "FTP",
-                        "aEng": "File Transfer Protocol"
+                "id": "p_12",
+                "category": "응용 계층",
+                "categoryEng": "Application Layer",
+                "clue": "FTP",
+                "q": "서버와 클라이언트 사이에서 파일을 송수신하는 프로토콜은?",
+                "a": "FTP",
+                "aEng": "File Transfer Protocol"
             },
             {
-                        "id": "p_13",
-                        "category": "응용 계층",
-                        "categoryEng": "Application Layer",
-                        "clue": "SMTP",
-                        "q": "전자우편 송신과 메일 서버 간 전달을 담당하는 프로토콜은?",
-                        "a": "SMTP",
-                        "aEng": "Simple Mail Transfer Protocol"
+                "id": "p_13",
+                "category": "응용 계층",
+                "categoryEng": "Application Layer",
+                "clue": "SMTP",
+                "q": "전자우편 송신과 메일 서버 간 전달을 담당하는 프로토콜은?",
+                "a": "SMTP",
+                "aEng": "Simple Mail Transfer Protocol"
             },
             {
-                        "id": "p_14",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "HDLC",
-                        "q": "비트 중심의 대표적인 데이터링크 계층 전송 제어 프로토콜은?",
-                        "a": "HDLC",
-                        "aEng": "High-level Data Link Control"
+                "id": "p_14",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "HDLC",
+                "q": "비트 중심의 대표적인 데이터링크 계층 전송 제어 프로토콜은?",
+                "a": "HDLC",
+                "aEng": "High-level Data Link Control"
             },
             {
-                        "id": "p_15",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "PPP",
-                        "q": "두 지점 간 링크에서 인증, 압축, 오류 검출 등을 지원하는 데이터링크 프로토콜은?",
-                        "a": "PPP",
-                        "aEng": "Point-to-Point Protocol"
+                "id": "p_15",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "PPP",
+                "q": "두 지점 간 링크에서 인증, 압축, 오류 검출 등을 지원하는 데이터링크 프로토콜은?",
+                "a": "PPP",
+                "aEng": "Point-to-Point Protocol"
             },
             {
-                        "id": "p_16",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "ATM",
-                        "q": "셀 단위로 데이터를 전송하며 음성·영상·데이터 통합 전송에 쓰이는 교환 방식은?",
-                        "a": "ATM",
-                        "aEng": "Asynchronous Transfer Mode"
+                "id": "p_16",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "ATM",
+                "q": "셀 단위로 데이터를 전송하며 음성·영상·데이터 통합 전송에 쓰이는 교환 방식은?",
+                "a": "ATM",
+                "aEng": "Asynchronous Transfer Mode"
             },
             {
-                        "id": "p_17",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "FEC",
-                        "q": "수신자가 오류를 직접 정정할 수 있도록 여분의 정보를 함께 보내는 오류 제어 방식은?",
-                        "a": "FEC (순방향 오류 수정)",
-                        "aEng": "Forward Error Correction"
+                "id": "p_17",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "FEC",
+                "q": "수신자가 오류를 직접 정정할 수 있도록 여분의 정보를 함께 보내는 오류 제어 방식은?",
+                "a": "FEC (순방향 오류 수정)",
+                "aEng": "Forward Error Correction"
             },
             {
-                        "id": "p_18",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "BEC",
-                        "q": "오류가 발견되면 송신자에게 재전송을 요구해 오류를 처리하는 방식은?",
-                        "a": "BEC (역방향 오류 수정)",
-                        "aEng": "Backward Error Correction"
+                "id": "p_18",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "BEC",
+                "q": "오류가 발견되면 송신자에게 재전송을 요구해 오류를 처리하는 방식은?",
+                "a": "BEC (역방향 오류 수정)",
+                "aEng": "Backward Error Correction"
             },
             {
-                        "id": "p_19",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "패리티",
-                        "q": "데이터에 1비트 검사 비트를 추가해 오류 여부를 확인하는 기본 오류 검출 방식은?",
-                        "a": "패리티 검사",
-                        "aEng": "Parity Check"
+                "id": "p_19",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "패리티",
+                "q": "데이터에 1비트 검사 비트를 추가해 오류 여부를 확인하는 기본 오류 검출 방식은?",
+                "a": "패리티 검사",
+                "aEng": "Parity Check"
             },
             {
-                        "id": "p_20",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "CRC",
-                        "q": "다항식 계산으로 생성한 검사값을 붙여 오류를 검출하는 방식은?",
-                        "a": "CRC (순환 중복 검사)",
-                        "aEng": "Cyclic Redundancy Check"
+                "id": "p_20",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "CRC",
+                "q": "다항식 계산으로 생성한 검사값을 붙여 오류를 검출하는 방식은?",
+                "a": "CRC (순환 중복 검사)",
+                "aEng": "Cyclic Redundancy Check"
             },
             {
-                        "id": "p_21",
-                        "category": "데이터링크 계층",
-                        "categoryEng": "Data Link Layer",
-                        "clue": "해밍",
-                        "q": "오류 검출뿐 아니라 1비트 오류 정정까지 가능한 코드 방식은?",
-                        "a": "해밍 코드",
-                        "aEng": "Hamming Code"
+                "id": "p_21",
+                "category": "데이터링크 계층",
+                "categoryEng": "Data Link Layer",
+                "clue": "해밍",
+                "q": "오류 검출뿐 아니라 1비트 오류 정정까지 가능한 코드 방식은?",
+                "a": "해밍 코드",
+                "aEng": "Hamming Code"
             },
             {
-                        "id": "p_22",
-                        "category": "프로토콜 개념",
-                        "categoryEng": "Protocol Concept",
-                        "clue": "정의",
-                        "q": "컴퓨터나 네트워크 장비가 서로 통신하기 위해 정한 표준화된 통신 규약은?",
-                        "a": "프로토콜 정의",
-                        "aEng": "Standardized Communication Rule"
+                "id": "p_24",
+                "category": "프로토콜 기본 요소",
+                "categoryEng": "Syntax",
+                "clue": "구문",
+                "q": "데이터 형식, 부호화 방식, 신호 레벨처럼 통신 데이터의 구조와 형식을 정하는 요소는?",
+                "a": "구문",
+                "aEng": "Syntax"
             },
             {
-                        "id": "p_24",
-                        "category": "프로토콜 기본 요소",
-                        "categoryEng": "Syntax",
-                        "clue": "구문",
-                        "q": "데이터 형식, 부호화 방식, 신호 레벨처럼 통신 데이터의 구조와 형식을 정하는 요소는?",
-                        "a": "구문",
-                        "aEng": "Syntax"
+                "id": "p_25",
+                "category": "프로토콜 기본 요소",
+                "categoryEng": "Semantics",
+                "clue": "의미",
+                "q": "전송 제어, 오류 제어, 동작 해석처럼 통신 데이터가 갖는 뜻과 제어 정보를 정하는 요소는?",
+                "a": "의미",
+                "aEng": "Semantics"
             },
             {
-                        "id": "p_25",
-                        "category": "프로토콜 기본 요소",
-                        "categoryEng": "Semantics",
-                        "clue": "의미",
-                        "q": "전송 제어, 오류 제어, 동작 해석처럼 통신 데이터가 갖는 뜻과 제어 정보를 정하는 요소는?",
-                        "a": "의미",
-                        "aEng": "Semantics"
-            },
-            {
-                        "id": "p_26",
-                        "category": "프로토콜 기본 요소",
-                        "categoryEng": "Timing",
-                        "clue": "타이밍",
-                        "q": "통신 속도, 전송 순서, 송수신 시점처럼 데이터 교환의 시간 관계를 정하는 요소는?",
-                        "a": "타이밍",
-                        "aEng": "Timing"
+                "id": "p_26",
+                "category": "프로토콜 기본 요소",
+                "categoryEng": "Timing",
+                "clue": "타이밍",
+                "q": "통신 속도, 전송 순서, 송수신 시점처럼 데이터 교환의 시간 관계를 정하는 요소는?",
+                "a": "타이밍",
+                "aEng": "Timing"
             }
-];
+        ];
 
         // Symmetric & Asymmetric Cryptographic Algorithms Dataset (10 Items)
         const algoDeck = [
@@ -15617,369 +15610,351 @@ EEl
             }
 ];
 
-        // Cyber Attack Dataset (32 Items)
-        const attackDeck = [
+        // Cyber Attack Dataset (38 Items)
+                const attackDeck = [
             {
-                        "id": "c_1",
-                        "category": "네트워크 공격",
-                        "categoryEng": "Network Attack",
-                        "clue": "세션",
-                        "q": "인증된 통신 세션을 가로채 공격자가 정상 사용자처럼 접속하는 공격은?",
-                        "a": "세션 하이재킹",
-                        "aEng": "Session Hijacking"
+                "id": "c_1",
+                "category": "네트워크 공격",
+                "categoryEng": "Network Attack",
+                "clue": "세션",
+                "q": "인증된 통신 세션을 가로채 공격자가 정상 사용자처럼 접속하는 공격은?",
+                "a": "세션 하이재킹",
+                "aEng": "Session Hijacking"
             },
             {
-                        "id": "c_2",
-                        "category": "네트워크 공격",
-                        "categoryEng": "Network Attack",
-                        "clue": "ARP",
-                        "q": "ARP 캐시를 위조해 공격자 MAC 주소로 트래픽을 유도하는 공격은?",
-                        "a": "ARP 스푸핑",
-                        "aEng": "ARP Spoofing"
+                "id": "c_2",
+                "category": "네트워크 공격",
+                "categoryEng": "Network Attack",
+                "clue": "ARP",
+                "q": "ARP 캐시를 위조해 공격자 MAC 주소로 트래픽을 유도하는 공격은?",
+                "a": "ARP 스푸핑",
+                "aEng": "ARP Spoofing"
             },
             {
-                        "id": "c_3",
-                        "category": "사회 공학",
-                        "categoryEng": "Social Engineering",
-                        "clue": "스미",
-                        "q": "문자 메시지로 악성 링크나 앱 설치를 유도해 정보를 탈취하는 공격은?",
-                        "a": "스미싱",
-                        "aEng": "Smishing"
+                "id": "c_3",
+                "category": "사회 공학",
+                "categoryEng": "Social Engineering",
+                "clue": "스미",
+                "q": "문자 메시지로 악성 링크나 앱 설치를 유도해 정보를 탈취하는 공격은?",
+                "a": "스미싱",
+                "aEng": "Smishing"
             },
             {
-                        "id": "c_4",
-                        "category": "사회 공학",
-                        "categoryEng": "Social Engineering",
-                        "clue": "사회",
-                        "q": "사람의 심리와 신뢰를 악용해 보안 절차를 우회하는 비기술적 공격 기법은?",
-                        "a": "사회 공학",
-                        "aEng": "Social Engineering"
+                "id": "c_4",
+                "category": "사회 공학",
+                "categoryEng": "Social Engineering",
+                "clue": "사회",
+                "q": "사람의 심리와 신뢰를 악용해 보안 절차를 우회하는 비기술적 공격 기법은?",
+                "a": "사회 공학",
+                "aEng": "Social Engineering"
             },
             {
-                        "id": "c_5",
-                        "category": "보안 관리",
-                        "categoryEng": "Security Management",
-                        "clue": "다크",
-                        "q": "수집되었지만 분석·활용되지 않고 저장만 되어 보안 위험이 될 수 있는 데이터는?",
-                        "a": "다크 데이터",
-                        "aEng": "Dark Data"
+                "id": "c_5",
+                "category": "보안 관리",
+                "categoryEng": "Security Management",
+                "clue": "다크",
+                "q": "수집되었지만 분석·활용되지 않고 저장만 되어 보안 위험이 될 수 있는 데이터는?",
+                "a": "다크 데이터",
+                "aEng": "Dark Data"
             },
             {
-                        "id": "c_6",
-                        "category": "웹 공격",
-                        "categoryEng": "Web Attack",
-                        "clue": "타이포",
-                        "q": "정상 도메인과 비슷한 오타 도메인을 등록해 사용자의 접속을 유도하는 공격은?",
-                        "a": "타이포스쿼팅",
-                        "aEng": "Typosquatting"
+                "id": "c_6",
+                "category": "웹 공격",
+                "categoryEng": "Web Attack",
+                "clue": "타이포",
+                "q": "정상 도메인과 비슷한 오타 도메인을 등록해 사용자의 접속을 유도하는 공격은?",
+                "a": "타이포스쿼팅",
+                "aEng": "Typosquatting"
             },
             {
-                        "id": "c_7",
-                        "category": "사회 공학",
-                        "categoryEng": "Social Engineering",
-                        "clue": "스피어",
-                        "q": "특정 개인이나 조직을 겨냥해 맞춤형 메일·메시지로 속이는 피싱 공격은?",
-                        "a": "스피어 피싱",
-                        "aEng": "Spear Phishing"
+                "id": "c_7",
+                "category": "사회 공학",
+                "categoryEng": "Social Engineering",
+                "clue": "스피어",
+                "q": "특정 개인이나 조직을 겨냥해 맞춤형 메일·메시지로 속이는 피싱 공격은?",
+                "a": "스피어 피싱",
+                "aEng": "Spear Phishing"
             },
             {
-                        "id": "c_8",
-                        "category": "지능형 위협",
-                        "categoryEng": "Advanced Threat",
-                        "clue": "APT",
-                        "q": "특정 조직을 장기간 표적으로 삼아 은밀하고 지속적으로 침투하는 공격은?",
-                        "a": "APT",
-                        "aEng": "Advanced Persistent Threat"
+                "id": "c_8",
+                "category": "지능형 위협",
+                "categoryEng": "Advanced Threat",
+                "clue": "APT",
+                "q": "특정 조직을 장기간 표적으로 삼아 은밀하고 지속적으로 침투하는 공격은?",
+                "a": "APT",
+                "aEng": "Advanced Persistent Threat"
             },
             {
-                        "id": "c_9",
-                        "category": "시스템 공격",
-                        "categoryEng": "System Attack",
-                        "clue": "무작위",
-                        "q": "가능한 모든 비밀번호 조합을 시도해 인증을 우회하는 공격은?",
-                        "a": "무작위 대입 공격",
-                        "aEng": "Brute Force Attack"
+                "id": "c_9",
+                "category": "시스템 공격",
+                "categoryEng": "System Attack",
+                "clue": "무작위",
+                "q": "가능한 모든 비밀번호 조합을 시도해 인증을 우회하는 공격은?",
+                "a": "무작위 대입 공격",
+                "aEng": "Brute Force Attack"
             },
             {
-                        "id": "c_10",
-                        "category": "사회 공학",
-                        "categoryEng": "Social Engineering",
-                        "clue": "큐싱",
-                        "q": "QR코드를 악용해 악성 사이트 접속이나 앱 설치를 유도하는 공격은?",
-                        "a": "큐싱",
-                        "aEng": "Qshing"
+                "id": "c_10",
+                "category": "사회 공학",
+                "categoryEng": "Social Engineering",
+                "clue": "큐싱",
+                "q": "QR코드를 악용해 악성 사이트 접속이나 앱 설치를 유도하는 공격은?",
+                "a": "큐싱",
+                "aEng": "Qshing"
             },
             {
-                        "id": "c_11",
-                        "category": "웹 공격",
-                        "categoryEng": "Web Attack",
-                        "clue": "SQL",
-                        "q": "입력값에 SQL 구문을 삽입해 DB를 비정상 조회·수정하게 하는 공격은?",
-                        "a": "SQL 삽입 공격",
-                        "aEng": "SQL Injection"
+                "id": "c_11",
+                "category": "웹 공격",
+                "categoryEng": "Web Attack",
+                "clue": "SQL",
+                "q": "입력값에 SQL 구문을 삽입해 DB를 비정상 조회·수정하게 하는 공격은?",
+                "a": "SQL 삽입 공격",
+                "aEng": "SQL Injection"
             },
             {
-                        "id": "c_12",
-                        "category": "웹 공격",
-                        "categoryEng": "Web Attack",
-                        "clue": "XSS",
-                        "q": "웹 페이지에 악성 스크립트를 삽입해 사용자의 브라우저에서 실행되게 하는 공격은?",
-                        "a": "크로스 사이트 스크립팅",
-                        "aEng": "Cross Site Scripting"
+                "id": "c_12",
+                "category": "웹 공격",
+                "categoryEng": "Web Attack",
+                "clue": "XSS",
+                "q": "웹 페이지에 악성 스크립트를 삽입해 사용자의 브라우저에서 실행되게 하는 공격은?",
+                "a": "크로스 사이트 스크립팅",
+                "aEng": "Cross Site Scripting"
             },
             {
-                        "id": "c_13",
-                        "category": "네트워크 공격",
-                        "categoryEng": "Network Attack",
-                        "clue": "스니핑",
-                        "q": "네트워크를 지나는 패킷을 몰래 캡처해 내용을 엿보는 공격은?",
-                        "a": "스니핑",
-                        "aEng": "Sniffing"
+                "id": "c_13",
+                "category": "네트워크 공격",
+                "categoryEng": "Network Attack",
+                "clue": "스니핑",
+                "q": "네트워크를 지나는 패킷을 몰래 캡처해 내용을 엿보는 공격은?",
+                "a": "스니핑",
+                "aEng": "Sniffing"
             },
             {
-                        "id": "c_14",
-                        "category": "웹 공격",
-                        "categoryEng": "Web Attack",
-                        "clue": "워터",
-                        "q": "자주 방문하는 정상 사이트를 감염시켜 방문자를 공격하는 기법은?",
-                        "a": "워터링 홀",
-                        "aEng": "Watering Hole"
+                "id": "c_14",
+                "category": "웹 공격",
+                "categoryEng": "Web Attack",
+                "clue": "워터",
+                "q": "자주 방문하는 정상 사이트를 감염시켜 방문자를 공격하는 기법은?",
+                "a": "워터링 홀",
+                "aEng": "Watering Hole"
             },
             {
-                        "id": "c_15",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "스케어",
-                        "q": "허위 감염 경고로 사용자를 겁주어 결제나 설치를 유도하는 악성 소프트웨어는?",
-                        "a": "스케어웨어",
-                        "aEng": "Scareware"
+                "id": "c_15",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "스케어",
+                "q": "허위 감염 경고로 사용자를 겁주어 결제나 설치를 유도하는 악성 소프트웨어는?",
+                "a": "스케어웨어",
+                "aEng": "Scareware"
             },
             {
-                        "id": "c_16",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "C&C",
-                        "q": "봇넷에 명령을 내리고 감염 단말을 제어하는 서버는?",
-                        "a": "C&C 서버",
-                        "aEng": "Command and Control Server"
+                "id": "c_16",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "C&C",
+                "q": "봇넷에 명령을 내리고 감염 단말을 제어하는 서버는?",
+                "a": "C&C 서버",
+                "aEng": "Command and Control Server"
             },
             {
-                        "id": "c_17",
-                        "category": "네트워크 공격",
-                        "categoryEng": "Network Attack",
-                        "clue": "봇넷",
-                        "q": "악성코드에 감염되어 공격자 명령에 따라 동작하는 좀비 PC들의 네트워크는?",
-                        "a": "봇넷",
-                        "aEng": "Botnet"
+                "id": "c_17",
+                "category": "네트워크 공격",
+                "categoryEng": "Network Attack",
+                "clue": "봇넷",
+                "q": "악성코드에 감염되어 공격자 명령에 따라 동작하는 좀비 PC들의 네트워크는?",
+                "a": "봇넷",
+                "aEng": "Botnet"
             },
             {
-                        "id": "c_18",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "웜",
-                        "q": "사용자 실행 없이 네트워크를 통해 스스로 복제·전파되는 악성코드는?",
-                        "a": "웜",
-                        "aEng": "Worm"
+                "id": "c_18",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "웜",
+                "q": "사용자 실행 없이 네트워크를 통해 스스로 복제·전파되는 악성코드는?",
+                "a": "웜",
+                "aEng": "Worm"
             },
             {
-                        "id": "c_19",
-                        "category": "시스템 공격",
-                        "categoryEng": "System Attack",
-                        "clue": "제로",
-                        "q": "보안 패치가 나오기 전 알려지지 않은 취약점을 이용하는 공격은?",
-                        "a": "제로 데이 공격",
-                        "aEng": "Zero-day Attack"
+                "id": "c_19",
+                "category": "시스템 공격",
+                "categoryEng": "System Attack",
+                "clue": "제로",
+                "q": "보안 패치가 나오기 전 알려지지 않은 취약점을 이용하는 공격은?",
+                "a": "제로 데이 공격",
+                "aEng": "Zero-day Attack"
             },
             {
-                        "id": "c_20",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "키",
-                        "q": "사용자의 키보드 입력을 몰래 기록해 계정 정보를 탈취하는 공격은?",
-                        "a": "Key Logger Attack",
-                        "aEng": "Key Logger Attack"
+                "id": "c_20",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "키",
+                "q": "사용자의 키보드 입력을 몰래 기록해 계정 정보를 탈취하는 공격은?",
+                "a": "Key Logger Attack",
+                "aEng": "Key Logger Attack"
             },
             {
-                        "id": "c_21",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "랜섬",
-                        "q": "파일을 암호화한 뒤 복호화 대가를 요구하는 악성코드는?",
-                        "a": "랜섬웨어",
-                        "aEng": "Ransomware"
+                "id": "c_21",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "랜섬",
+                "q": "파일을 암호화한 뒤 복호화 대가를 요구하는 악성코드는?",
+                "a": "랜섬웨어",
+                "aEng": "Ransomware"
             },
             {
-                        "id": "c_22",
-                        "category": "시스템 공격",
-                        "categoryEng": "System Attack",
-                        "clue": "레인보우",
-                        "q": "미리 계산한 해시값 표를 이용해 비밀번호를 역추적하는 공격은?",
-                        "a": "레인보우 테이블 공격",
-                        "aEng": "Rainbow Table Attack"
+                "id": "c_22",
+                "category": "시스템 공격",
+                "categoryEng": "System Attack",
+                "clue": "레인보우",
+                "q": "미리 계산한 해시값 표를 이용해 비밀번호를 역추적하는 공격은?",
+                "a": "레인보우 테이블 공격",
+                "aEng": "Rainbow Table Attack"
             },
             {
-                        "id": "c_23",
-                        "category": "네트워크 공격",
-                        "categoryEng": "Network Attack",
-                        "clue": "재전송",
-                        "q": "가로챈 인증 패킷이나 메시지를 다시 보내 정상 요청처럼 속이는 공격은?",
-                        "a": "재전송 공격",
-                        "aEng": "Replay Attack"
+                "id": "c_23",
+                "category": "네트워크 공격",
+                "categoryEng": "Network Attack",
+                "clue": "재전송",
+                "q": "가로챈 인증 패킷이나 메시지를 다시 보내 정상 요청처럼 속이는 공격은?",
+                "a": "재전송 공격",
+                "aEng": "Replay Attack"
             },
             {
-                        "id": "c_24",
-                        "category": "사회 공학",
-                        "categoryEng": "Social Engineering",
-                        "clue": "BEC",
-                        "q": "임원·거래처 이메일처럼 위장해 송금이나 기밀 정보 전송을 유도하는 사기 공격은?",
-                        "a": "비즈니스 이메일 사기 (BEC / Business Scam)",
-                        "aEng": "Business Email Compromise"
+                "id": "c_24",
+                "category": "사회 공학",
+                "categoryEng": "Social Engineering",
+                "clue": "BEC",
+                "q": "임원·거래처 이메일처럼 위장해 송금이나 기밀 정보 전송을 유도하는 사기 공격은?",
+                "a": "비즈니스 이메일 사기 (BEC / Business Scam)",
+                "aEng": "Business Email Compromise"
             },
             {
-                        "id": "c_25",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "트로이",
-                        "q": "정상 프로그램처럼 위장해 실행되면 악성 행위를 수행하는 악성코드는?",
-                        "a": "트로이 목마",
-                        "aEng": "Trojan Horse"
+                "id": "c_25",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "트로이",
+                "q": "정상 프로그램처럼 위장해 실행되면 악성 행위를 수행하는 악성코드는?",
+                "a": "트로이 목마",
+                "aEng": "Trojan Horse"
             },
             {
-                        "id": "c_26",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "바이러스",
-                        "q": "다른 파일에 감염되어 사용자의 실행을 통해 전파되는 악성코드는?",
-                        "a": "컴퓨터 바이러스",
-                        "aEng": "Computer Virus"
+                "id": "c_26",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "바이러스",
+                "q": "다른 파일에 감염되어 사용자의 실행을 통해 전파되는 악성코드는?",
+                "a": "컴퓨터 바이러스",
+                "aEng": "Computer Virus"
             },
             {
-                        "id": "c_27",
-                        "category": "DoS 공격",
-                        "categoryEng": "DoS Attack",
-                        "clue": "랜드",
-                        "q": "출발지와 목적지 IP/포트를 같게 조작한 패킷으로 시스템을 혼란시키는 공격은?",
-                        "a": "랜드 어택 (LAND Attack)",
-                        "aEng": "LAND Attack"
+                "id": "c_27",
+                "category": "DoS 공격",
+                "categoryEng": "DoS Attack",
+                "clue": "랜드",
+                "q": "출발지와 목적지 IP/포트를 같게 조작한 패킷으로 시스템을 혼란시키는 공격은?",
+                "a": "랜드 어택 (LAND Attack)",
+                "aEng": "LAND Attack"
             },
             {
-                        "id": "c_28",
-                        "category": "DoS 공격",
-                        "categoryEng": "DoS Attack",
-                        "clue": "스머프",
-                        "q": "ICMP 요청의 출발지를 피해자로 위조해 증폭 응답을 유발하는 공격은?",
-                        "a": "스머프 어택 (Smurf Attack)",
-                        "aEng": "Smurf Attack"
+                "id": "c_28",
+                "category": "DoS 공격",
+                "categoryEng": "DoS Attack",
+                "clue": "스머프",
+                "q": "ICMP 요청의 출발지를 피해자로 위조해 증폭 응답을 유발하는 공격은?",
+                "a": "스머프 어택 (Smurf Attack)",
+                "aEng": "Smurf Attack"
             },
             {
-                        "id": "c_29",
-                        "category": "DoS 공격",
-                        "categoryEng": "DoS Attack",
-                        "clue": "티어",
-                        "q": "조각난 IP 패킷을 비정상적으로 보내 재조립 과정에서 장애를 유발하는 공격은?",
-                        "a": "티어드롭 (Tear Drop)",
-                        "aEng": "Tear Drop"
+                "id": "c_29",
+                "category": "DoS 공격",
+                "categoryEng": "DoS Attack",
+                "clue": "티어",
+                "q": "조각난 IP 패킷을 비정상적으로 보내 재조립 과정에서 장애를 유발하는 공격은?",
+                "a": "티어드롭 (Tear Drop)",
+                "aEng": "Tear Drop"
             },
             {
-                        "id": "c_30",
-                        "category": "DoS 공격",
-                        "categoryEng": "DoS Attack",
-                        "clue": "핑",
-                        "q": "규격보다 큰 ICMP 패킷을 보내 시스템 오류를 유발하는 공격은?",
-                        "a": "죽음의 핑 (Ping of Death)",
-                        "aEng": "Ping of Death"
+                "id": "c_30",
+                "category": "DoS 공격",
+                "categoryEng": "DoS Attack",
+                "clue": "핑",
+                "q": "규격보다 큰 ICMP 패킷을 보내 시스템 오류를 유발하는 공격은?",
+                "a": "죽음의 핑 (Ping of Death)",
+                "aEng": "Ping of Death"
             },
             {
-                        "id": "c_31",
-                        "category": "DoS 공격",
-                        "categoryEng": "DoS Attack",
-                        "clue": "SYN",
-                        "q": "TCP 연결 요청만 대량 전송하고 완료하지 않아 연결 큐를 고갈시키는 공격은?",
-                        "a": "SYN 플러딩 (SYN Flooding)",
-                        "aEng": "SYN Flooding"
+                "id": "c_31",
+                "category": "DoS 공격",
+                "categoryEng": "DoS Attack",
+                "clue": "SYN",
+                "q": "TCP 연결 요청만 대량 전송하고 완료하지 않아 연결 큐를 고갈시키는 공격은?",
+                "a": "SYN 플러딩 (SYN Flooding)",
+                "aEng": "SYN Flooding"
             },
             {
-                        "id": "c_32",
-                        "category": "DoS 공격",
-                        "categoryEng": "DoS Attack",
-                        "clue": "UDP",
-                        "q": "UDP 패킷을 대량 전송해 대상 시스템이나 네트워크 자원을 소모시키는 공격은?",
-                        "a": "UDP 플러딩 (UDP Flooding)",
-                        "aEng": "UDP Flooding"
+                "id": "c_32",
+                "category": "DoS 공격",
+                "categoryEng": "DoS Attack",
+                "clue": "UDP",
+                "q": "UDP 패킷을 대량 전송해 대상 시스템이나 네트워크 자원을 소모시키는 공격은?",
+                "a": "UDP 플러딩 (UDP Flooding)",
+                "aEng": "UDP Flooding"
             },
             {
-                        "id": "c_33",
-                        "category": "DoS 공격",
-                        "categoryEng": "Denial of Service",
-                        "clue": "DoS",
-                        "q": "하나의 공격자가 대량 요청이나 비정상 패킷으로 대상 서비스의 정상 이용을 방해하는 공격은?",
-                        "a": "DoS 공격",
-                        "aEng": "Denial of Service Attack"
+                "id": "c_33",
+                "category": "DoS 공격",
+                "categoryEng": "Denial of Service",
+                "clue": "DoS",
+                "q": "하나의 공격자가 대량 요청이나 비정상 패킷으로 대상 서비스의 정상 이용을 방해하는 공격은?",
+                "a": "DoS 공격",
+                "aEng": "Denial of Service Attack"
             },
             {
-                        "id": "c_34",
-                        "category": "DoS 공격",
-                        "categoryEng": "Distributed Denial of Service",
-                        "clue": "DDoS",
-                        "q": "여러 좀비 PC나 봇넷을 이용해 동시에 트래픽을 보내 서비스를 마비시키는 분산 서비스 거부 공격은?",
-                        "a": "DDoS",
-                        "aEng": "Distributed Denial of Service"
+                "id": "c_34",
+                "category": "DoS 공격",
+                "categoryEng": "Distributed Denial of Service",
+                "clue": "DDoS",
+                "q": "여러 좀비 PC나 봇넷을 이용해 동시에 트래픽을 보내 서비스를 마비시키는 분산 서비스 거부 공격은?",
+                "a": "DDoS",
+                "aEng": "Distributed Denial of Service"
             },
             {
-                        "id": "c_35",
-                        "category": "DoS 공격",
-                        "categoryEng": "Distributed Reflection DoS",
-                        "clue": "DRDoS",
-                        "q": "출발지 IP를 피해자로 위조해 반사 서버의 응답 트래픽을 피해자에게 집중시키는 공격은?",
-                        "a": "DRDoS",
-                        "aEng": "Distributed Reflection Denial of Service"
+                "id": "c_35",
+                "category": "DoS 공격",
+                "categoryEng": "Distributed Reflection DoS",
+                "clue": "DRDoS",
+                "q": "출발지 IP를 피해자로 위조해 반사 서버의 응답 트래픽을 피해자에게 집중시키는 공격은?",
+                "a": "DRDoS",
+                "aEng": "Distributed Reflection Denial of Service"
             },
             {
-                        "id": "c_36",
-                        "category": "보안 기술",
-                        "categoryEng": "Security Technology",
-                        "clue": "TrustZone",
-                        "q": "프로세서를 보안 영역과 일반 영역으로 분리해 중요 코드와 데이터를 보호하는 하드웨어 기반 보안 기술은?",
-                        "a": "트러스트존",
-                        "aEng": "TrustZone"
+                "id": "c_38",
+                "category": "악성코드",
+                "categoryEng": "Malware",
+                "clue": "Rootkit",
+                "q": "시스템 관리자 권한을 탈취하고 악성 행위나 파일·프로세스를 은닉하는 프로그램은?",
+                "a": "루트킷",
+                "aEng": "Rootkit"
             },
             {
-                        "id": "c_37",
-                        "category": "보안 기술",
-                        "categoryEng": "Anti-Tampering",
-                        "clue": "변조방지",
-                        "q": "소프트웨어나 장비가 불법 분석·변조되지 않도록 보호하는 변조 방지 기법은?",
-                        "a": "템퍼프루핑",
-                        "aEng": "Tamper Proofing"
+                "id": "c_39",
+                "category": "웹 공격",
+                "categoryEng": "Web Attack",
+                "clue": "CSRF",
+                "q": "인증된 사용자의 권한을 이용해 의도하지 않은 요청을 서버에 전송하게 만드는 웹 공격은?",
+                "a": "CSRF",
+                "aEng": "Cross-Site Request Forgery"
             },
             {
-                        "id": "c_38",
-                        "category": "악성코드",
-                        "categoryEng": "Malware",
-                        "clue": "Rootkit",
-                        "q": "시스템 관리자 권한을 탈취하고 악성 행위나 파일·프로세스를 은닉하는 프로그램은?",
-                        "a": "루트킷",
-                        "aEng": "Rootkit"
-            },
-            {
-                        "id": "c_39",
-                        "category": "웹 공격",
-                        "categoryEng": "Web Attack",
-                        "clue": "CSRF",
-                        "q": "인증된 사용자의 권한을 이용해 의도하지 않은 요청을 서버에 전송하게 만드는 웹 공격은?",
-                        "a": "CSRF",
-                        "aEng": "Cross-Site Request Forgery"
-            },
-            {
-                        "id": "c_40",
-                        "category": "시스템 공격",
-                        "categoryEng": "Memory Attack",
-                        "clue": "버퍼",
-                        "q": "메모리 버퍼의 크기를 초과하는 데이터를 입력해 인접 메모리를 덮어쓰고 시스템 오동작이나 권한 탈취를 유발하는 공격은?",
-                        "a": "버퍼 오버플로우",
-                        "aEng": "Buffer Overflow"
+                "id": "c_40",
+                "category": "시스템 공격",
+                "categoryEng": "Memory Attack",
+                "clue": "버퍼",
+                "q": "메모리 버퍼의 크기를 초과하는 데이터를 입력해 인접 메모리를 덮어쓰고 시스템 오동작이나 권한 탈취를 유발하는 공격은?",
+                "a": "버퍼 오버플로우",
+                "aEng": "Buffer Overflow"
             }
-];
+        ];
 
         // Interface System Dataset (19 Items)
         const interfaceDeck = [
@@ -16362,116 +16337,134 @@ EEl
 
 
         // [추가] 플래시 카드 암기 신규 목차용 임시 데이터셋
-        const infoSecurityBasicDeck = [
+                const infoSecurityBasicDeck = [
             {
-                        "id": "info_security_basic_2",
-                        "category": "정보보안 3요소",
-                        "categoryEng": "Confidentiality",
-                        "clue": "기",
-                        "q": "정보를 암호화하고 인가된 사용자만 접근하도록 보장하는 정보보안 특성은?",
-                        "a": "기밀성",
-                        "aEng": "Confidentiality"
+                "id": "info_security_basic_2",
+                "category": "정보보안 3요소",
+                "categoryEng": "Confidentiality",
+                "clue": "기",
+                "q": "정보를 암호화하고 인가된 사용자만 접근하도록 보장하는 정보보안 특성은?",
+                "a": "기밀성",
+                "aEng": "Confidentiality"
             },
             {
-                        "id": "info_security_basic_3",
-                        "category": "정보보안 3요소",
-                        "categoryEng": "Integrity",
-                        "clue": "무",
-                        "q": "정보가 인가된 사용자에 의해서만 변경되며 위·변조되지 않도록 보장하는 특성은?",
-                        "a": "무결성",
-                        "aEng": "Integrity"
+                "id": "info_security_basic_3",
+                "category": "정보보안 3요소",
+                "categoryEng": "Integrity",
+                "clue": "무",
+                "q": "정보가 인가된 사용자에 의해서만 변경되며 위·변조되지 않도록 보장하는 특성은?",
+                "a": "무결성",
+                "aEng": "Integrity"
             },
             {
-                        "id": "info_security_basic_4",
-                        "category": "정보보안 3요소",
-                        "categoryEng": "Availability",
-                        "clue": "가",
-                        "q": "인가된 사용자가 필요할 때 언제든지 정보와 서비스에 접근할 수 있게 하는 특성은?",
-                        "a": "가용성",
-                        "aEng": "Availability"
+                "id": "info_security_basic_4",
+                "category": "정보보안 3요소",
+                "categoryEng": "Availability",
+                "clue": "가",
+                "q": "인가된 사용자가 필요할 때 언제든지 정보와 서비스에 접근할 수 있게 하는 특성은?",
+                "a": "가용성",
+                "aEng": "Availability"
             },
             {
-                        "id": "info_security_basic_5",
-                        "category": "인증 제도",
-                        "categoryEng": "Certification",
-                        "clue": "ISMS",
-                        "q": "조직의 정보보호 관리체계를 수립·운영하고 있는지 인증하는 제도는?",
-                        "a": "ISMS",
-                        "aEng": "Information Security Management System"
+                "id": "info_security_basic_5",
+                "category": "인증 제도",
+                "categoryEng": "Certification",
+                "clue": "ISMS",
+                "q": "조직의 정보보호 관리체계를 수립·운영하고 있는지 인증하는 제도는?",
+                "a": "ISMS",
+                "aEng": "Information Security Management System"
             },
             {
-                        "id": "info_security_basic_6",
-                        "category": "인증 제도",
-                        "categoryEng": "Certification",
-                        "clue": "PIMS",
-                        "q": "개인정보보호 관리체계를 인증하는 제도는?",
-                        "a": "PIMS",
-                        "aEng": "Personal Information Management System"
+                "id": "info_security_basic_6",
+                "category": "인증 제도",
+                "categoryEng": "Certification",
+                "clue": "PIMS",
+                "q": "개인정보보호 관리체계를 인증하는 제도는?",
+                "a": "PIMS",
+                "aEng": "Personal Information Management System"
             },
             {
-                        "id": "info_security_basic_7",
-                        "category": "인증 제도",
-                        "categoryEng": "Certification",
-                        "clue": "ISMS-P",
-                        "q": "정보보호 및 개인정보보호 관리체계를 함께 인증하는 제도는?",
-                        "a": "ISMS-P",
-                        "aEng": "Information Security and Personal Information Management System"
+                "id": "info_security_basic_7",
+                "category": "인증 제도",
+                "categoryEng": "Certification",
+                "clue": "ISMS-P",
+                "q": "정보보호 및 개인정보보호 관리체계를 함께 인증하는 제도는?",
+                "a": "ISMS-P",
+                "aEng": "Information Security and Personal Information Management System"
             },
             {
-                        "id": "info_security_basic_8",
-                        "category": "평가 기준",
-                        "categoryEng": "Evaluation Criteria",
-                        "clue": "ITSEC",
-                        "q": "유럽에서 사용된 정보보호 제품 평가 기준은?",
-                        "a": "ITSEC",
-                        "aEng": "Information Technology Security Evaluation Criteria"
+                "id": "info_security_basic_8",
+                "category": "평가 기준",
+                "categoryEng": "Evaluation Criteria",
+                "clue": "ITSEC",
+                "q": "유럽에서 사용된 정보보호 제품 평가 기준은?",
+                "a": "ITSEC",
+                "aEng": "Information Technology Security Evaluation Criteria"
             },
             {
-                        "id": "info_security_basic_9",
-                        "category": "평가 기준",
-                        "categoryEng": "Evaluation Criteria",
-                        "clue": "TCSEC",
-                        "q": "미국에서 사용된 정보보호 제품 평가 기준은?",
-                        "a": "TCSEC",
-                        "aEng": "Trusted Computer System Evaluation Criteria"
+                "id": "info_security_basic_9",
+                "category": "평가 기준",
+                "categoryEng": "Evaluation Criteria",
+                "clue": "TCSEC",
+                "q": "미국에서 사용된 정보보호 제품 평가 기준은?",
+                "a": "TCSEC",
+                "aEng": "Trusted Computer System Evaluation Criteria"
             },
             {
-                        "id": "info_security_basic_10",
-                        "category": "평가 기준",
-                        "categoryEng": "Evaluation Criteria",
-                        "clue": "CC",
-                        "q": "여러 평가 기준의 결과를 통합한 국제 공통 평가 기준은?",
-                        "a": "CC",
-                        "aEng": "Common Criteria"
+                "id": "info_security_basic_10",
+                "category": "평가 기준",
+                "categoryEng": "Evaluation Criteria",
+                "clue": "CC",
+                "q": "여러 평가 기준의 결과를 통합한 국제 공통 평가 기준은?",
+                "a": "CC",
+                "aEng": "Common Criteria"
             },
             {
-                        "id": "info_security_basic_11",
-                        "category": "접근 통제 정책",
-                        "categoryEng": "Access Control",
-                        "clue": "MAC",
-                        "q": "자원의 보안 레벨과 사용자의 보안 취급 인자를 비교해 중앙 정책으로 강제 통제하는 방식은?",
-                        "a": "강제적 접근 통제(MAC)",
-                        "aEng": "Mandatory Access Control"
+                "id": "info_security_basic_11",
+                "category": "접근 통제 정책",
+                "categoryEng": "Access Control",
+                "clue": "MAC",
+                "q": "자원의 보안 레벨과 사용자의 보안 취급 인자를 비교해 중앙 정책으로 강제 통제하는 방식은?",
+                "a": "강제적 접근 통제(MAC)",
+                "aEng": "Mandatory Access Control"
             },
             {
-                        "id": "info_security_basic_12",
-                        "category": "접근 통제 정책",
-                        "categoryEng": "Access Control",
-                        "clue": "DAC",
-                        "q": "자원의 소유자가 사용자 접근 권한을 임의로 허용하거나 회수하는 방식은?",
-                        "a": "임의적 접근 통제(DAC)",
-                        "aEng": "Discretionary Access Control"
+                "id": "info_security_basic_12",
+                "category": "접근 통제 정책",
+                "categoryEng": "Access Control",
+                "clue": "DAC",
+                "q": "자원의 소유자가 사용자 접근 권한을 임의로 허용하거나 회수하는 방식은?",
+                "a": "임의적 접근 통제(DAC)",
+                "aEng": "Discretionary Access Control"
             },
             {
-                        "id": "info_security_basic_13",
-                        "category": "접근 통제 정책",
-                        "categoryEng": "Access Control",
-                        "clue": "RBAC",
-                        "q": "사용자의 역할(Role)을 기준으로 접근 권한을 부여하는 방식은?",
-                        "a": "역할 기반 접근 통제(RBAC)",
-                        "aEng": "Role-Based Access Control"
+                "id": "info_security_basic_13",
+                "category": "접근 통제 정책",
+                "categoryEng": "Access Control",
+                "clue": "RBAC",
+                "q": "사용자의 역할(Role)을 기준으로 접근 권한을 부여하는 방식은?",
+                "a": "역할 기반 접근 통제(RBAC)",
+                "aEng": "Role-Based Access Control"
+            },
+            {
+                "id": "c_36",
+                "category": "보안기술",
+                "categoryEng": "Security Technology",
+                "clue": "TrustZone",
+                "q": "프로세서를 보안 영역과 일반 영역으로 분리해 중요 코드와 데이터를 보호하는 하드웨어 기반 보안 기술은?",
+                "a": "트러스트존",
+                "aEng": "TrustZone"
+            },
+            {
+                "id": "c_37",
+                "category": "보안기술",
+                "categoryEng": "Security Technology",
+                "clue": "변조방지",
+                "q": "소프트웨어나 장비가 불법 분석·변조되지 않도록 보호하는 변조 방지 기법은?",
+                "a": "템퍼프루핑",
+                "aEng": "Tamper Proofing"
             }
-];
+        ];
 
         const uiDeck = [
             {
@@ -17509,11 +17502,11 @@ EEl
             COHESION: [FILTER_ALL, '응집도', '결합도'],
             BLACKBOX: [FILTER_ALL, '블랙박스 테스트'],
             INTERFACE: [FILTER_ALL, '데이터 포맷', '웹 서비스', '인터페이스 보안', '웹 통신 기술', '연계 솔루션'],
-            INFO_SECURITY_BASIC: [FILTER_ALL, '정보보안 3요소', '인증 제도', '평가 기준', '접근 통제 정책'],
+            INFO_SECURITY_BASIC: [FILTER_ALL, '정보보안 3요소', '인증 제도', '평가 기준', '접근 통제 정책', '보안기술'],
             UI: [FILTER_ALL, 'UI/UX 개념', 'UI 설계 원칙', 'UI 유형', 'UI 인터페이스'],
             INTEGRITY_CONSTRAINT: [FILTER_ALL, '제약조건 종류'],
-            ATTACK: [FILTER_ALL, '네트워크 공격', '사회 공학', '보안 관리', '웹 공격', '지능형 위협', '시스템 공격', '악성코드', 'DoS 공격', '보안 기술'],
-            PROTOCOL: [FILTER_ALL, '네트워크 계층', '응용 계층', '데이터링크 계층', '프로토콜 개념', '프로토콜 기본 요소'],
+            ATTACK: [FILTER_ALL, '네트워크 공격', '사회 공학', '보안 관리', '웹 공격', '지능형 위협', '시스템 공격', '악성코드', 'DoS 공격'],
+            PROTOCOL: [FILTER_ALL, '네트워크 계층', '응용 계층', '데이터링크 계층', '프로토콜 기본 요소'],
             ALGO: [FILTER_ALL, '대칭(블록)', '비대칭(공개키)', '보안 프로토콜', '해시 알고리즘'],
             TEST_CARD: [FILTER_ALL, '테스트 기본 원칙', '테스트 오라클', '테스트 산출물', '품질 분석 도구', '테스트 프레임워크', '코드 품질 관리'],
             INFO_SECURITY_MISC: [FILTER_ALL, '인증/인가', '보안 솔루션', '네트워크 보안', '보안 모델', '데이터 보호', 'AAA'],
@@ -17569,7 +17562,8 @@ EEl
                     { label: '정보보안 3요소', className: 'text-indigo-600 bg-indigo-50 border border-indigo-100', deck: infoSecurityBasicDeck },
                     { label: '인증 제도', className: 'text-emerald-600 bg-emerald-50 border border-emerald-100', deck: infoSecurityBasicDeck },
                     { label: '평가 기준', className: 'text-amber-600 bg-amber-50 border border-amber-100', deck: infoSecurityBasicDeck },
-                    { label: '접근 통제 정책', className: 'text-rose-600 bg-rose-50 border border-rose-100', deck: infoSecurityBasicDeck }
+                    { label: '접근 통제 정책', className: 'text-rose-600 bg-rose-50 border border-rose-100', deck: infoSecurityBasicDeck },
+                    { label: '보안기술', className: 'text-sky-700 bg-sky-50 border border-sky-200', deck: infoSecurityBasicDeck }
                 ]
             },
             UI: {
@@ -17597,8 +17591,7 @@ EEl
                     { label: '지능형 위협', className: 'text-fuchsia-600 bg-fuchsia-50 border border-fuchsia-100', deck: attackDeck },
                     { label: '시스템 공격', className: 'text-violet-600 bg-violet-50 border border-violet-100', deck: attackDeck },
                     { label: '악성코드', className: 'text-emerald-600 bg-emerald-50 border border-emerald-100', deck: attackDeck },
-                    { label: 'DoS 공격', className: 'text-rose-700 bg-rose-50 border border-rose-200', deck: attackDeck },
-                    { label: '보안 기술', className: 'text-sky-700 bg-sky-50 border border-sky-200', deck: attackDeck }
+                    { label: 'DoS 공격', className: 'text-rose-700 bg-rose-50 border border-rose-200', deck: attackDeck }
                 ]
             },
             PROTOCOL: {
@@ -17607,7 +17600,6 @@ EEl
                     { label: '네트워크 계층', className: 'text-sky-600 bg-sky-50 border border-sky-100', deck: protocolDeck },
                     { label: '응용 계층', className: 'text-emerald-600 bg-emerald-50 border border-emerald-100', deck: protocolDeck },
                     { label: '데이터링크 계층', className: 'text-rose-600 bg-rose-50 border border-rose-100', deck: protocolDeck },
-                    { label: '프로토콜 개념', className: 'text-indigo-600 bg-indigo-50 border border-indigo-100', deck: protocolDeck },
                     { label: '프로토콜 기본 요소', className: 'text-violet-600 bg-violet-50 border border-violet-100', deck: protocolDeck }
                 ]
             },
